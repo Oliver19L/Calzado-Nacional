@@ -135,7 +135,7 @@
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "IniSesion";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
