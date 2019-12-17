@@ -23,7 +23,7 @@ namespace Main
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new Compras());
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -68,6 +68,21 @@ namespace Main
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.google.com/maps/place/Calzado+Nacional+Sharon/@11.963495,-86.0938846,20.7z/data=!4m5!3m4!1s0x8f7407fbcfa131ff:0x16321c9e7099d8d3!8m2!3d11.9636643!4d-86.0936455");
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Pedidos());
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Ventas());
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Devoluciones());
         }
     }
 }
