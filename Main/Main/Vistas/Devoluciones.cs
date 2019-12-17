@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Main.Vistas
 {
-    public partial class Clientes : Form
+    public partial class Devoluciones : Form
     {
-        public Clientes()
+        public Devoluciones()
         {
             InitializeComponent();
         }
