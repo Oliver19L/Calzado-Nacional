@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Main.DAO
 {
     class Conexion
     {
-        protected SqlConnection connect = new SqlConnection();
+        public SqlConnection connect = new SqlConnection();
 
-        public Conectar(String user , String Pass)
+        public Conexion(String user , String Pass)
         {
             try
             {

@@ -8,11 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Threading;
+using Main.DAO;
 
 namespace Main
 {
     public partial class IniSesion : Form
     {
+
+        Conexion con;
+        Principal princi;
+        BackgroundWorker bg = new BackgroundWorker();
+
+
         public IniSesion()
         {
             InitializeComponent();
@@ -82,6 +90,63 @@ namespace Main
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            int progreso = 0, porciento = 0;
+
+            for(int i = 0; i <= 100; i++)
+            {
+                progreso++;
+                Thread.Sleep(50);
+                bg.ReportProgress(i);
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+            progressBar1.Style = ProgressBarStyle.Continuous;
+
+            if (e.ProgressPercentage > 100)
+            {
+                label2.Text = "100%";
+                progressBar1.Value = progressBar1.Maximum;
+            }
+            else
+            {
+                label2.Text = Convert.ToString(e.ProgressPercentage) + "%";
+                progressBar1.Value = e.ProgressPercentage;
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            princi = new Principal(con);
+
+            princi.Show();
+            this.Hide();
+        }
+
+        private void btnAcceder_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+
+            con = new Conexion(txtUsuario.Text, txtPass.Text);
+            if(this.con.connect.State == ConnectionState.Open)
+            {
+                bg.WorkerReportsProgress = true;
+                bg.ProgressChanged += backgroundWorker1_ProgressChanged;
+                bg.DoWork += backgroundWorker1_DoWork;
+                bg.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
+                bg.RunWorkerAsync();
+                label2.Visible = true;
+                progressBar1.Visible = true;
+
+
+            }
+
         }
     }
 }
