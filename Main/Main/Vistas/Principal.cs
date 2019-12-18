@@ -14,17 +14,20 @@ namespace Main
 {
     public partial class Principal : Form
     {
-        private Conexion cone;
+         public Conexion Con;
+
+       
 
         public Principal()
         {
            
             InitializeComponent();
         }
+        
 
         public Principal(Conexion Con)
         {
-            this.cone = Con;
+            this.Con = Con;
             InitializeComponent();
             
         }

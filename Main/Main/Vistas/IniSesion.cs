@@ -124,7 +124,6 @@ namespace Main
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             princi = new Principal(con);
-
             princi.Show();
             this.Hide();
         }

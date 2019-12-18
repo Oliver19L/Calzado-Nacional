@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Main.DAO
 {
-    class Conexion
+     public  class Conexion
     {
         public SqlConnection connect = new SqlConnection();
 
