@@ -1,4 +1,5 @@
-﻿using Main.Vistas;
+﻿using Main.DAO;
+using Main.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,19 @@ namespace Main
 {
     public partial class Principal : Form
     {
+          public Conexion con;
 
-        Empleados emples = new Empleados();
+       
         public Principal()
         {
             InitializeComponent();
             
+        }
+
+        public Principal(Conexion con)
+        {
+            this.con = con;
+            InitializeComponent();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
