@@ -16,6 +16,8 @@ namespace Main
     public partial class IniSesion : Form
     {
 
+        int cont = 3;
+
         Conexion con;
         Principal princi;
         BackgroundWorker bg = new BackgroundWorker();
@@ -145,7 +147,19 @@ namespace Main
 
 
             }
-
+            else
+            {
+                Cursor.Current = Cursors.Default;
+                --cont;
+                MessageBox.Show("Error:Usuario o Contraseña incorrecta", cont + "Intentos Restantes");
+                if (cont == 0)
+                {
+                    cont = 3;
+                    btnAcceder.Enabled = false;
+                    Thread.Sleep(3000);
+                    btnAcceder.Enabled = true;
+                }
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Main.DAO
         {
             try
             {
-                connect = new SqlConnection("Server=OLIVERPC\\SQLSERVER2019;Database=Cifrado;UID=" +user+";PWD="+Pass);
+                connect = new SqlConnection("Server=OLIVERPC;Database=Cifrado;UID=" +user+";PWD="+Pass);
                 connect.Open();
             }
             catch (Exception)
