@@ -41,8 +41,12 @@ namespace Main
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-           
-            AbrirFormEnPanel(new Empleados());
+            NewMethod();
+        }
+
+        private void NewMethod()
+        {
+            AbrirFormEnPanel(new Empleado());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

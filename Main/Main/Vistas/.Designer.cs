@@ -1,6 +1,6 @@
 ﻿namespace Main.Vistas
 {
-    partial class Empleados
+    partial class Empleado
     {
         /// <summary>
         /// Required designer variable.

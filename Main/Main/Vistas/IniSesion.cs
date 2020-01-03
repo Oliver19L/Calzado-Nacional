@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Main.DAO;
+using System.Data.SqlClient;
 
 namespace Main
 {
@@ -96,7 +97,7 @@ namespace Main
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            int progreso = 0, porciento = 0;
+            int progreso = 0;
 
             for(int i = 0; i <= 100; i++)
             {
@@ -135,7 +136,11 @@ namespace Main
             Cursor.Current = Cursors.WaitCursor;
 
             con = new Conexion(txtUsuario.Text, txtPass.Text);
-            if(this.con.connect.State == ConnectionState.Open)
+           // int result = con.Autentificacion(txtUsuario.Text,txtPass.Text);
+            //MessageBox.Show(result.ToString());
+
+
+            if (this.con.connect.State == ConnectionState.Open)
             {
                 bg.WorkerReportsProgress = true;
                 bg.ProgressChanged += backgroundWorker1_ProgressChanged;

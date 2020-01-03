@@ -59,17 +59,24 @@
     <Compile Include="Vistas\Devoluciones.Designer.cs">
       <DependentUpon>Devoluciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vistas\Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Empleados.cs">
+    <Compile Include="Vistas\Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Empleados.Designer.cs">
-      <DependentUpon>Empleados.cs</DependentUpon>
+    <Compile Include="Vistas\Empleado.Designer.cs">
+      <DependentUpon>Empleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\IniSesion.cs">
       <SubType>Form</SubType>
@@ -103,11 +110,14 @@
     <EmbeddedResource Include="Vistas\Devoluciones.resx">
       <DependentUpon>Devoluciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Empleados.resx">
-      <DependentUpon>Empleados.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Empleado.resx">
+      <DependentUpon>Empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\IniSesion.resx">
       <DependentUpon>IniSesion.cs</DependentUpon>
