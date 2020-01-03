@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Empleados
+            // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1330, 530);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Empleados";
+            this.Name = "Empleado";
             this.Text = "Empleados";
             this.ResumeLayout(false);
 

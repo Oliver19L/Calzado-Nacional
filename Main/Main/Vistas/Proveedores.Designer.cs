@@ -1,6 +1,6 @@
 ﻿namespace Main.Vistas
 {
-    partial class Devoluciones
+    partial class Proveedores
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Devoluciones
+            // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Devoluciones";
-            this.Text = "Devoluciones";
+            this.Name = "Proveedores";
+            this.Text = "Proveedores";
             this.ResumeLayout(false);
 
         }

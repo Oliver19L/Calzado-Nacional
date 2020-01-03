@@ -98,7 +98,12 @@ namespace Main
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Devoluciones());
+            AbrirFormEnPanel(new DevolucionesCompra());
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new  Clientes());
         }
     }
 }
