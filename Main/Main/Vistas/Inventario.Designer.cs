@@ -54,12 +54,12 @@
             this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(12, 85);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 318);
+            this.dataGridView1.Size = new System.Drawing.Size(1307, 387);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(414, 415);
+            this.btnEliminar.Location = new System.Drawing.Point(944, 496);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(713, 415);
+            this.btnCerrar.Location = new System.Drawing.Point(1243, 496);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(510, 415);
+            this.btnNuevo.Location = new System.Drawing.Point(1040, 496);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(611, 415);
+            this.btnEditar.Location = new System.Drawing.Point(1141, 496);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(90, 25);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(464, 20);
+            this.textBox1.Size = new System.Drawing.Size(786, 20);
             this.textBox1.TabIndex = 5;
             // 
             // label1
@@ -114,34 +114,37 @@
             // 
             this.Column1.HeaderText = "Codigo Producto";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 180;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Nombre Producto";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 140;
+            this.Column2.Width = 225;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Descripcion";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 294;
+            this.Column3.Width = 404;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Cantidad";
             this.Column4.Name = "Column4";
+            this.Column4.Width = 225;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Precio";
             this.Column5.Name = "Column5";
+            this.Column5.Width = 230;
             // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1331, 531);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEditar);
