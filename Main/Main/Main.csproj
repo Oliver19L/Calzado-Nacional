@@ -59,6 +59,12 @@
     <Compile Include="Vistas\Compras.Designer.cs">
       <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ContenedorDeDevoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ContenedorDeDevoluciones.Designer.cs">
+      <DependentUpon>ContenedorDeDevoluciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\DevolucionesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="Vistas\DevolucionCliente.Designer.cs">
       <DependentUpon>DevolucionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\EditarTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\EditarTrabajador.Designer.cs">
+      <DependentUpon>EditarTrabajador.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Proveedor.cs">
       <SubType>Form</SubType>
@@ -128,11 +140,17 @@
     <EmbeddedResource Include="Vistas\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ContenedorDeDevoluciones.resx">
+      <DependentUpon>ContenedorDeDevoluciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\DevolucionesCompra.resx">
       <DependentUpon>DevolucionesCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\DevolucionCliente.resx">
       <DependentUpon>DevolucionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\EditarTrabajador.resx">
+      <DependentUpon>EditarTrabajador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>

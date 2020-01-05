@@ -39,12 +39,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +48,6 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 27;
-            this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -103,81 +96,42 @@
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
+            this.Column4});
             this.dgvEmpleados.Location = new System.Drawing.Point(13, 85);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.Size = new System.Drawing.Size(1306, 386);
             this.dgvEmpleados.TabIndex = 21;
+            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Id_Empleado";
+            this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 41;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Primer Nombre";
+            this.Column2.HeaderText = "Nombre";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
+            this.Column2.Width = 69;
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Segundo Nombre";
+            this.Column3.HeaderText = "apellido";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.Column3.Width = 68;
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Primer Apellido";
+            this.Column4.HeaderText = "Contraseña";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Segundo Apellido";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Email";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 200;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Telefono ";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 90;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Celular";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 90;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Direccion";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 250;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Id_Municipio";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 75;
+            this.Column4.Width = 86;
             // 
             // Trabajador
             // 
@@ -194,6 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Trabajador";
             this.Text = "Trabajador";
+            this.Load += new System.EventHandler(this.Trabajador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,11 +168,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

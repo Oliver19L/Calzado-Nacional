@@ -41,7 +41,7 @@ namespace Main
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Trabajador());
+            AbrirFormEnPanel(new Trabajador(Con));
         }
     
 
@@ -98,7 +98,7 @@ namespace Main
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new DevolucionesCompra());
+            AbrirFormEnPanel(new ContenedorDeDevoluciones());
         }
 
         private void pictureBox12_Click(object sender, EventArgs e)
