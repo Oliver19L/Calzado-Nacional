@@ -16,17 +16,18 @@ namespace Main
 {
     public partial class IniSesion : Form
     {
-
+        
         int cont = 3;
-
+        
         Conexion con;
         Principal princi;
         BackgroundWorker bg = new BackgroundWorker();
-
-
+        
+       
         public IniSesion()
         {
             InitializeComponent();
+        
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -91,6 +92,7 @@ namespace Main
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
+           
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
@@ -98,8 +100,8 @@ namespace Main
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             int progreso = 0;
-
-            for(int i = 0; i <= 100; i++)
+            progressBar1.ForeColor = Color.SkyBlue;
+            for (int i = 0; i <= 100; i++)
             {
                 progreso++;
                 Thread.Sleep(50);
@@ -109,6 +111,7 @@ namespace Main
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            
             progressBar1.Value = e.ProgressPercentage;
             progressBar1.Style = ProgressBarStyle.Continuous;
 
@@ -126,14 +129,20 @@ namespace Main
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            princi = new Principal(con);
+
+            
+            princi = new Principal(con,txtUsuario.Text);
+            
             princi.Show();
             this.Hide();
         }
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
+
+           
             Cursor.Current = Cursors.WaitCursor;
+            this.progressBar1.ForeColor = Color.SkyBlue;
 
             con = new Conexion(txtUsuario.Text, txtPass.Text);
            // int result = con.Autentificacion(txtUsuario.Text,txtPass.Text);
@@ -142,6 +151,7 @@ namespace Main
 
             if (this.con.connect.State == ConnectionState.Open)
             {
+                
                 bg.WorkerReportsProgress = true;
                 bg.ProgressChanged += backgroundWorker1_ProgressChanged;
                 bg.DoWork += backgroundWorker1_DoWork;
@@ -149,6 +159,7 @@ namespace Main
                 bg.RunWorkerAsync();
                 label2.Visible = true;
                 progressBar1.Visible = true;
+               
 
 
             }
@@ -166,5 +177,24 @@ namespace Main
                 }
             }
         }
+
+
+        
+
+        
+        
+
+
+
+        
+
+
+
+
+
+
     }
+
+
 }
+

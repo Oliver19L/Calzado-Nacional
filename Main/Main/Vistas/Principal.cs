@@ -14,6 +14,7 @@ namespace Main
 {
     public partial class Principal : Form
     {
+       
          public Conexion Con;
 
        
@@ -21,14 +22,17 @@ namespace Main
         public Principal()
         {
            
-            InitializeComponent();
+            
         }
         
 
-        public Principal(Conexion Con)
+        public Principal(Conexion Con,String tex)
         {
             this.Con = Con;
             InitializeComponent();
+            this.label13.Text = tex;
+            this.label14.Text = Acesso(tex);
+            
             
         }
 
@@ -105,5 +109,43 @@ namespace Main
         {
             AbrirFormEnPanel(new  Clientes());
         }
+
+        private void pictureBox8_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void pictureBox8_MouseLeave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://api.whatsapp.com/send?phone=50584422254");
+        }
+
+        public string Usuarios(string user)
+        {
+            string userr = user;
+            return userr;
+        }
+        
+        public string Acesso(String Acc)
+        {
+            String persona="";
+
+            switch (Acc)
+            {
+                case "Prueba": 
+                    persona="Administrador";
+                    break;
+
+            }
+            return persona;
+        }
     }
+
+   
+    
 }

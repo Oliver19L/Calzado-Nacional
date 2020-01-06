@@ -46,18 +46,19 @@ namespace Main.DAO
         public void Listar(DataGridView GridView1)
         {
             SqlCommand cmd = new SqlCommand();
-            SqlDataReader leer;
+            
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "NuevoUsuario";
             cmd.Connection = connect;
 
-            leer = cmd.ExecuteReader();
+           // leer = cmd.ExecuteReader();
 
-            while (leer.Read()) { 
-            //GridView1.CurrentRow.CreateCells(0) = leer.GetString(0);
+            //while (leer.Read()) { 
+            ////GridView1.CurrentRow.CreateCells(0) = leer.GetString(0);
 
-             }
+            // }
+            DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
            
             
