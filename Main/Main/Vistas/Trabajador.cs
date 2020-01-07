@@ -15,32 +15,32 @@ namespace Main.Vistas
     public partial class Trabajador : Form
     {
         private Conexion cone;
-        public Trabajador()
-        {
-            InitializeComponent();
-          
+        // public Trabajador()
+        // {
+        //    InitializeComponent();
+        //  
 
-          
-        }
+
+        // }
 
         public Trabajador(Conexion con)
         {
             this.cone = con;
             InitializeComponent();
             ListarUsuarios(cone);
-            this.textBox1.Text = Svr(con);
+            //  this.textBox1.Text = Svr(con);
         }
 
         private void Trabajador_Load(object sender, EventArgs e)
         {
-           
-            
+
+
 
         }
 
         public void ListarUsuarios(Conexion con)
         {
-            con.Listar(dgvEmpleados);
+            con.ListarEmpleados(dgvEmpleados);
             //SqlCommand cmd = new SqlCommand();
             //SqlDataReader leer;
 
@@ -62,7 +62,7 @@ namespace Main.Vistas
             ////    dgvEmpleados.Rows.Add(filas);
 
             ////}
-           
+
 
             //DataTable dt = new DataTable();
             //da.Fill(dt);
@@ -74,12 +74,12 @@ namespace Main.Vistas
         {
 
         }
-         
+
 
         public string Svr(Conexion con)
         {
             String sert;
-           
+
             SqlCommand cmd = new SqlCommand();
             SqlDataReader leer;
 
@@ -88,11 +88,16 @@ namespace Main.Vistas
             cmd.Connection = con.connect;
 
             leer = cmd.ExecuteReader();
-            sert = Convert.ToString( leer.Read());
+            sert = Convert.ToString(leer.Read());
 
 
             return sert;
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            EditarTrabajador ET = new EditarTrabajador(cone);
+            ET.Show();
+        }
     }
 }

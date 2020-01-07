@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Main.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,20 @@ namespace Main.Vistas
 {
     public partial class EditarTrabajador : Form
     {
-        public EditarTrabajador()
+
+
+        private Conexion con;
+        public EditarTrabajador(Conexion con)
         {
+            this.con = con;
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            con.insertarTrabajador(txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerA.Text, txtSegundoA.Text, txtEmail.Text, mskTele.Text, mskCelular.Text, txtDireccion.Text,txtMunicipio.Text);
+            this.Hide();
         }
     }
 }

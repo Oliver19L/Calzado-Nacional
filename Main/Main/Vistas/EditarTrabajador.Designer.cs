@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtPrimerNombre = new System.Windows.Forms.TextBox();
+            this.txtSegundoNombre = new System.Windows.Forms.TextBox();
+            this.txtPrimerA = new System.Windows.Forms.TextBox();
+            this.txtSegundoA = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtMunicipio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.mskTele = new System.Windows.Forms.MaskedTextBox();
+            this.mskCelular = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -60,55 +60,55 @@
             this.textBox1.Size = new System.Drawing.Size(131, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // textBox2
+            // txtPrimerNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtPrimerNombre.Location = new System.Drawing.Point(155, 71);
+            this.txtPrimerNombre.Name = "txtPrimerNombre";
+            this.txtPrimerNombre.Size = new System.Drawing.Size(175, 20);
+            this.txtPrimerNombre.TabIndex = 1;
             // 
-            // textBox3
+            // txtSegundoNombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(155, 120);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(175, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtSegundoNombre.Location = new System.Drawing.Point(155, 120);
+            this.txtSegundoNombre.Name = "txtSegundoNombre";
+            this.txtSegundoNombre.Size = new System.Drawing.Size(175, 20);
+            this.txtSegundoNombre.TabIndex = 2;
             // 
-            // textBox4
+            // txtPrimerA
             // 
-            this.textBox4.Location = new System.Drawing.Point(155, 175);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(175, 20);
-            this.textBox4.TabIndex = 3;
+            this.txtPrimerA.Location = new System.Drawing.Point(155, 175);
+            this.txtPrimerA.Name = "txtPrimerA";
+            this.txtPrimerA.Size = new System.Drawing.Size(175, 20);
+            this.txtPrimerA.TabIndex = 3;
             // 
-            // textBox5
+            // txtSegundoA
             // 
-            this.textBox5.Location = new System.Drawing.Point(155, 225);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(175, 20);
-            this.textBox5.TabIndex = 4;
+            this.txtSegundoA.Location = new System.Drawing.Point(155, 225);
+            this.txtSegundoA.Name = "txtSegundoA";
+            this.txtSegundoA.Size = new System.Drawing.Size(175, 20);
+            this.txtSegundoA.TabIndex = 4;
             // 
-            // textBox6
+            // txtEmail
             // 
-            this.textBox6.Location = new System.Drawing.Point(155, 281);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(207, 20);
-            this.textBox6.TabIndex = 5;
+            this.txtEmail.Location = new System.Drawing.Point(155, 281);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(207, 20);
+            this.txtEmail.TabIndex = 5;
             // 
-            // textBox9
+            // txtDireccion
             // 
-            this.textBox9.Location = new System.Drawing.Point(415, 167);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(210, 78);
-            this.textBox9.TabIndex = 8;
+            this.txtDireccion.Location = new System.Drawing.Point(415, 167);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(210, 78);
+            this.txtDireccion.TabIndex = 8;
             // 
-            // textBox10
+            // txtMunicipio
             // 
-            this.textBox10.Location = new System.Drawing.Point(415, 16);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 9;
+            this.txtMunicipio.Location = new System.Drawing.Point(415, 16);
+            this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.Size = new System.Drawing.Size(100, 20);
+            this.txtMunicipio.TabIndex = 9;
             // 
             // label1
             // 
@@ -200,21 +200,21 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Segundo Nombre:";
             // 
-            // maskedTextBox1
+            // mskTele
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(415, 78);
-            this.maskedTextBox1.Mask = "0000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(136, 20);
-            this.maskedTextBox1.TabIndex = 21;
+            this.mskTele.Location = new System.Drawing.Point(415, 78);
+            this.mskTele.Mask = " 00000000";
+            this.mskTele.Name = "mskTele";
+            this.mskTele.Size = new System.Drawing.Size(136, 20);
+            this.mskTele.TabIndex = 21;
             // 
-            // maskedTextBox2
+            // mskCelular
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(415, 119);
-            this.maskedTextBox2.Mask = "0000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(136, 20);
-            this.maskedTextBox2.TabIndex = 22;
+            this.mskCelular.Location = new System.Drawing.Point(415, 119);
+            this.mskCelular.Mask = "00000000";
+            this.mskCelular.Name = "mskCelular";
+            this.mskCelular.Size = new System.Drawing.Size(136, 20);
+            this.mskCelular.TabIndex = 22;
             // 
             // button1
             // 
@@ -222,8 +222,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 24);
             this.button1.TabIndex = 23;
-            this.button1.Text = "button1";
+            this.button1.Text = "Insertar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -251,8 +252,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mskCelular);
+            this.Controls.Add(this.mskTele);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -263,13 +264,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtMunicipio);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtSegundoA);
+            this.Controls.Add(this.txtPrimerA);
+            this.Controls.Add(this.txtSegundoNombre);
+            this.Controls.Add(this.txtPrimerNombre);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "EditarTrabajador";
@@ -282,13 +283,13 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtPrimerNombre;
+        private System.Windows.Forms.TextBox txtSegundoNombre;
+        private System.Windows.Forms.TextBox txtPrimerA;
+        private System.Windows.Forms.TextBox txtSegundoA;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtMunicipio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -299,8 +300,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox mskTele;
+        private System.Windows.Forms.MaskedTextBox mskCelular;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
