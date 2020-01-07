@@ -55,7 +55,7 @@ namespace Main
         private void pictureBox1_Click(object sender, EventArgs e)
         {
            
-            AbrirFormEnPanel(new Inventario());
+            AbrirFormEnPanel(new Inventario(Con));
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace Main
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new  Clientes());
+            AbrirFormEnPanel(new  Clientes(Con));
         }
 
         private void pictureBox8_MouseDown(object sender, MouseEventArgs e)

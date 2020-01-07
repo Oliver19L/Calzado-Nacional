@@ -27,6 +27,9 @@ namespace Main.Vistas
             
             con.insertarTrabajador(txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerA.Text, txtSegundoA.Text, txtEmail.Text, mskTele.Text, mskCelular.Text, txtDireccion.Text,txtMunicipio.Text);
             this.Hide();
+            
         }
+
+      
     }
 }

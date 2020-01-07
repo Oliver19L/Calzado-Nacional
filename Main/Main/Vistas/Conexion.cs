@@ -43,13 +43,13 @@ namespace Main.DAO
 
         //    return result;
         //}
-        public void ListarEmpleados(DataGridView GridView1)
+        public void ListarEmpleados(DataGridView GridView1,String Procedimiento)
         {
             SqlCommand cmd = new SqlCommand();
             
 
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "ListaEmpleados";
+            cmd.CommandText = Procedimiento;
             cmd.Connection = connect;
 
            // leer = cmd.ExecuteReader();
@@ -71,39 +71,39 @@ namespace Main.DAO
         public void insertarTrabajador(String Pnombre, String Snombre, String Papellido, String Sapellido, String Email, String tel, String celular, String Dire, String Id_Muni)
         {
 
-            //  Console.WriteLine(contra);
+           
             int munic = 0;
             munic = Convert.ToInt32(Id_Muni);
 
-
-            try
+            
+        try
             {
                 SqlCommand cmd = new SqlCommand();
 
                 SqlParameter[] param = new SqlParameter[9];
-                param[0] = new SqlParameter("@PrimNombre", SqlDbType.VarChar);
+                param[0] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
                 param[0].Value = Pnombre;
-                param[1] = new SqlParameter("@SegundNombre", SqlDbType.VarChar);
+                param[1] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
                 param[1].Value = Snombre;
-                param[2] = new SqlParameter("@PrimApellid", SqlDbType.VarChar);
+                param[2] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
                 param[2].Value = Papellido;
-                param[3] = new SqlParameter("@SegundApellid", SqlDbType.VarChar);
+                param[3] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
                 param[3].Value = Sapellido;
-                param[4] = new SqlParameter("@Email", SqlDbType.VarChar);
+                param[4] = new SqlParameter("@Email", SqlDbType.NVarChar);
                 param[4].Value = Email;
                 param[5] = new SqlParameter("@Telefono", SqlDbType.Char);
                 param[5].Value = tel;
                 param[6] = new SqlParameter("@Celular", SqlDbType.Char);
                 param[6].Value = celular;
-                param[7] = new SqlParameter("@Direccion", SqlDbType.VarChar);
+                param[7] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
                 param[7].Value = Dire;
                 param[8] = new SqlParameter("@IdMunic", SqlDbType.Int);
                 param[8].Value = munic;
 
-
+                cmd.Connection = connect;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "NuevoEmpleado";
-                cmd.Connection = connect;
+               
                 cmd.Parameters.AddRange(param);
                 
 
@@ -115,8 +115,53 @@ namespace Main.DAO
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error en la insercion     " + ex.Message);
-                return;
+               MessageBox.Show("Error en la insercion     " + ex.Message);
+              return;
+            }
+        }
+        
+        public void insertarClientes()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlParameter[] param = new SqlParameter[4];
+
+                //param[0] = new SqlParameter("@PrimNombre", SqlDbType.VarChar);
+                //param[0].Value = Pnombre;
+                //param[1] = new SqlParameter("@SegundNombre", SqlDbType.VarChar);
+                //param[1].Value = Snombre;
+                //param[2] = new SqlParameter("@PrimApellid", SqlDbType.VarChar);
+                //param[2].Value = Papellido;
+                //param[3] = new SqlParameter("@SegundApellid", SqlDbType.VarChar);
+                //param[3].Value = Sapellido;
+                //param[4] = new SqlParameter("@Email", SqlDbType.VarChar);
+                //param[4].Value = Email;
+                //param[5] = new SqlParameter("@Telefono", SqlDbType.Char);
+                //param[5].Value = tel;
+                //param[6] = new SqlParameter("@Celular", SqlDbType.Char);
+                //param[6].Value = celular;
+                //param[7] = new SqlParameter("@Direccion", SqlDbType.VarChar);
+                //param[7].Value = Dire;
+                //param[8] = new SqlParameter("@IdMunic", SqlDbType.Int);
+                //param[8].Value = munic;
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "NuevoEmpleado";
+                cmd.Connection = connect;
+                cmd.Parameters.AddRange(param);
+
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(ds);
+
+
+            }
+            catch (Exception )
+            {
+                
             }
         }
     }

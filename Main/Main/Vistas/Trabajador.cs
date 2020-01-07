@@ -27,7 +27,7 @@ namespace Main.Vistas
         {
             this.cone = con;
             InitializeComponent();
-            ListarUsuarios(cone);
+            ListarUsuarios(cone,"ListaEmpleados");
             //  this.textBox1.Text = Svr(con);
         }
 
@@ -38,9 +38,9 @@ namespace Main.Vistas
 
         }
 
-        public void ListarUsuarios(Conexion con)
+        public void ListarUsuarios(Conexion con, String procedimiento)
         {
-            con.ListarEmpleados(dgvEmpleados);
+            con.ListarEmpleados(dgvEmpleados,procedimiento);
             //SqlCommand cmd = new SqlCommand();
             //SqlDataReader leer;
 
