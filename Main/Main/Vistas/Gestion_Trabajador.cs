@@ -12,9 +12,11 @@ using System.Windows.Forms;
 
 namespace Main.Vistas
 {
-    public partial class Trabajador : Form
+    public partial class Gestion_Trabajador : Form
     {
         private Conexion cone;
+
+        public DataRow dr;
         // public Trabajador()
         // {
         //    InitializeComponent();
@@ -23,7 +25,7 @@ namespace Main.Vistas
 
         // }
 
-        public Trabajador(Conexion con)
+        public Gestion_Trabajador(Conexion con)
         {
             this.cone = con;
             InitializeComponent();
@@ -97,7 +99,34 @@ namespace Main.Vistas
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             EditarTrabajador ET = new EditarTrabajador(cone);
-            ET.Show();
+            ET.BtnInsertar();
+            ET.ShowDialog();
+            
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewSelectedRowCollection rowCollection = dgvEmpleados.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+            EditarTrabajador fp = new EditarTrabajador(cone);
+            fp.DrEmpleados = drow;
+            fp.BtnActualizar();
+            fp.ShowDialog();
+            
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

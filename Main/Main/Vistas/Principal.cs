@@ -45,7 +45,7 @@ namespace Main
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Trabajador(Con));
+            AbrirFormEnPanel(new Gestion_Trabajador(Con));
         }
     
 

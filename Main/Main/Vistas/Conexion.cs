@@ -52,13 +52,8 @@ namespace Main.DAO
             cmd.CommandText = Procedimiento;
             cmd.Connection = connect;
 
-           // leer = cmd.ExecuteReader();
-
-            //while (leer.Read()) { 
-            ////GridView1.CurrentRow.CreateCells(0) = leer.GetString(0);
-
-            // }
-            DataSet ds = new DataSet();
+           
+          
             SqlDataAdapter da = new SqlDataAdapter(cmd);
            
             
@@ -68,12 +63,11 @@ namespace Main.DAO
             GridView1.DataSource = dt;
         }
 
-        public void insertarTrabajador(String Pnombre, String Snombre, String Papellido, String Sapellido, String Email, String tel, String celular, String Dire, String Id_Muni)
+        public void InsertarTrabajador(String Pnombre, String Snombre, String Papellido, String Sapellido, String Email, String tel, String celular, String Dire,int Id_Muni)
         {
 
            
-            int munic = 0;
-            munic = Convert.ToInt32(Id_Muni);
+            
 
             
         try
@@ -98,7 +92,7 @@ namespace Main.DAO
                 param[7] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
                 param[7].Value = Dire;
                 param[8] = new SqlParameter("@IdMunic", SqlDbType.Int);
-                param[8].Value = munic;
+                param[8].Value = Id_Muni;
 
                 cmd.Connection = connect;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -163,6 +157,66 @@ namespace Main.DAO
             {
                 
             }
+        }
+
+        public void editarCliente(DataGridView GridView1, String Pnombre, String Snombre, String Papellido, String Sapellido, String Email, String tel, String celular, String Dire, int Id_Muni)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            SqlParameter[] param = new SqlParameter[9];
+
+            param[0] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
+            param[0].Value = Pnombre;
+            param[1] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
+            param[1].Value = Snombre;
+            param[2] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
+            param[2].Value = Papellido;
+            param[3] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
+            param[3].Value = Sapellido;
+            param[4] = new SqlParameter("@Email", SqlDbType.NVarChar);
+            param[4].Value = Email;
+            param[5] = new SqlParameter("@Telefono", SqlDbType.Char);
+            param[5].Value = tel;
+            param[6] = new SqlParameter("@Celular", SqlDbType.Char);
+            param[6].Value = celular;
+            param[7] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
+            param[7].Value = Dire;
+            param[8] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[8].Value = Id_Muni;
+
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "EditarEmpleado";
+            cmd.Connection = connect;
+            cmd.Parameters.AddRange(param);
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(ds);
+
+
+        }
+
+
+        public void eliminarCliente(int id,String Procedimiento,String Campo)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter(Campo, SqlDbType.Int);
+            param[0].Value = id;
+
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = Procedimiento;
+            cmd.Connection = connect;
+            cmd.Parameters.AddRange(param);
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(ds);
         }
     }
 }

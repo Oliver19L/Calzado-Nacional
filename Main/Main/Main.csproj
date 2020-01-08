@@ -102,11 +102,11 @@
     <Compile Include="Vistas\DevolucionCliente.Designer.cs">
       <DependentUpon>DevolucionCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\EditarTrabajador.cs">
+    <Compile Include="Vistas\Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\EditarTrabajador.Designer.cs">
-      <DependentUpon>EditarTrabajador.cs</DependentUpon>
+    <Compile Include="Vistas\Empleado.Designer.cs">
+      <DependentUpon>Empleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Proveedor.cs">
       <SubType>Form</SubType>
@@ -153,11 +153,11 @@
     <Compile Include="Vistas\Reporte1.Designer.cs">
       <DependentUpon>Reporte1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Trabajador.cs">
+    <Compile Include="Vistas\Gestion_Trabajador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Trabajador.Designer.cs">
-      <DependentUpon>Trabajador.cs</DependentUpon>
+    <Compile Include="Vistas\Gestion_Trabajador.Designer.cs">
+      <DependentUpon>Gestion_Trabajador.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Ventas.cs">
       <SubType>Form</SubType>
@@ -184,8 +184,8 @@
     <EmbeddedResource Include="Vistas\DevolucionCliente.resx">
       <DependentUpon>DevolucionCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\EditarTrabajador.resx">
-      <DependentUpon>EditarTrabajador.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Empleado.resx">
+      <DependentUpon>Empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
@@ -217,8 +217,8 @@
     <EmbeddedResource Include="Vistas\Reporte1.resx">
       <DependentUpon>Reporte1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Trabajador.resx">
-      <DependentUpon>Trabajador.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Gestion_Trabajador.resx">
+      <DependentUpon>Gestion_Trabajador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>

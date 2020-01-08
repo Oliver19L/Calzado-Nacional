@@ -1,6 +1,6 @@
 ﻿namespace Main.Vistas
 {
-    partial class Trabajador
+    partial class Gestion_Trabajador
     {
         /// <summary>
         /// Required designer variable.
@@ -36,16 +36,23 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
             // 
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnCerrar.FlatAppearance.BorderSize = 2;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCerrar.Location = new System.Drawing.Point(1244, 496);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 27;
+            this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label1
             // 
@@ -66,12 +73,16 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnEditar.FlatAppearance.BorderSize = 2;
             this.btnEditar.Location = new System.Drawing.Point(1144, 496);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 24;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -85,6 +96,8 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnEliminar.FlatAppearance.BorderSize = 2;
             this.btnEliminar.Location = new System.Drawing.Point(942, 496);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
@@ -94,6 +107,7 @@
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
             this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Location = new System.Drawing.Point(13, 85);
@@ -102,11 +116,23 @@
             this.dgvEmpleados.TabIndex = 21;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             // 
-            // Trabajador
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1110, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(194, 32);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Generar Reporte";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Gestion_Trabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1331, 531);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -115,7 +141,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvEmpleados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Trabajador";
+            this.Name = "Gestion_Trabajador";
             this.Text = "Trabajador";
             this.Load += new System.EventHandler(this.Trabajador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
@@ -134,5 +160,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.Button button1;
     }
 }

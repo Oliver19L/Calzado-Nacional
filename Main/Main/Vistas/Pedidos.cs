@@ -16,5 +16,10 @@ namespace Main.Vistas
         {
             InitializeComponent();
         }
+
+        private void Pedidos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
