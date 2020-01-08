@@ -42,13 +42,15 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.btnCerrar.FlatAppearance.BorderSize = 2;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCerrar.Location = new System.Drawing.Point(1244, 496);
+            this.btnCerrar.Location = new System.Drawing.Point(1244, 494);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.Size = new System.Drawing.Size(75, 25);
             this.btnCerrar.TabIndex = 27;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -74,11 +76,14 @@
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.btnEditar.FlatAppearance.BorderSize = 2;
-            this.btnEditar.Location = new System.Drawing.Point(1144, 496);
+            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Location = new System.Drawing.Point(1144, 494);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(75, 25);
             this.btnEditar.TabIndex = 24;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -86,9 +91,14 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(1043, 496);
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnNuevo.FlatAppearance.BorderSize = 2;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Location = new System.Drawing.Point(1043, 494);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(75, 25);
             this.btnNuevo.TabIndex = 23;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -96,11 +106,14 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.btnEliminar.FlatAppearance.BorderSize = 2;
-            this.btnEliminar.Location = new System.Drawing.Point(942, 496);
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Location = new System.Drawing.Point(948, 494);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 25);
             this.btnEliminar.TabIndex = 22;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -118,10 +131,15 @@
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1110, 34);
+            this.button1.Location = new System.Drawing.Point(1110, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 32);
+            this.button1.Size = new System.Drawing.Size(194, 47);
             this.button1.TabIndex = 28;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = true;

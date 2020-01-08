@@ -97,5 +97,10 @@ namespace Main.Vistas
             txtDireccion.Text = String.Empty;
             txtMunicipio.Text = String.Empty;
         }
+
+        private void EditarTrabajador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
