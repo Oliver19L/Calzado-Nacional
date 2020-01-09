@@ -32,5 +32,16 @@ namespace Main.Properties {
                 return ((string)(this["CalzadoNacionalProConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=OLIVERPC;Initial Catalog=CalzadoNacionalPro;Persist Security Info=Tru" +
+            "e;User ID=Oliver")]
+        public string CalzadoNacionalProConnectionString1 {
+            get {
+                return ((string)(this["CalzadoNacionalProConnectionString1"]));
+            }
+        }
     }
 }

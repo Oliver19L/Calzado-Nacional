@@ -15,7 +15,7 @@ namespace Main.Vistas
 
 
 
-        private Conexion cone;
+       
 
         public Clientes()
         {
@@ -25,7 +25,7 @@ namespace Main.Vistas
         public Clientes(Conexion con)
 
         {
-            this.cone = con;
+           
             InitializeComponent();
             this.ListaC(con,"ListarClientes");
 
@@ -33,7 +33,7 @@ namespace Main.Vistas
 
         public void ListaC(Conexion con, String Proce)
         {
-            con.ListarEmpleados(dgvClientes, Proce);
+            //con.ListarEmpleados(dgvClientes, Proce);
 
         }
    

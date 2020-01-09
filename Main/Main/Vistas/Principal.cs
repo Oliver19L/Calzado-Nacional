@@ -21,17 +21,18 @@ namespace Main
 
         public Principal()
         {
-           
             
+            InitializeComponent();
+           
+
         }
         
 
-        public Principal(Conexion Con,String tex)
+        public Principal(Conexion Con)
         {
             this.Con = Con;
             InitializeComponent();
-            this.label13.Text = tex;
-            this.label14.Text = Acesso(tex);
+           
             
             
         }
@@ -45,6 +46,7 @@ namespace Main
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+           
             AbrirFormEnPanel(new Gestion_Trabajador(Con));
         }
     

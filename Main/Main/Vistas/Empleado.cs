@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,23 +16,47 @@ namespace Main.Vistas
     {
 
 
-        private Conexion con;
-       
+
+        private Conexion conex;
 
         private DataRow drEmpleados;
 
-        public EditarTrabajador(Conexion con)
+        public EditarTrabajador(Conexion cone)
         {
-            this.con = con;
+            this.conex = cone;
             InitializeComponent();
            
         }
+        public SqlParameter[] parametro()
+        {
+            SqlParameter[] param = new SqlParameter[9];
+            param[0] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
+            param[0].Value = txtPrimerNombre.Text;
+            param[1] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
+            param[1].Value = txtSegundoNombre.Text;
+            param[2] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
+            param[2].Value = txtPrimerA.Text;
+            param[3] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
+            param[3].Value = txtSegundoA.Text;
+            param[4] = new SqlParameter("@Email", SqlDbType.NVarChar);
+            param[4].Value = txtEmail.Text;
+            param[5] = new SqlParameter("@Telefono", SqlDbType.Char);
+            param[5].Value = mskTele.Text;
+            param[6] = new SqlParameter("@Celular", SqlDbType.Char);
+            param[6].Value = mskCelular.Text;
+            param[7] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
+            param[7].Value = txtDireccion.Text;
+            param[8] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[8].Value = int.Parse(txtMunicipio.Text);
 
+            return param;
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            btnActualizar.Enabled = true;
-            btnActualizar.Visible = false;
-            con.InsertarTrabajador(txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerA.Text, txtSegundoA.Text, txtEmail.Text, mskTele.Text, mskCelular.Text, txtDireccion.Text,int.Parse(txtMunicipio.Text));
+           
+            
+            conex.InsertarTrabajador(parametro());
             this.Hide();
             
         }
@@ -47,7 +72,7 @@ namespace Main.Vistas
             set
             {
                 drEmpleados = value;
-                textBox1.Text = drEmpleados["Id_Empleados"].ToString();
+                txtId.Text = drEmpleados["Id_Empleados"].ToString();
                 txtPrimerNombre.Text = drEmpleados["Primer_Nombre"].ToString();
                 txtSegundoNombre.Text = drEmpleados["Segundo_Nombre"].ToString();
                 txtPrimerA.Text = drEmpleados["Primer_Apellido"].ToString();
@@ -62,7 +87,8 @@ namespace Main.Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-           
+            conex.editarEmpleado(int.Parse(txtId.Text),txtEmail.Text,mskTele.Text,mskCelular.Text,txtDireccion.Text,int.Parse(txtMunicipio.Text));
+            this.Hide();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -72,17 +98,42 @@ namespace Main.Vistas
 
         public void BtnActualizar()
         {
-            textBox1.Enabled = false;
+            txtId.Enabled = false;
             btnInsertar.Enabled = false;
             btnInsertar.Visible = false;
+            btnelim.Enabled = false;
+            btnelim.Visible = false;
 
+        }
+
+        public void BtnEliminar()
+        {
+            txtId.Enabled = false;
+            btnActualizar.Enabled = false;
+            btnActualizar.Visible = false;
+            btnInsertar.Enabled = false;
+            btnInsertar.Visible = false;
+            btnLimpiar.Enabled = false;
+            btnLimpiar.Visible = false;
+            txtPrimerNombre.Enabled = false;
+            txtSegundoNombre.Enabled = false;
+            txtPrimerA.Enabled = false;
+            txtSegundoA.Enabled = false;
+            txtEmail.Enabled = false;
+            mskCelular.Enabled = false;
+            mskTele.Enabled = false;
+            txtDireccion.Enabled = false;
+            txtMunicipio.Enabled = false;
         }
             
         public void BtnInsertar()
         {
-            textBox1.Enabled = false;
+            txtId.Enabled = false;
             btnActualizar.Enabled = false;
             btnActualizar.Visible = false;
+            btnelim.Enabled = false;
+            btnelim.Visible = false;
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

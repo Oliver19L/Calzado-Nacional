@@ -30,7 +30,7 @@ namespace Main.Vistas
 
         public void ListarInventario(Conexion Con,String Procedimiento)
         {
-            Con.ListarEmpleados(dataGridView1, Procedimiento);
+          //  Con.ListarEmpleados(dataGridView1, Procedimiento);
         }
     }
 }

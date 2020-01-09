@@ -14,8 +14,9 @@ namespace Main.Vistas
 {
     public partial class Gestion_Trabajador : Form
     {
-        private Conexion cone;
 
+        
+        private Conexion conex;
         public DataRow dr;
         // public Trabajador()
         // {
@@ -25,11 +26,11 @@ namespace Main.Vistas
 
         // }
 
-        public Gestion_Trabajador(Conexion con)
+        public Gestion_Trabajador(Conexion cone)
         {
-            this.cone = con;
+            this.conex = cone;
             InitializeComponent();
-            ListarUsuarios(cone,"ListaEmpleados");
+            ListarUsuarios();
             //  this.textBox1.Text = Svr(con);
         }
 
@@ -40,9 +41,10 @@ namespace Main.Vistas
 
         }
 
-        public void ListarUsuarios(Conexion con, String procedimiento)
+        public void ListarUsuarios()
         {
-            con.ListarEmpleados(dgvEmpleados,procedimiento);
+            
+            conex.ListarEmpleados(dgvEmpleados,"ListaEmpleados");
             //SqlCommand cmd = new SqlCommand();
             //SqlDataReader leer;
 
@@ -98,9 +100,10 @@ namespace Main.Vistas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            EditarTrabajador ET = new EditarTrabajador(cone);
+            EditarTrabajador ET = new EditarTrabajador(conex);
             ET.BtnInsertar();
             ET.ShowDialog();
+            ListarUsuarios();
             
         }
 
@@ -117,16 +120,40 @@ namespace Main.Vistas
             DataGridViewRow gridRow = rowCollection[0];
             DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
 
-            EditarTrabajador fp = new EditarTrabajador(cone);
+            EditarTrabajador fp = new EditarTrabajador(conex);
             fp.DrEmpleados = drow;
             fp.BtnActualizar();
             fp.ShowDialog();
-            
+            ListarUsuarios();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rowCollection = dgvEmpleados.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+            EditarTrabajador fp = new EditarTrabajador(conex);
+            fp.DrEmpleados = drow;
+            fp.BtnEliminar();
+            fp.ShowDialog();
+            ListarUsuarios();
         }
     }
 }

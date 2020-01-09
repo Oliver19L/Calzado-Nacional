@@ -26,6 +26,7 @@ namespace Main
        
         public IniSesion()
         {
+            
             InitializeComponent();
         
         }
@@ -131,7 +132,7 @@ namespace Main
         {
 
             
-            princi = new Principal(con,txtUsuario.Text);
+            princi = new Principal(con);
             
             princi.Show();
             this.Hide();

@@ -1,4 +1,5 @@
-﻿using Main.Vistas;
+﻿using Main.DAO;
+using Main.Vistas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,10 @@ using System.Windows.Forms;
 
 namespace Main
 {
+    
     static class Program
     {
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

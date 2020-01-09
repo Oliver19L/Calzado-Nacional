@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.txtPrimerA = new System.Windows.Forms.TextBox();
@@ -54,14 +54,15 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnelim = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtId.Location = new System.Drawing.Point(188, 81);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(131, 20);
+            this.txtId.TabIndex = 0;
             // 
             // txtPrimerNombre
             // 
@@ -206,7 +207,7 @@
             // mskTele
             // 
             this.mskTele.Location = new System.Drawing.Point(448, 139);
-            this.mskTele.Mask = " 00000000";
+            this.mskTele.Mask = "00000000";
             this.mskTele.Name = "mskTele";
             this.mskTele.Size = new System.Drawing.Size(136, 20);
             this.mskTele.TabIndex = 21;
@@ -241,7 +242,7 @@
             this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(502, 370);
+            this.btnActualizar.Location = new System.Drawing.Point(583, 326);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 27);
             this.btnActualizar.TabIndex = 24;
@@ -299,12 +300,27 @@
             this.panel1.Size = new System.Drawing.Size(696, 28);
             this.panel1.TabIndex = 28;
             // 
+            // btnelim
+            // 
+            this.btnelim.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnelim.FlatAppearance.BorderSize = 2;
+            this.btnelim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnelim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnelim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnelim.Location = new System.Drawing.Point(502, 330);
+            this.btnelim.Name = "btnelim";
+            this.btnelim.Size = new System.Drawing.Size(75, 27);
+            this.btnelim.TabIndex = 29;
+            this.btnelim.Text = "Eliminar";
+            this.btnelim.UseVisualStyleBackColor = true;
+            // 
             // EditarTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(695, 416);
+            this.Controls.Add(this.btnelim);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnLimpiar);
@@ -330,7 +346,7 @@
             this.Controls.Add(this.txtPrimerA);
             this.Controls.Add(this.txtSegundoNombre);
             this.Controls.Add(this.txtPrimerNombre);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarTrabajador";
             this.Load += new System.EventHandler(this.EditarTrabajador_Load);
@@ -341,7 +357,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtPrimerNombre;
         private System.Windows.Forms.TextBox txtSegundoNombre;
         private System.Windows.Forms.TextBox txtPrimerA;
@@ -367,5 +383,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnelim;
     }
 }
