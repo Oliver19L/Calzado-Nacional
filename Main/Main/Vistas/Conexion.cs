@@ -37,12 +37,12 @@ namespace Main.DAO
             }
         }
 
-        public void ListarEmpleados(DataGridView GridView1, String Procedimiento)
+        public void Listados(DataGridView GridView1, String Procedimiento)
         {
             SqlCommand cmd = new SqlCommand();
 
-            try
-            {
+           // try
+           // {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = Procedimiento;
                 cmd.Connection = connect;
@@ -56,11 +56,11 @@ namespace Main.DAO
                 da.Fill(dt);
 
                 GridView1.DataSource = dt;
-            }
-            catch (Exception)
-            {
-
-            }
+           // }
+            //catch (Exception ex)
+           // {
+           //      MessageBox.Show("Error Al Listar Los datos  " + ex.Message);
+          //  }
            
 
 

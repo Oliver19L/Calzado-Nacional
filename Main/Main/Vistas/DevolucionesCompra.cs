@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Main.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,18 @@ namespace Main.Vistas
         {
             InitializeComponent();
         }
+        private Conexion con;
+
+        public DevolucionesCompra(Conexion con)
+        {
+            this.con = con;
+            InitializeComponent();
+            ListaDevoCom(con);
+        }
+        public void ListaDevoCom(Conexion con)
+        {
+            con.Listados(dgvDevolucionesCompra, "ListarDvCompra");
+        }
+
     }
 }

@@ -33,7 +33,7 @@ namespace Main.Vistas
 
         public void ListaC(Conexion con, String Proce)
         {
-            //con.ListarEmpleados(dgvClientes, Proce);
+            con.Listados(dgvClientes, Proce);
 
         }
    

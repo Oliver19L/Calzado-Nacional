@@ -44,7 +44,7 @@ namespace Main.Vistas
         public void ListarUsuarios()
         {
             
-            conex.ListarEmpleados(dgvEmpleados,"ListaEmpleados");
+            conex.Listados(dgvEmpleados,"ListaEmpleados");
             //SqlCommand cmd = new SqlCommand();
             //SqlDataReader leer;
 

@@ -24,13 +24,13 @@ namespace Main.Vistas
         {
             this.con = Con;
             InitializeComponent();
-            ListarInventario(Con,"ListarInventario");
+            ListarInventario(Con);
         }
 
 
-        public void ListarInventario(Conexion Con,String Procedimiento)
+        public void ListarInventario(Conexion Con)
         {
-          //  Con.ListarEmpleados(dataGridView1, Procedimiento);
+            Con.Listados(dgvInventario,"ListarInventario");
         }
     }
 }

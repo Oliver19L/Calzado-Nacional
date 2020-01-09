@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Main.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,22 @@ namespace Main.Vistas
 {
     public partial class Pedidos : Form
     {
-        public Pedidos()
+        private Conexion cone;
+        public Pedidos(Conexion cone)
         {
+            this.cone = cone;
             InitializeComponent();
+            ListarPedido(cone);
         }
 
         private void Pedidos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ListarPedido(Conexion cone)
+        {
+            cone.Listados(dgvPedidos,"ListarPedidos");
         }
     }
 }

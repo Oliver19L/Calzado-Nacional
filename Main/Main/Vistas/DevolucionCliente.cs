@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Main.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,20 @@ namespace Main.Vistas
 {
     public partial class DevolucionCliente : Form
     {
-        public DevolucionCliente()
+
+        private Conexion cone;
+        public DevolucionCliente(Conexion con)
         {
+            this.cone = con;
             InitializeComponent();
+            ListarDevoC(con);
         }
+
+        private void ListarDevoC(Conexion con)
+        {
+            con.Listados(dgvDevoCliente, "ListarDvCliente");
+        }
+
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Main.DAO;
 using Main.Vistas;
 namespace Main.Vistas
 {
@@ -16,6 +17,13 @@ namespace Main.Vistas
         {
             InitializeComponent();
             
+        }
+        private Conexion cone;
+        public ContenedorDeDevoluciones(Conexion cone)
+        {
+            this.cone = cone;
+            InitializeComponent();
+
         }
 
         private void AbrirFormEnPanel(object Formhijo)
@@ -39,12 +47,12 @@ namespace Main.Vistas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new DevolucionesCompra());
+            AbrirFormEnPanel(new DevolucionesCompra(cone));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-                AbrirFormEnPanel(new DevolucionCliente());
+                AbrirFormEnPanel(new DevolucionCliente(cone));
             
         }
     }
