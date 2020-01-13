@@ -66,6 +66,12 @@
     <Compile Include="Vistas\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Gestion_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Gestion_Clientes.Designer.cs">
+      <DependentUpon>Gestion_Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Conexion.cs" />
     <Compile Include="Vistas\Compras.cs">
       <SubType>Form</SubType>
@@ -103,6 +109,12 @@
     <Compile Include="Vistas\Empleado.Designer.cs">
       <DependentUpon>Empleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Inventarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Inventarios.Designer.cs">
+      <DependentUpon>Inventarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +122,11 @@
       <DependentUpon>Proveedor.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Inventario.cs">
+    <Compile Include="Vistas\Gestion_Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Inventario.Designer.cs">
-      <DependentUpon>Inventario.cs</DependentUpon>
+    <Compile Include="Vistas\Gestion_Inventario.Designer.cs">
+      <DependentUpon>Gestion_Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\IniSesion.cs">
       <SubType>Form</SubType>
@@ -157,6 +169,9 @@
     <EmbeddedResource Include="Vistas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Gestion_Clientes.resx">
+      <DependentUpon>Gestion_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,11 +190,14 @@
     <EmbeddedResource Include="Vistas\Empleado.resx">
       <DependentUpon>Empleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Inventarios.resx">
+      <DependentUpon>Inventarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Inventario.resx">
-      <DependentUpon>Inventario.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Gestion_Inventario.resx">
+      <DependentUpon>Gestion_Inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\IniSesion.resx">
       <DependentUpon>IniSesion.cs</DependentUpon>

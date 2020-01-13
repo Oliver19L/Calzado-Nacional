@@ -50,13 +50,36 @@ namespace Main.Vistas
             param[8].Value = int.Parse(txtMunicipio.Text);
 
             return param;
+           
+        }
+
+        public SqlParameter[] EditarEmpleadosParam()
+        {
+
+            SqlParameter[] param = new SqlParameter[6];
+
+
+            param[0] = new SqlParameter("@Id", SqlDbType.Int);
+            param[0].Value =txtId.Text;
+            param[1] = new SqlParameter("@Email", SqlDbType.NVarChar);
+            param[1].Value = txtEmail.Text;
+            param[2] = new SqlParameter("@Telefono", SqlDbType.Char);
+            param[2].Value = mskTele.Text;
+            param[3] = new SqlParameter("@Celular", SqlDbType.Char);
+            param[3].Value = mskCelular.Text;
+            param[4] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
+            param[4].Value = txtDireccion.Text;
+            param[5] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[5].Value = txtMunicipio.Text;
+
+            return param;
         }
         
         private void button1_Click(object sender, EventArgs e)
         {
            
             
-            conex.InsertarTrabajador(parametro());
+            conex.InsertarTrabajador(parametro(),"NuevoEmpleado");
             this.Hide();
             
         }
@@ -87,7 +110,9 @@ namespace Main.Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            conex.editarEmpleado(int.Parse(txtId.Text),txtEmail.Text,mskTele.Text,mskCelular.Text,txtDireccion.Text,int.Parse(txtMunicipio.Text));
+
+
+            conex.editarEmpleado(EditarEmpleadosParam(),"ActualizacionEmpleados");
             this.Hide();
         }
 
@@ -124,6 +149,7 @@ namespace Main.Vistas
             mskTele.Enabled = false;
             txtDireccion.Enabled = false;
             txtMunicipio.Enabled = false;
+          
         }
             
         public void BtnInsertar()
@@ -152,6 +178,18 @@ namespace Main.Vistas
         private void EditarTrabajador_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void btnelim_Click(object sender, EventArgs e)
+        {
+            conex.eliminar(int.Parse(txtId.Text), "EliminarEmpleado", "@ID");
+            this.Hide();
+            
         }
     }
 }

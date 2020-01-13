@@ -18,7 +18,8 @@ namespace Main.Vistas
         {
             this.cone = cone;
             InitializeComponent();
-            ListarPedido(cone);
+            ListarPedido();
+            ListarDetallePedido();
         }
 
         private void Pedidos_Load(object sender, EventArgs e)
@@ -26,9 +27,14 @@ namespace Main.Vistas
 
         }
 
-        private void ListarPedido(Conexion cone)
+        private void ListarPedido()
         {
             cone.Listados(dgvPedidos,"ListarPedidos");
+        }
+
+        private void ListarDetallePedido()
+        {
+            cone.Listados(dgvDetalle,"ListaDetallePedidos");
         }
     }
 }

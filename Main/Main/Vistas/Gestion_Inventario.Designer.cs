@@ -1,6 +1,6 @@
 ﻿namespace Main.Vistas
 {
-    partial class Inventario
+    partial class Gestion_Inventario
     {
         /// <summary>
         /// Required designer variable.
@@ -55,6 +55,7 @@
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCerrar
             // 
@@ -73,6 +74,7 @@
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -82,6 +84,7 @@
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // textBox1
             // 
@@ -100,7 +103,7 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Buscar:";
             // 
-            // Inventario
+            // Gestion_Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +116,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvInventario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Inventario";
+            this.Name = "Gestion_Inventario";
             this.Text = "Inventario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.ResumeLayout(false);

@@ -57,7 +57,7 @@ namespace Main
         private void pictureBox1_Click(object sender, EventArgs e)
         {
            
-            AbrirFormEnPanel(new Inventario(Con));
+            AbrirFormEnPanel(new Gestion_Inventario(Con));
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace Main
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new  Clientes(Con));
+            AbrirFormEnPanel(new  Gestion_Clientes(Con));
         }
 
         private void pictureBox8_MouseDown(object sender, MouseEventArgs e)
@@ -145,6 +145,21 @@ namespace Main
 
             }
             return persona;
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+            DialogResult Dresult;
+           Dresult= MessageBox.Show(this, "Esta seguro que desea Salir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Dresult == DialogResult.Yes)
+            {
+                Con.connect.Close();
+                IniSesion ini = new IniSesion();
+                this.Hide();
+                ini.Show();
+            }
+          
         }
     }
 

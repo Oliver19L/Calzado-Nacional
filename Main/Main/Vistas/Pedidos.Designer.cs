@@ -34,8 +34,15 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnEditarDetalle = new System.Windows.Forms.Button();
+            this.btnNuevoDetalle = new System.Windows.Forms.Button();
+            this.btnElimDetalle = new System.Windows.Forms.Button();
+            this.dgvDetalle = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,60 +59,143 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(92, 19);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(464, 20);
+            this.textBox1.Size = new System.Drawing.Size(294, 20);
             this.textBox1.TabIndex = 11;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(1143, 496);
+            this.btnEditar.BackColor = System.Drawing.Color.White;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnEditar.FlatAppearance.BorderSize = 2;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Location = new System.Drawing.Point(405, 496);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(76, 23);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(1042, 496);
+            this.btnNuevo.BackColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnNuevo.FlatAppearance.BorderSize = 2;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Location = new System.Drawing.Point(304, 496);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(946, 496);
+            this.btnEliminar.BackColor = System.Drawing.Color.White;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnEliminar.FlatAppearance.BorderSize = 2;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Location = new System.Drawing.Point(208, 496);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // dgvPedidos
             // 
             this.dgvPedidos.AllowUserToAddRows = false;
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedidos.Location = new System.Drawing.Point(12, 85);
+            this.dgvPedidos.Location = new System.Drawing.Point(16, 70);
             this.dgvPedidos.Name = "dgvPedidos";
-            this.dgvPedidos.Size = new System.Drawing.Size(1307, 389);
+            this.dgvPedidos.Size = new System.Drawing.Size(465, 405);
             this.dgvPedidos.TabIndex = 7;
             // 
-            // btnCerrar
+            // btnEditarDetalle
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(1243, 496);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 13;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnEditarDetalle.BackColor = System.Drawing.Color.White;
+            this.btnEditarDetalle.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnEditarDetalle.FlatAppearance.BorderSize = 2;
+            this.btnEditarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarDetalle.Location = new System.Drawing.Point(1244, 496);
+            this.btnEditarDetalle.Name = "btnEditarDetalle";
+            this.btnEditarDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarDetalle.TabIndex = 16;
+            this.btnEditarDetalle.Text = "Editar";
+            this.btnEditarDetalle.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevoDetalle
+            // 
+            this.btnNuevoDetalle.BackColor = System.Drawing.Color.White;
+            this.btnNuevoDetalle.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnNuevoDetalle.FlatAppearance.BorderSize = 2;
+            this.btnNuevoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoDetalle.Location = new System.Drawing.Point(1143, 496);
+            this.btnNuevoDetalle.Name = "btnNuevoDetalle";
+            this.btnNuevoDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoDetalle.TabIndex = 15;
+            this.btnNuevoDetalle.Text = "Nuevo";
+            this.btnNuevoDetalle.UseVisualStyleBackColor = false;
+            // 
+            // btnElimDetalle
+            // 
+            this.btnElimDetalle.BackColor = System.Drawing.Color.White;
+            this.btnElimDetalle.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnElimDetalle.FlatAppearance.BorderSize = 2;
+            this.btnElimDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElimDetalle.Location = new System.Drawing.Point(1048, 496);
+            this.btnElimDetalle.Name = "btnElimDetalle";
+            this.btnElimDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnElimDetalle.TabIndex = 14;
+            this.btnElimDetalle.Text = "Eliminar";
+            this.btnElimDetalle.UseVisualStyleBackColor = false;
+            // 
+            // dgvDetalle
+            // 
+            this.dgvDetalle.AllowUserToAddRows = false;
+            this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalle.Location = new System.Drawing.Point(584, 70);
+            this.dgvDetalle.Name = "dgvDetalle";
+            this.dgvDetalle.Size = new System.Drawing.Size(733, 405);
+            this.dgvDetalle.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(862, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Buscar:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(944, 31);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(376, 20);
+            this.textBox2.TabIndex = 19;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.Location = new System.Drawing.Point(524, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 533);
+            this.panel1.TabIndex = 21;
             // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1331, 531);
-            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dgvDetalle);
+            this.Controls.Add(this.btnEditarDetalle);
+            this.Controls.Add(this.btnNuevoDetalle);
+            this.Controls.Add(this.btnElimDetalle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEditar);
@@ -117,6 +207,7 @@
             this.Text = "Pedidos";
             this.Load += new System.EventHandler(this.Pedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,6 +221,12 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvPedidos;
-        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnEditarDetalle;
+        private System.Windows.Forms.Button btnNuevoDetalle;
+        private System.Windows.Forms.Button btnElimDetalle;
+        private System.Windows.Forms.DataGridView dgvDetalle;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

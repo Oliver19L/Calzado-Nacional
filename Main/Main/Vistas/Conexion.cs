@@ -37,6 +37,8 @@ namespace Main.DAO
             }
         }
 
+       
+
         public void Listados(DataGridView GridView1, String Procedimiento)
         {
             SqlCommand cmd = new SqlCommand();
@@ -67,7 +69,7 @@ namespace Main.DAO
         }
 
        // public void InsertarTrabajador(String Pnombre, String Snombre, String Papellido, String Sapellido, String Email, String tel, String celular, String Dire, int Id_Muni)
-       public void InsertarTrabajador(SqlParameter[] param)
+       public void InsertarTrabajador(SqlParameter[] param,string proce)
         {
 
             try
@@ -76,7 +78,7 @@ namespace Main.DAO
 
                 cmd.Connection = connect;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "NuevoEmpleado";
+                cmd.CommandText = proce;
 
                
 
@@ -99,29 +101,15 @@ namespace Main.DAO
         }
 
 
-        public void editarEmpleado(int Id,String Email, String tel, String celular, String Dire, int Id_Muni)
+        public void editarEmpleado(SqlParameter[] param, String proce)
         {
 
             SqlCommand cmd = new SqlCommand();
-            SqlParameter[] param = new SqlParameter[6];
-            
-
-            param[0] = new SqlParameter("@Id", SqlDbType.Int);
-            param[0].Value = Id;
-            param[1] = new SqlParameter("@Email", SqlDbType.NVarChar);
-            param[1].Value = Email;
-            param[2] = new SqlParameter("@Telefono", SqlDbType.Char);
-            param[2].Value = tel;
-            param[3] = new SqlParameter("@Celular", SqlDbType.Char);
-            param[3].Value = celular;
-            param[4] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
-            param[4].Value = Dire;
-            param[5] = new SqlParameter("@IdMunic", SqlDbType.Int);
-            param[5].Value = Id_Muni;
+         
 
 
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "ActualizacionEmpleados";
+            cmd.CommandText = proce;
             cmd.Connection = connect;
             cmd.Parameters.AddRange(param);
 
@@ -132,14 +120,18 @@ namespace Main.DAO
 
 
         }
-        public void eliminarCliente(int id, String Procedimiento, String Campo)
+        public void eliminar(int id, String Procedimiento, String Campo)
         {
+
+            
+          
             SqlCommand cmd = new SqlCommand();
 
-            SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter(Campo, SqlDbType.Int);
-            param[0].Value = id;
-
+           
+                SqlParameter[] param = new SqlParameter[1];
+                param[0] = new SqlParameter(Campo, SqlDbType.Int);
+                param[0].Value = id;
+  
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = Procedimiento;
@@ -152,7 +144,6 @@ namespace Main.DAO
             da.Fill(ds);
         }
 
-
-
+      
     }
 }
