@@ -55,10 +55,13 @@
             this.txtUsuario.Location = new System.Drawing.Point(362, 51);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(180, 20);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.TabStop = false;
+            this.txtUsuario.Tag = "0";
             this.txtUsuario.Text = "Usuario";
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
             // txtPass
@@ -67,9 +70,12 @@
             this.txtPass.Location = new System.Drawing.Point(362, 113);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(180, 20);
-            this.txtPass.TabIndex = 2;
+            this.txtPass.TabIndex = 0;
+            this.txtPass.TabStop = false;
+            this.txtPass.Tag = "0";
             this.txtPass.Text = "Contraseña";
             this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // btnAcceder
@@ -77,7 +83,9 @@
             this.btnAcceder.Location = new System.Drawing.Point(391, 158);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(124, 23);
-            this.btnAcceder.TabIndex = 3;
+            this.btnAcceder.TabIndex = 0;
+            this.btnAcceder.TabStop = false;
+            this.btnAcceder.Tag = "0";
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.UseVisualStyleBackColor = true;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
@@ -186,6 +194,7 @@
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IniSesion";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

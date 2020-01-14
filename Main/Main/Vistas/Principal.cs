@@ -99,7 +99,7 @@ namespace Main
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Ventas(Con));
+            AbrirFormEnPanel(new Gestion_Ventas(Con));
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -160,6 +160,12 @@ namespace Main
                 ini.Show();
             }
           
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel( new Gestion_Proveedores(Con));
+
         }
     }
 

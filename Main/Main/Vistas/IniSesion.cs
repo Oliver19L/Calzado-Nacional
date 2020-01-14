@@ -28,6 +28,7 @@ namespace Main
         {
             
             InitializeComponent();
+         
         
         }
 
@@ -88,7 +89,8 @@ namespace Main
 
         private void IniSesion_Load(object sender, EventArgs e)
         {
-
+          
+           
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -179,21 +181,56 @@ namespace Main
             }
         }
 
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                this.progressBar1.ForeColor = Color.SkyBlue;
 
+                con = new Conexion(txtUsuario.Text, txtPass.Text);
+                // int result = con.Autentificacion(txtUsuario.Text,txtPass.Text);
+                //MessageBox.Show(result.ToString());
+
+
+                if (this.con.connect.State == ConnectionState.Open)
+                {
+
+                    bg.WorkerReportsProgress = true;
+                    bg.ProgressChanged += backgroundWorker1_ProgressChanged;
+                    bg.DoWork += backgroundWorker1_DoWork;
+                    bg.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
+                    bg.RunWorkerAsync();
+                    label2.Visible = true;
+                    progressBar1.Visible = true;
+
+
+
+                }
+                else
+                {
+                    Cursor.Current = Cursors.Default;
+                    --cont;
+                    MessageBox.Show("Error:Usuario o Contraseña incorrecta", cont + "Intentos Restantes");
+                    if (cont == 0)
+                    {
+                        cont = 3;
+                        btnAcceder.Enabled = false;
+                        Thread.Sleep(3000);
+                        btnAcceder.Enabled = true;
+                    }
+                }
+            }
         
+        }
 
-        
-        
-
-
-
-        
-
-
-
-
-
-
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtPass.Focus();
+            }
+        }
     }
 
 

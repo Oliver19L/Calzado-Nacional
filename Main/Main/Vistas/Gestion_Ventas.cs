@@ -11,30 +11,38 @@ using System.Windows.Forms;
 
 namespace Main.Vistas
 {
-    public partial class Ventas : Form
+    public partial class Gestion_Ventas : Form
     {
 
         private Conexion cone;
 
-        public Ventas()
+        public Gestion_Ventas()
         {
             InitializeComponent();
         }
 
-        public Ventas(Conexion cone)
+        public Gestion_Ventas(Conexion cone)
         {
             this.cone = cone;
             InitializeComponent();
-            ListaVenta(cone);
+            ListaVenta();
+            ListaDVenta();
         }
 
-        public void ListaVenta(Conexion cone)
+        public void ListaVenta()
         {
             cone.Listados(dgvInventario,"ListarVenta");
 
         }
 
+        public void ListaDVenta()
+        {
+            cone.Listados(dgvDetalleVenta,"ListaDetalleVenta");
+        }
 
+        private void Gestion_Ventas_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
