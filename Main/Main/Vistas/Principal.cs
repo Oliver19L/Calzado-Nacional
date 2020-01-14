@@ -47,7 +47,19 @@ namespace Main
         private void pictureBox5_Click(object sender, EventArgs e)
         {
            
-            AbrirFormEnPanel(new Gestion_Trabajador(Con));
+            if (lbAcceso.Text == "Administrador")
+            {
+                AbrirFormEnPanel(new Gestion_Trabajador(Con));
+
+            }
+            if (lbAcceso.Text =="Lector")
+            {
+
+                Gestion_Trabajador gt = new Gestion_Trabajador(Con);
+                AbrirFormEnPanel(gt);
+                gt.buttonsAccesoLector();
+            }
+
         }
     
 
@@ -62,7 +74,7 @@ namespace Main
 
         private void Principal_Load(object sender, EventArgs e)
         {
-        
+            
         }
 
         private void AbrirFormEnPanel(object Formhijo)
@@ -127,10 +139,11 @@ namespace Main
             System.Diagnostics.Process.Start("https://api.whatsapp.com/send?phone=50584422254");
         }
 
-        public string Usuarios(string user)
+        public void Usuarios(string user,String Nombre)
         {
-            string userr = user;
-            return userr;
+            lbNombre.Text = Nombre;
+            lbAcceso.Text = user;
+            
         }
         
         public string Acesso(String Acc)

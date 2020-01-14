@@ -103,7 +103,7 @@ namespace Main
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             int progreso = 0;
-            progressBar1.ForeColor = Color.SkyBlue;
+           
             for (int i = 0; i <= 100; i++)
             {
                 progreso++;
@@ -133,11 +133,25 @@ namespace Main
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
 
-            
-            princi = new Principal(con);
-            
-            princi.Show();
-            this.Hide();
+            int result = con.Autentificacion("sysadmin",txtUsuario.Text);
+
+           
+            if (result==1)
+            {
+                princi = new Principal(con);
+                princi.Usuarios("Administrador", txtUsuario.Text);
+                princi.Show();
+                this.Hide();
+            }
+            else
+            {
+                princi = new Principal(con);
+                princi.Usuarios("Lector", txtUsuario.Text);
+                
+                princi.Show();
+                this.Hide();
+            }
+           
         }
 
         private void btnAcceder_Click(object sender, EventArgs e)
@@ -145,11 +159,9 @@ namespace Main
 
            
             Cursor.Current = Cursors.WaitCursor;
-            this.progressBar1.ForeColor = Color.SkyBlue;
 
             con = new Conexion(txtUsuario.Text, txtPass.Text);
-           // int result = con.Autentificacion(txtUsuario.Text,txtPass.Text);
-            //MessageBox.Show(result.ToString());
+        
 
 
             if (this.con.connect.State == ConnectionState.Open)

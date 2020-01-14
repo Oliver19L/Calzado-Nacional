@@ -18,13 +18,10 @@ namespace Main.Vistas
         
         private Conexion conex;
         public DataRow dr;
-        // public Trabajador()
-        // {
-        //    InitializeComponent();
-        //  
+         public Gestion_Trabajador()
+         {
 
-
-        // }
+         }
 
         public Gestion_Trabajador(Conexion cone)
         {
@@ -154,6 +151,16 @@ namespace Main.Vistas
             fp.BtnEliminar();
             fp.ShowDialog();
             ListarUsuarios();
+        }
+
+        public void buttonsAccesoLector()
+        {
+            btnEditar.Enabled = false;
+            btnEditar.Visible = false;
+            btnEliminar.Enabled = false;
+            btnEliminar.Visible = false;
+            btnNuevo.Enabled = false;
+            btnNuevo.Visible = false;
         }
     }
 }

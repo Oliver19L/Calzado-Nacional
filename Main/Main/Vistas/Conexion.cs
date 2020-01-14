@@ -43,8 +43,8 @@ namespace Main.DAO
         {
             SqlCommand cmd = new SqlCommand();
 
-           // try
-           // {
+            try
+            {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = Procedimiento;
                 cmd.Connection = connect;
@@ -58,11 +58,11 @@ namespace Main.DAO
                 da.Fill(dt);
 
                 GridView1.DataSource = dt;
-           // }
-            //catch (Exception ex)
-           // {
-           //      MessageBox.Show("Error Al Listar Los datos  " + ex.Message);
-          //  }
+            }
+            catch (Exception ex)
+           {
+                 MessageBox.Show("Error Al Listar Los datos  " + ex.Message);
+           }
            
 
 
@@ -144,6 +144,28 @@ namespace Main.DAO
             da.Fill(ds);
         }
 
+        public int Autentificacion(String Access,String Nombre)
+        {
+            int result=0;
+            SqlCommand cmd = new SqlCommand();
+           
+
+          
+
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select IS_SRVROLEMEMBER ('"+Access+"','"+ Nombre+"')";
+            cmd.Connection = connect;
+            SqlDataReader leer = cmd.ExecuteReader();
+            while (leer.Read())
+            {
+                result = leer.GetInt32(0);
+            }
+            
+
+           
+            return result;
+        }
       
     }
 }

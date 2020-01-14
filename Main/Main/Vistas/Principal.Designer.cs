@@ -55,8 +55,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.lbAcceso = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -383,23 +383,23 @@
             this.PanelContenedor.Size = new System.Drawing.Size(1347, 570);
             this.PanelContenedor.TabIndex = 1;
             // 
-            // label13
+            // lbNombre
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(103, 9);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "label13";
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Location = new System.Drawing.Point(103, 9);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(41, 13);
+            this.lbNombre.TabIndex = 2;
+            this.lbNombre.Text = "label13";
             // 
-            // label14
+            // lbAcceso
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(103, 33);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "label14";
+            this.lbAcceso.AutoSize = true;
+            this.lbAcceso.Location = new System.Drawing.Point(103, 33);
+            this.lbAcceso.Name = "lbAcceso";
+            this.lbAcceso.Size = new System.Drawing.Size(41, 13);
+            this.lbAcceso.TabIndex = 3;
+            this.lbAcceso.Text = "label14";
             // 
             // label15
             // 
@@ -439,8 +439,8 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lbAcceso);
+            this.Controls.Add(this.lbNombre);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -496,8 +496,8 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.Label lbAcceso;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
