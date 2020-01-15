@@ -68,8 +68,19 @@ namespace Main
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-           
-            AbrirFormEnPanel(new Gestion_Inventario(Con));
+            if (lbAcceso.Text == "Administrador")
+            {
+                AbrirFormEnPanel(new Gestion_Inventario(Con));
+
+            }
+            if (lbAcceso.Text == "Lector")
+            {
+
+                Gestion_Inventario Inv = new Gestion_Inventario(Con);
+                AbrirFormEnPanel(Inv);
+                Inv.acceso();
+            }
+            
         }
 
         private void Principal_Load(object sender, EventArgs e)

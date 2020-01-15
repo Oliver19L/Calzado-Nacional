@@ -81,5 +81,15 @@ namespace Main.Vistas
             fp.ShowDialog();
             ListarInventario();
         }
+
+        public void acceso()
+        {
+            btnEditar.Enabled = false;
+            btnEditar.Visible = false;
+            btnEliminar.Enabled = false;
+            btnEliminar.Visible = false;
+            btnNuevo.Enabled = false;
+            btnNuevo.Visible = false;
+        }
     }
 }
