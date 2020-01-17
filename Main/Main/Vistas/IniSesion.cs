@@ -28,6 +28,7 @@ namespace Main
         {
             
             InitializeComponent();
+            lbTiempo.Text = DateTime.Now.ToString();
          
         
         }
@@ -242,6 +243,17 @@ namespace Main
             {
                 txtPass.Focus();
             }
+        }
+
+        private void IniSesion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            Application.Exit();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            lbTiempo.Text = DateTime.Now.ToString();
         }
     }
 

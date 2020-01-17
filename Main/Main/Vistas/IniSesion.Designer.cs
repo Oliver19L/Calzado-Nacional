@@ -41,7 +41,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbTiempo = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,7 +80,7 @@
             // 
             // btnAcceder
             // 
-            this.btnAcceder.Location = new System.Drawing.Point(391, 168);
+            this.btnAcceder.Location = new System.Drawing.Point(384, 156);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(124, 23);
             this.btnAcceder.TabIndex = 0;
@@ -170,12 +171,27 @@
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // lbTiempo
+            // 
+            this.lbTiempo.AutoSize = true;
+            this.lbTiempo.Location = new System.Drawing.Point(467, 263);
+            this.lbTiempo.Name = "lbTiempo";
+            this.lbTiempo.Size = new System.Drawing.Size(0, 13);
+            this.lbTiempo.TabIndex = 10;
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // IniSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 285);
+            this.Controls.Add(this.lbTiempo);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -189,6 +205,7 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IniSesion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IniSesion_FormClosing);
             this.Load += new System.EventHandler(this.IniSesion_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.IniSesion_MouseDown);
             this.panel1.ResumeLayout(false);
@@ -214,6 +231,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbTiempo;
+        private System.Windows.Forms.Timer timer2;
     }
 }

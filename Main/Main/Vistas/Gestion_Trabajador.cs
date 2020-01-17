@@ -1,4 +1,5 @@
 ﻿using Main.DAO;
+using Main.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -131,7 +132,9 @@ namespace Main.Vistas
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+          ReporteEmpleados ri = new ReporteEmpleados();
+          ri.ShowDialog();
+           
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -161,6 +164,37 @@ namespace Main.Vistas
             btnEliminar.Visible = false;
             btnNuevo.Enabled = false;
             btnNuevo.Visible = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //if (textBox1.Text!= "")
+            //{
+            //    foreach(DataGridViewRow ro in dgvEmpleados.Rows)
+            //    {
+            //        ro.Visible = false;
+            //    }
+
+            //    foreach (DataGridViewRow row in dgvEmpleados.Rows)
+            //    {
+
+            //        foreach (DataGridViewCell c in row.Cells)
+            //        {
+            //            if((c.Value.ToString().ToUpper()).IndexOf(textBox1.Text.ToUpper()) == 0){
+            //                row.Visible = true;
+            //                break;
+            //            }
+            //        }
+
+
+            //    }
+            //}
+            //else
+            //{
+            //    ListarUsuarios();
+            //}
+
+
         }
     }
 }

@@ -72,6 +72,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(464, 20);
             this.textBox1.TabIndex = 25;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnEditar
             // 
@@ -137,10 +138,10 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1110, 19);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1160, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 47);
+            this.button1.Size = new System.Drawing.Size(144, 30);
             this.button1.TabIndex = 28;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = true;

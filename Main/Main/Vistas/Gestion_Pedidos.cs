@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Main.Reportes;
 
 namespace Main.Vistas
 {
-    public partial class Pedidos : Form
+    public partial class Gestion_Pedidos : Form
     {
         private Conexion cone;
-        public Pedidos(Conexion cone)
+        public Gestion_Pedidos(Conexion cone)
         {
             this.cone = cone;
             InitializeComponent();
@@ -35,6 +36,12 @@ namespace Main.Vistas
         private void ListarDetallePedido()
         {
             cone.Listados(dgvDetalle,"ListaDetallePedidos");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReporteDetallePedidos rdp = new ReporteDetallePedidos();
+            rdp.ShowDialog();
         }
     }
 }

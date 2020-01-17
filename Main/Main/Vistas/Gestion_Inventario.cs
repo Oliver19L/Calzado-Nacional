@@ -1,4 +1,5 @@
 ﻿using Main.DAO;
+using Main.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,6 +91,12 @@ namespace Main.Vistas
             btnEliminar.Visible = false;
             btnNuevo.Enabled = false;
             btnNuevo.Visible = false;
+        }
+
+        private void btnReporteAll_Click(object sender, EventArgs e)
+        {
+            ReporteInventario ri = new ReporteInventario();
+            ri.ShowDialog();
         }
     }
 }

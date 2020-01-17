@@ -35,6 +35,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReporteAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,12 +124,28 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Buscar:";
             // 
+            // btnReporteAll
+            // 
+            this.btnReporteAll.BackColor = System.Drawing.Color.White;
+            this.btnReporteAll.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnReporteAll.FlatAppearance.BorderSize = 2;
+            this.btnReporteAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnReporteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteAll.Location = new System.Drawing.Point(1201, 23);
+            this.btnReporteAll.Name = "btnReporteAll";
+            this.btnReporteAll.Size = new System.Drawing.Size(108, 34);
+            this.btnReporteAll.TabIndex = 7;
+            this.btnReporteAll.Text = "Generar Reporte";
+            this.btnReporteAll.UseVisualStyleBackColor = false;
+            this.btnReporteAll.Click += new System.EventHandler(this.btnReporteAll_Click);
+            // 
             // Gestion_Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1331, 531);
+            this.Controls.Add(this.btnReporteAll);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEditar);
@@ -154,5 +171,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReporteAll;
     }
 }

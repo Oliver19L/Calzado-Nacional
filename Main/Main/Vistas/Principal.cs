@@ -25,6 +25,8 @@ namespace Main
             InitializeComponent();
            
 
+
+
         }
         
 
@@ -32,9 +34,9 @@ namespace Main
         {
             this.Con = Con;
             InitializeComponent();
-           
+            lbTiempo.Text = DateTime.Now.ToString();
             
-            
+
         }
 
         
@@ -117,7 +119,7 @@ namespace Main
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Pedidos(Con));
+            AbrirFormEnPanel(new Gestion_Pedidos(Con));
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -190,6 +192,33 @@ namespace Main
         {
             AbrirFormEnPanel( new Gestion_Proveedores(Con));
 
+        }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult Dresult;
+            Dresult = MessageBox.Show(this, "Por su seguridad ''CERRAREMOS'' el Inicio de Sesion", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Dresult == DialogResult.Yes)
+            {
+                Con.connect.Close();
+                IniSesion ini = new IniSesion();
+                this.Hide();
+                ini.Show();
+            }
+            else
+            {
+                e.Cancel=true;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbTiempo.Text = DateTime.Now.ToString();
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            lbTiempo.Text = DateTime.Now.ToString();
         }
     }
 

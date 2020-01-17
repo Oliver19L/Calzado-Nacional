@@ -48,6 +48,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +60,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reportes\DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleCompras.Designer.cs">
+      <DependentUpon>DetalleCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetallePedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetallePedidos.Designer.cs">
+      <DependentUpon>ReporteDetallePedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteEmpleados.Designer.cs">
+      <DependentUpon>ReporteEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteInventario.Designer.cs">
+      <DependentUpon>ReporteInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Vistas\Clientes.cs">
       <SubType>Form</SubType>
@@ -140,11 +173,11 @@
     <Compile Include="Vistas\IniSesion.Designer.cs">
       <DependentUpon>IniSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Pedidos.cs">
+    <Compile Include="Vistas\Gestion_Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Pedidos.Designer.cs">
-      <DependentUpon>Pedidos.cs</DependentUpon>
+    <Compile Include="Vistas\Gestion_Pedidos.Designer.cs">
+      <DependentUpon>Gestion_Pedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Principal.cs">
       <SubType>Form</SubType>
@@ -172,6 +205,22 @@
     <Compile Include="Vistas\Gestion_Ventas.Designer.cs">
       <DependentUpon>Gestion_Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\DetalleCompra.rdlc" />
+    <EmbeddedResource Include="Reportes\DetalleCompras.resx">
+      <DependentUpon>DetalleCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\DetallePedidos.rdlc" />
+    <EmbeddedResource Include="Reportes\EmpleadosAll.rdlc" />
+    <EmbeddedResource Include="Reportes\ListaInventario.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteDetallePedidos.resx">
+      <DependentUpon>ReporteDetallePedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteEmpleados.resx">
+      <DependentUpon>ReporteEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteInventario.resx">
+      <DependentUpon>ReporteInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,8 +260,8 @@
     <EmbeddedResource Include="Vistas\IniSesion.resx">
       <DependentUpon>IniSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Pedidos.resx">
-      <DependentUpon>Pedidos.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Gestion_Pedidos.resx">
+      <DependentUpon>Gestion_Pedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -245,6 +294,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
