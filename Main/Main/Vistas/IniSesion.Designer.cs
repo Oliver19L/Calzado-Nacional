@@ -94,8 +94,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -119,7 +117,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(194, 257);
+            this.label2.Location = new System.Drawing.Point(535, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 1;
@@ -129,7 +127,7 @@
             // progressBar1
             // 
             this.progressBar1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.progressBar1.Location = new System.Drawing.Point(12, 257);
+            this.progressBar1.Location = new System.Drawing.Point(353, 185);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(176, 16);
             this.progressBar1.TabIndex = 0;
@@ -192,7 +190,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 285);
             this.Controls.Add(this.lbTiempo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -209,7 +209,6 @@
             this.Load += new System.EventHandler(this.IniSesion_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.IniSesion_MouseDown);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

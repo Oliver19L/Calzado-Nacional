@@ -36,7 +36,6 @@
             this.txtSegundoA = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtMunicipio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,8 +54,9 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnelim = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnelim = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,13 +110,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(210, 78);
             this.txtDireccion.TabIndex = 8;
-            // 
-            // txtMunicipio
-            // 
-            this.txtMunicipio.Location = new System.Drawing.Point(465, 84);
-            this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(100, 20);
-            this.txtMunicipio.TabIndex = 9;
             // 
             // label1
             // 
@@ -213,7 +206,7 @@
             this.mskTele.Location = new System.Drawing.Point(448, 139);
             this.mskTele.Mask = "00000000";
             this.mskTele.Name = "mskTele";
-            this.mskTele.Size = new System.Drawing.Size(136, 20);
+            this.mskTele.Size = new System.Drawing.Size(65, 20);
             this.mskTele.TabIndex = 21;
             // 
             // mskCelular
@@ -221,7 +214,7 @@
             this.mskCelular.Location = new System.Drawing.Point(448, 180);
             this.mskCelular.Mask = "00000000";
             this.mskCelular.Name = "mskCelular";
-            this.mskCelular.Size = new System.Drawing.Size(136, 20);
+            this.mskCelular.Size = new System.Drawing.Size(65, 20);
             this.mskCelular.TabIndex = 22;
             // 
             // btnInsertar
@@ -305,6 +298,17 @@
             this.panel1.Size = new System.Drawing.Size(696, 28);
             this.panel1.TabIndex = 28;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(663, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // btnelim
             // 
             this.btnelim.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
@@ -320,16 +324,13 @@
             this.btnelim.UseVisualStyleBackColor = true;
             this.btnelim.Click += new System.EventHandler(this.btnelim_Click);
             // 
-            // pictureBox1
+            // comboBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(663, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(463, 91);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
+            this.comboBox1.TabIndex = 30;
             // 
             // EditarTrabajador
             // 
@@ -337,6 +338,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(695, 416);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnelim);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
@@ -356,7 +358,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMunicipio);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSegundoA);
@@ -384,7 +385,6 @@
         private System.Windows.Forms.TextBox txtSegundoA;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtMunicipio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -405,5 +405,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnelim;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

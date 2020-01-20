@@ -42,5 +42,11 @@ namespace Main.Vistas
         {
 
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FrmDevolucionCliente dc = new FrmDevolucionCliente(cone);
+            dc.ShowDialog();
+        }
     }
 }

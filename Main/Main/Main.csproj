@@ -60,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ClaseEmpleado.cs" />
+    <Compile Include="DAO\Municipio.cs" />
     <Compile Include="Reportes\DataSet.cs">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
@@ -99,11 +101,29 @@
     <Compile Include="Vistas\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Departamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Departamentos.Designer.cs">
+      <DependentUpon>Departamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Detalle_Venta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\Detalle_Venta.Designer.cs">
       <DependentUpon>Detalle_Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmDevolucionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmDevolucionCliente.Designer.cs">
+      <DependentUpon>FrmDevolucionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmDevolucionCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmDevolucionCompra.Designer.cs">
+      <DependentUpon>FrmDevolucionCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Gestion_Clientes.cs">
       <SubType>Form</SubType>
@@ -154,12 +174,11 @@
     <Compile Include="Vistas\Inventarios.Designer.cs">
       <DependentUpon>Inventarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Proveedor.cs">
+    <Compile Include="Vistas\Municipios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\.Designer.cs">
-      <DependentUpon>Proveedor.cs</DependentUpon>
-      <SubType>Form</SubType>
+    <Compile Include="Vistas\Municipios.Designer.cs">
+      <DependentUpon>Municipios.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Gestion_Inventario.cs">
       <SubType>Form</SubType>
@@ -224,8 +243,17 @@
     <EmbeddedResource Include="Vistas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Departamentos.resx">
+      <DependentUpon>Departamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Detalle_Venta.resx">
       <DependentUpon>Detalle_Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmDevolucionCliente.resx">
+      <DependentUpon>FrmDevolucionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmDevolucionCompra.resx">
+      <DependentUpon>FrmDevolucionCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Gestion_Clientes.resx">
       <DependentUpon>Gestion_Clientes.cs</DependentUpon>
@@ -251,8 +279,8 @@
     <EmbeddedResource Include="Vistas\Inventarios.resx">
       <DependentUpon>Inventarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Proveedor.resx">
-      <DependentUpon>Proveedor.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Municipios.resx">
+      <DependentUpon>Municipios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Gestion_Inventario.resx">
       <DependentUpon>Gestion_Inventario.cs</DependentUpon>
@@ -310,7 +338,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAO\" />
     <Folder Include="DTO\" />
   </ItemGroup>
   <ItemGroup>

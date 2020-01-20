@@ -49,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMunicipio = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSegundoA = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,12 +68,13 @@
             this.btnelim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnelim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnelim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnelim.Location = new System.Drawing.Point(502, 381);
+            this.btnelim.Location = new System.Drawing.Point(567, 347);
             this.btnelim.Name = "btnelim";
             this.btnelim.Size = new System.Drawing.Size(75, 27);
             this.btnelim.TabIndex = 56;
             this.btnelim.Text = "Eliminar";
             this.btnelim.UseVisualStyleBackColor = true;
+            this.btnelim.Click += new System.EventHandler(this.btnelim_Click);
             // 
             // panel1
             // 
@@ -119,6 +120,7 @@
             this.btnLimpiar.TabIndex = 53;
             this.btnLimpiar.Text = "Limpiar Campos";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
             // btnCancelar
             // 
@@ -142,12 +144,13 @@
             this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(502, 381);
+            this.btnActualizar.Location = new System.Drawing.Point(463, 348);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 27);
             this.btnActualizar.TabIndex = 51;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnInsertar
             // 
@@ -162,6 +165,7 @@
             this.btnInsertar.TabIndex = 50;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // mskCelular
             // 
@@ -269,13 +273,6 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Id_Cliente:";
             // 
-            // txtMunicipio
-            // 
-            this.txtMunicipio.Location = new System.Drawing.Point(465, 94);
-            this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(100, 20);
-            this.txtMunicipio.TabIndex = 37;
-            // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(448, 238);
@@ -326,12 +323,21 @@
             this.txtId.Size = new System.Drawing.Size(131, 20);
             this.txtId.TabIndex = 30;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(463, 94);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(159, 21);
+            this.comboBox1.TabIndex = 57;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(695, 416);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnelim);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
@@ -351,7 +357,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMunicipio);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSegundoA);
@@ -392,7 +397,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMunicipio;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSegundoA;
@@ -400,5 +404,6 @@
         private System.Windows.Forms.TextBox txtSegundoNombre;
         private System.Windows.Forms.TextBox txtPrimerNombre;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

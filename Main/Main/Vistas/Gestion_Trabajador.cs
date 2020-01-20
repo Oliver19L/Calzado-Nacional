@@ -83,14 +83,14 @@ namespace Main.Vistas
             String sert;
 
             SqlCommand cmd = new SqlCommand();
-            SqlDataReader leer;
+            SqlDataReader leere;
 
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "Select IS_SRVROLEMEMBER ('sysadmin','Prueba12')";
             cmd.Connection = con.connect;
 
-            leer = cmd.ExecuteReader();
-            sert = Convert.ToString(leer.Read());
+            leere = cmd.ExecuteReader();
+            sert = Convert.ToString(leere.Read());
 
 
             return sert;
@@ -98,7 +98,7 @@ namespace Main.Vistas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            EditarTrabajador ET = new EditarTrabajador(conex);
+            EditarTrabajador ET = new EditarTrabajador(conex,true);
             ET.BtnInsertar();
             ET.ShowDialog();
             ListarUsuarios();
@@ -118,11 +118,13 @@ namespace Main.Vistas
             DataGridViewRow gridRow = rowCollection[0];
             DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
 
-            EditarTrabajador fp = new EditarTrabajador(conex);
+            EditarTrabajador fp = new EditarTrabajador(conex,false);
             fp.DrEmpleados = drow;
+            fp.Combo(false);
             fp.BtnActualizar();
-            fp.ShowDialog();
+            fp.Show();
             ListarUsuarios();
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -149,8 +151,9 @@ namespace Main.Vistas
             DataGridViewRow gridRow = rowCollection[0];
             DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
 
-            EditarTrabajador fp = new EditarTrabajador(conex);
+            EditarTrabajador fp = new EditarTrabajador(conex,false);
             fp.DrEmpleados = drow;
+            fp.Combo(false);
             fp.BtnEliminar();
             fp.ShowDialog();
             ListarUsuarios();

@@ -195,6 +195,7 @@
             this.btnCancelar.TabIndex = 58;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnInsert
             // 
@@ -203,7 +204,7 @@
             this.btnInsert.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Location = new System.Drawing.Point(273, 292);
+            this.btnInsert.Location = new System.Drawing.Point(273, 326);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 27);
             this.btnInsert.TabIndex = 61;
@@ -218,12 +219,13 @@
             this.btnActu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnActu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnActu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActu.Location = new System.Drawing.Point(354, 277);
+            this.btnActu.Location = new System.Drawing.Point(273, 324);
             this.btnActu.Name = "btnActu";
             this.btnActu.Size = new System.Drawing.Size(75, 27);
             this.btnActu.TabIndex = 62;
             this.btnActu.Text = "Actualizar";
             this.btnActu.UseVisualStyleBackColor = true;
+            this.btnActu.Click += new System.EventHandler(this.btnActu_Click);
             // 
             // Inventarios
             // 
@@ -248,6 +250,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Inventarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventarios";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

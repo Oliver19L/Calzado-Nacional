@@ -30,5 +30,10 @@ namespace Main.Vistas
             con.Listados(dgvDevolucionesCompra, "ListarDvCompra");
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FrmDevolucionCompra dc = new FrmDevolucionCompra(con);
+            dc.ShowDialog();
+        }
     }
 }

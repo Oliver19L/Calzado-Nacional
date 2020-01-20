@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Main.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,19 @@ using System.Windows.Forms;
 
 namespace Main.Vistas
 {
-    public partial class Empleado : Form
+    public partial class FrmDevolucionCliente : Form
     {
-        public Empleado()
+
+        private Conexion con;
+        public FrmDevolucionCliente()
         {
             InitializeComponent();
+        }
+        public FrmDevolucionCliente(Conexion con)
+        {
+            this.con = con;
+            InitializeComponent();
+
         }
     }
 }

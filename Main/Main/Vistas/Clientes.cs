@@ -19,10 +19,11 @@ namespace Main.Vistas
 
         private DataRow drCliente
             ;
-        public Clientes(Conexion con)
+        public Clientes(Conexion con,Boolean obj)
         {
             this.conex = con;
             InitializeComponent();
+            ComboCliente(obj);
         }
 
 
@@ -46,7 +47,7 @@ namespace Main.Vistas
             param[7] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
             param[7].Value = txtDireccion.Text;
             param[8] = new SqlParameter("@IdMunic", SqlDbType.Int);
-            param[8].Value = int.Parse(txtMunicipio.Text);
+            param[8].Value = comboBox1.SelectedValue;
 
             return param;
         }
@@ -56,7 +57,7 @@ namespace Main.Vistas
             set
             {
                 drCliente = value;
-                txtId.Text = drCliente["Id_Empleados"].ToString();
+                txtId.Text = drCliente["Id_Cliente"].ToString();
                 txtPrimerNombre.Text = drCliente["Primer_Nombre"].ToString();
                 txtSegundoNombre.Text = drCliente["Segundo_Nombre"].ToString();
                 txtPrimerA.Text = drCliente["Primer_Apellido"].ToString();
@@ -65,7 +66,7 @@ namespace Main.Vistas
                 mskCelular.Text = drCliente["Telefono"].ToString();
                 mskTele.Text = drCliente["Celular"].ToString();
                 txtDireccion.Text = drCliente["Direccion"].ToString();
-                txtMunicipio.Text = drCliente["Id_Munic"].ToString();
+                ObtenerCliente(drCliente["Id_Munic"].ToString()); 
             }
         }
 
@@ -97,7 +98,7 @@ namespace Main.Vistas
             mskCelular.Enabled = false;
             mskTele.Enabled = false;
             txtDireccion.Enabled = false;
-            txtMunicipio.Enabled = false;
+           
 
         }
 
@@ -121,12 +122,105 @@ namespace Main.Vistas
             mskCelular.Text = String.Empty;
             mskTele.Text = String.Empty;
             txtDireccion.Text = String.Empty;
-            txtMunicipio.Text = String.Empty;
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        public void ComboCliente(Boolean bolo)
+        {
+
+
+            if (bolo)
+            {
+
+                SqlCommand cmdn = new SqlCommand
+                {
+                    Connection = conex.connect,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "ListarMunicipios"
+                };
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmdn);
+                DataTable dataTable = new DataTable();
+
+                sqlDataAdapter.Fill(dataTable);
+                comboBox1.DataSource = dataTable;
+                comboBox1.ValueMember = "Id_Munic";
+                comboBox1.DisplayMember = "NombreMun";
+
+                AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    collection.Add(Convert.ToString(dr["NombreMun"]));
+                }
+
+                comboBox1.AutoCompleteCustomSource = collection;
+                comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                comboBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
+            else { }
+
+
+
+
+        }
+
+        public void ObtenerCliente(String id)
+        {
+
+
+
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id", SqlDbType.Int);
+            param[0].Value = id;
+
+            SqlCommand cmdo = new SqlCommand();
+            cmdo.CommandType = CommandType.StoredProcedure;
+            cmdo.CommandText = "ObtenerMuni";
+            cmdo.Connection = conex.connect;
+            cmdo.Parameters.AddRange(param);
+            SqlDataAdapter dat = new SqlDataAdapter(cmdo);
+            DataTable dtable = new DataTable();
+            dat.Fill(dtable);
+            comboBox1.DataSource = dtable;
+            comboBox1.ValueMember = "Id_Munic";
+            comboBox1.DisplayMember = "NombreMun";
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            conex.editados(parametro(),"ActualizacionCliente");
+            this.Hide();
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            conex.Insertados(parametro(), "NuevoCliente");
+            this.Hide();
+        }
+
+        private void btnelim_Click(object sender, EventArgs e)
+        {
+            conex.eliminar(int.Parse(txtId.Text), "EliminarCliente", "@ID");
+            this.Hide();
+        }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            txtPrimerNombre.Text = string.Empty;
+            txtSegundoNombre.Text = string.Empty;
+            txtPrimerA.Text = string.Empty;
+            txtSegundoA.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            mskTele.Text = string.Empty;
+            mskCelular.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            
         }
     }
 }

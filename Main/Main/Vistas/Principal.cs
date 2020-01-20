@@ -134,7 +134,8 @@ namespace Main
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new  Gestion_Clientes(Con));
+              AbrirFormEnPanel(new  Gestion_Clientes(Con));
+            
         }
 
         private void pictureBox8_MouseDown(object sender, MouseEventArgs e)

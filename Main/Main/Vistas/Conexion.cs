@@ -41,21 +41,21 @@ namespace Main.DAO
 
         public void Listados(DataGridView GridView1, String Procedimiento)
         {
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmdu = new SqlCommand();
 
             try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = Procedimiento;
-                cmd.Connection = connect;
+                cmdu.CommandType = CommandType.StoredProcedure;
+                cmdu.CommandText = Procedimiento;
+                cmdu.Connection = connect;
 
 
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                SqlDataAdapter daad = new SqlDataAdapter(cmdu);
 
 
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                daad.Fill(dt);
 
                 GridView1.DataSource = dt;
             }
@@ -69,7 +69,7 @@ namespace Main.DAO
         }
 
        // public void InsertarTrabajador(String Pnombre, String Snombre, String Papellido, String Sapellido, String Email, String tel, String celular, String Dire, int Id_Muni)
-       public void InsertarTrabajador(SqlParameter[] param,string proce)
+       public void Insertados(SqlParameter[] param,string proce)
         {
 
             try
@@ -101,7 +101,7 @@ namespace Main.DAO
         }
 
 
-        public void editarEmpleado(SqlParameter[] param, String proce)
+        public void editados(SqlParameter[] param, String proce)
         {
 
             SqlCommand cmd = new SqlCommand();

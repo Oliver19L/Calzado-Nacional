@@ -49,7 +49,7 @@ namespace Main.Vistas
             DataGridViewRow gridRow = rowCollection[0];
             DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
 
-            Clientes fp = new Clientes(cone);
+            Clientes fp = new Clientes(cone,false);
             fp.DrCliente = drow;
             fp.BtnActualizar();
             fp.ShowDialog();
@@ -68,7 +68,7 @@ namespace Main.Vistas
             DataGridViewRow gridRow = rowCollection[0];
             DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
 
-            Clientes fp = new Clientes(cone);
+            Clientes fp = new Clientes(cone,false);
             fp.DrCliente = drow;
             fp.BtnEliminar();
             fp.ShowDialog();
@@ -77,7 +77,7 @@ namespace Main.Vistas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Clientes ET = new Clientes(cone);
+            Clientes ET = new Clientes(cone,true);
             ET.BtnInsertar();
             ET.ShowDialog();
             ListaC();

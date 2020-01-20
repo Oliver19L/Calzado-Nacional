@@ -104,22 +104,35 @@ namespace Main.Vistas
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-
+            cone.Insertados(parametroInv(), "NuevoProducto");
+            this.Dispose();
         }
 
         public SqlParameter[] parametroInv()
         {
-            SqlParameter[] param = new SqlParameter[3];
-            param[0] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
-            param[0].Value = txtNombre.Text;
-            param[1] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
-            param[1].Value = txtDescripcion.Text;
-            param[2] = new SqlParameter("@PrimApellid", SqlDbType.Int);
-            param[2].Value = txtCantidad;
-            param[3] = new SqlParameter("@SegundApellid", SqlDbType.Float);
-            param[3].Value = txtPrecio.Text;
-
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@Codigo", SqlDbType.Char);
+            param[0].Value =txtId.Text;
+            param[1] = new SqlParameter("@Nombre", SqlDbType.NVarChar);
+            param[1].Value =txtNombre.Text;
+            param[2] = new SqlParameter("@Descripcion", SqlDbType.NVarChar);
+            param[2].Value =txtDescripcion.Text;
+            param[3] = new SqlParameter("@Cantidad", SqlDbType.Int);
+            param[3].Value = int.Parse(txtCantidad.Text);
+            param[4] = new SqlParameter("@PrecioVenta", SqlDbType.Float);
+            param[4].Value = float.Parse(txtPrecio.Text);
             return param;
+        }
+
+        private void btnActu_Click(object sender, EventArgs e)
+        {
+            cone.editados(parametroInv(),"ActualizarInventario");
+            this.Hide();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
