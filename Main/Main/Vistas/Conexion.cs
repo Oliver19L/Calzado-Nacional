@@ -13,7 +13,8 @@ namespace Main.DAO
     public class Conexion
     {
         public SqlConnection connect = new SqlConnection();
-        
+
+        SqlDataReader sqlDataReader;
 
         public Conexion()
         {
@@ -33,7 +34,7 @@ namespace Main.DAO
             }
             catch (Exception)
             {
-
+                
             }
         }
 
@@ -75,27 +76,27 @@ namespace Main.DAO
             try
             {
                 SqlCommand cmd = new SqlCommand();
+                
 
                 cmd.Connection = connect;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = proce;
 
-               
-
-               
 
                 cmd.Parameters.AddRange(param);
-
+                sqlDataReader = cmd.ExecuteReader();
+                sqlDataReader.NextResult();
+               // MessageBox.Show();
 
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                 da.Fill(ds);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show("Error en la insercion     " + ex.Message);
+                MessageBox.Show("Error en la insercion     " + connect.InfoMessage);
                 return;
             }
         }
@@ -140,6 +141,35 @@ namespace Main.DAO
 
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(ds);
+        }
+
+        public void eliminarChar(String id, String Procedimiento, String Campo)
+        {
+
+
+
+            SqlCommand cmdi = new SqlCommand();
+           
+
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter(Campo, SqlDbType.Char);
+            param[0].Value = id;
+
+            
+            cmdi.CommandType = CommandType.StoredProcedure;
+            cmdi.CommandText = Procedimiento;
+            cmdi.Connection = connect;
+            cmdi.Parameters.AddRange(param);
+          
+            sqlDataReader = cmdi.ExecuteReader();
+            sqlDataReader.Read();
+            MessageBox.Show(sqlDataReader.GetString(0));
+
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmdi);
 
             da.Fill(ds);
         }

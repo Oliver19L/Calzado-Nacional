@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -194,14 +195,31 @@ namespace Main.Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            conex.editados(parametro(),"ActualizacionCliente");
-            this.Hide();
+            if (email_bien_escrito(txtEmail.Text)) {
+                conex.editados(parametro(), "ActualizacionCliente");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Email mal Escrito");
+                txtEmail.Text = string.Empty;
+            }
+            
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            conex.Insertados(parametro(), "NuevoCliente");
-            this.Hide();
+            if (email_bien_escrito(txtEmail.Text))
+            {
+                conex.Insertados(parametro(), "NuevoCliente");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Email mal escrito");
+                txtEmail.Text = string.Empty;
+            }
+           
         }
 
         private void btnelim_Click(object sender, EventArgs e)
@@ -221,6 +239,27 @@ namespace Main.Vistas
             mskCelular.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             
+        }
+
+        private Boolean email_bien_escrito(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

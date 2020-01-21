@@ -43,5 +43,52 @@ namespace Main.Vistas
             ReporteDetallePedidos rdp = new ReporteDetallePedidos();
             rdp.ShowDialog();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Pedidos p = new Pedidos(cone);
+            p.btnNuevo();
+            p.ShowDialog();
+            ListarPedido();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rowCollection = dgvPedidos.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+            Pedidos p = new Pedidos(cone);
+            p.DrPedidis = drow;
+            p.btnesEliminar();
+            p.ShowDialog();
+            ListarPedido();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewSelectedRowCollection rowCollection = dgvPedidos.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+            Pedidos p = new Pedidos(cone);
+            p.DrPedidis = drow;
+            p.btnesEditar();
+            p.ShowDialog();
+            ListarPedido();
+        }
     }
 }

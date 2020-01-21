@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,7 +40,7 @@ namespace Main.Vistas
         public SqlParameter[] parametro()
         {
 
-            MessageBox.Show("Id"+ comboBox1.SelectedValue);
+           
             SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
             param[0].Value = txtPrimerNombre.Text;
@@ -67,31 +68,47 @@ namespace Main.Vistas
         public SqlParameter[] EditarEmpleadosParam()
         {
 
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[10];
 
 
             param[0] = new SqlParameter("@Id", SqlDbType.Int);
             param[0].Value =txtId.Text;
-            param[1] = new SqlParameter("@Email", SqlDbType.NVarChar);
-            param[1].Value = txtEmail.Text;
-            param[2] = new SqlParameter("@Telefono", SqlDbType.Char);
-            param[2].Value = mskTele.Text;
-            param[3] = new SqlParameter("@Celular", SqlDbType.Char);
-            param[3].Value = mskCelular.Text;
-            param[4] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
-            param[4].Value = txtDireccion.Text;
-            param[5] = new SqlParameter("@IdMunic", SqlDbType.Int);
-            param[5].Value =int.Parse( comboBox1.ValueMember.ToString());
+            param[1] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
+            param[1].Value = txtPrimerNombre.Text;
+            param[2] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
+            param[2].Value = txtSegundoNombre.Text;
+            param[3] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
+            param[3].Value = txtPrimerA.Text;
+            param[4] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
+            param[4].Value = txtSegundoA.Text;
+            param[5] = new SqlParameter("@Email", SqlDbType.NVarChar);
+            param[5].Value = txtEmail.Text;
+            param[6] = new SqlParameter("@Telefono", SqlDbType.Char);
+            param[6].Value = mskTele.Text;
+            param[7] = new SqlParameter("@Celular", SqlDbType.Char);
+            param[7].Value = mskCelular.Text;
+            param[8] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
+            param[8].Value = txtDireccion.Text;
+            param[9] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[9].Value = comboBox1.SelectedValue;
 
             return param;
         }
         
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
+            if (email_bien_escrito(txtEmail.Text))
+            {
+                conex.Insertados(parametro(), "NuevoEmpleado");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Email mal Escrito");
+                txtEmail.Text = String.Empty;
+            }
             
-            conex.Insertados(parametro(),"NuevoEmpleado");
-            this.Hide();
             
         }
 
@@ -129,9 +146,17 @@ namespace Main.Vistas
         private void btnActualizar_Click(object sender, EventArgs e)
         {
 
-
-            conex.editados(EditarEmpleadosParam(),"ActualizacionEmpleados");
-            this.Hide();
+            if (email_bien_escrito(txtEmail.Text))
+            {
+                conex.editados(EditarEmpleadosParam(), "ActualizacionEmpleado");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Email mal Escrito");
+                txtEmail.Text = string.Empty;
+            }
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -213,8 +238,17 @@ namespace Main.Vistas
 
         private void btnelim_Click(object sender, EventArgs e)
         {
-            conex.eliminar(int.Parse(txtId.Text), "EliminarEmpleado", "@ID");
-            this.Hide();
+            if (email_bien_escrito(txtEmail.Text))
+            {
+                conex.eliminar(int.Parse(txtId.Text), "EliminarEmpleado", "@ID");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Email mal Escrito");
+                txtEmail.Text = string.Empty;
+            }
+            
             
         }
 
@@ -278,13 +312,29 @@ namespace Main.Vistas
             comboBox1.DisplayMember = "NombreMun";
 
 
-
-
-
-
-
-
         }
-     
+
+
+        private Boolean email_bien_escrito(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

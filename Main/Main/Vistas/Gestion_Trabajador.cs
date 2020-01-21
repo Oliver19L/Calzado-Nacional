@@ -122,7 +122,7 @@ namespace Main.Vistas
             fp.DrEmpleados = drow;
             fp.Combo(false);
             fp.BtnActualizar();
-            fp.Show();
+            fp.ShowDialog();
             ListarUsuarios();
             
         }
