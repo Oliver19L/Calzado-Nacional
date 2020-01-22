@@ -90,5 +90,55 @@ namespace Main.Vistas
             p.ShowDialog();
             ListarPedido();
         }
+
+        private void btnNuevoDetalle_Click(object sender, EventArgs e)
+        {
+            Detalle_Pedidos dp = new Detalle_Pedidos(cone);
+            dp.btnNuevoD();
+            dp.ShowDialog();
+            ListarDetallePedido();
+
+        }
+
+        private void btnElimDetalle_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rowCollection = dgvDetalle.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+
+            Detalle_Pedidos dp = new Detalle_Pedidos(cone);
+            dp.DrDetallePedido = drow;
+            dp.btnEliminarDP();
+            dp.ShowDialog();
+            ListarDetallePedido();
+        }
+
+        private void btnEditarDetalle_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewSelectedRowCollection rowCollection = dgvDetalle.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+
+            Detalle_Pedidos dp = new Detalle_Pedidos(cone);
+            dp.DrDetallePedido = drow;
+            dp.btnEditarDP();
+            dp.ShowDialog();
+            ListarDetallePedido();
+        }
     }
 }

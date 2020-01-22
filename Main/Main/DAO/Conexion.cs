@@ -14,7 +14,8 @@ namespace Main.DAO
     {
         public SqlConnection connect = new SqlConnection();
 
-        SqlDataReader sqlDataReader;
+       
+            
 
         public Conexion()
         {
@@ -24,7 +25,7 @@ namespace Main.DAO
         {
             try
             {
-
+                
 
                 connect = new SqlConnection("Server=OLIVERPC;Database=CalzadoNacionalPro;UID=" + user + ";PWD=" + Pass);
                                             
@@ -81,22 +82,18 @@ namespace Main.DAO
                 cmd.Connection = connect;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = proce;
-
-
                 cmd.Parameters.AddRange(param);
-                sqlDataReader = cmd.ExecuteReader();
-                sqlDataReader.NextResult();
-               // MessageBox.Show();
+               
 
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                 da.Fill(ds);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                MessageBox.Show("Error en la insercion     " + connect.InfoMessage);
+                MessageBox.Show("Error en la insercion     " + ex.Message);
                 return;
             }
         }
@@ -163,9 +160,7 @@ namespace Main.DAO
             cmdi.Connection = connect;
             cmdi.Parameters.AddRange(param);
           
-            sqlDataReader = cmdi.ExecuteReader();
-            sqlDataReader.Read();
-            MessageBox.Show(sqlDataReader.GetString(0));
+           
 
 
             DataSet ds = new DataSet();
@@ -191,7 +186,8 @@ namespace Main.DAO
             {
                 result = leer.GetInt32(0);
             }
-            
+
+            leer.Close();
 
            
             return result;

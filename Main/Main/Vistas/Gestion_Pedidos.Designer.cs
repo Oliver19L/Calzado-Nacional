@@ -127,6 +127,7 @@
             this.btnEditarDetalle.TabIndex = 16;
             this.btnEditarDetalle.Text = "Editar";
             this.btnEditarDetalle.UseVisualStyleBackColor = false;
+            this.btnEditarDetalle.Click += new System.EventHandler(this.btnEditarDetalle_Click);
             // 
             // btnNuevoDetalle
             // 
@@ -140,6 +141,7 @@
             this.btnNuevoDetalle.TabIndex = 15;
             this.btnNuevoDetalle.Text = "Nuevo";
             this.btnNuevoDetalle.UseVisualStyleBackColor = false;
+            this.btnNuevoDetalle.Click += new System.EventHandler(this.btnNuevoDetalle_Click);
             // 
             // btnElimDetalle
             // 
@@ -153,6 +155,7 @@
             this.btnElimDetalle.TabIndex = 14;
             this.btnElimDetalle.Text = "Eliminar";
             this.btnElimDetalle.UseVisualStyleBackColor = false;
+            this.btnElimDetalle.Click += new System.EventHandler(this.btnElimDetalle_Click);
             // 
             // dgvDetalle
             // 

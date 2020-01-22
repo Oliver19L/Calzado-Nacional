@@ -30,25 +30,55 @@ namespace Main.Vistas
 
         public SqlParameter[] parametro()
         {
-            SqlParameter[] param = new SqlParameter[9];
-            param[0] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
-            param[0].Value = txtPrimerNombre.Text;
-            param[1] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
-            param[1].Value = txtSegundoNombre.Text;
-            param[2] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
-            param[2].Value = txtPrimerA.Text;
-            param[3] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
-            param[3].Value = txtSegundoA.Text;
-            param[4] = new SqlParameter("@Email", SqlDbType.NVarChar);
-            param[4].Value = txtEmail.Text;
-            param[5] = new SqlParameter("@Telefono", SqlDbType.Char);
-            param[5].Value = mskTele.Text;
-            param[6] = new SqlParameter("@Celular", SqlDbType.Char);
-            param[6].Value = mskCelular.Text;
-            param[7] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
-            param[7].Value = txtDireccion.Text;
-            param[8] = new SqlParameter("@IdMunic", SqlDbType.Int);
-            param[8].Value = comboBox1.SelectedValue;
+            SqlParameter[] param = new SqlParameter[10];
+
+            param[0] = new SqlParameter("@Id_Cliente", SqlDbType.Int);
+            param[0].Value = int.Parse(txtId.Text);
+            param[1] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
+            param[1].Value = txtPrimerNombre.Text;
+            param[2] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
+            param[2].Value = txtSegundoNombre.Text;
+            param[3] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
+            param[3].Value = txtPrimerA.Text;
+            param[4] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
+            param[4].Value = txtSegundoA.Text;
+            param[5] = new SqlParameter("@Email", SqlDbType.NVarChar);
+            param[5].Value = txtEmail.Text;
+            param[6] = new SqlParameter("@Telefono", SqlDbType.Char);
+            param[6].Value = mskTele.Text;
+            param[7] = new SqlParameter("@Celular", SqlDbType.Char);
+            param[7].Value = mskCelular.Text;
+            param[8] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
+            param[8].Value = txtDireccion.Text;
+            param[9] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[9].Value = comboBox1.SelectedValue;
+            
+            return param;
+        }
+
+        public SqlParameter[] parametroNuevo()
+        {
+            SqlParameter[] param = new SqlParameter[10];
+
+            
+            param[1] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
+            param[1].Value = txtPrimerNombre.Text;
+            param[2] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
+            param[2].Value = txtSegundoNombre.Text;
+            param[3] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
+            param[3].Value = txtPrimerA.Text;
+            param[4] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
+            param[4].Value = txtSegundoA.Text;
+            param[5] = new SqlParameter("@Email", SqlDbType.NVarChar);
+            param[5].Value = txtEmail.Text;
+            param[6] = new SqlParameter("@Telefono", SqlDbType.Char);
+            param[6].Value = mskTele.Text;
+            param[7] = new SqlParameter("@Celular", SqlDbType.Char);
+            param[7].Value = mskCelular.Text;
+            param[8] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
+            param[8].Value = txtDireccion.Text;
+            param[9] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[9].Value = comboBox1.SelectedValue;
 
             return param;
         }
@@ -59,13 +89,13 @@ namespace Main.Vistas
             {
                 drCliente = value;
                 txtId.Text = drCliente["Id_Cliente"].ToString();
-                txtPrimerNombre.Text = drCliente["Primer_Nombre"].ToString();
-                txtSegundoNombre.Text = drCliente["Segundo_Nombre"].ToString();
+                txtPrimerNombre.Text = drCliente["Primer_NombreC"].ToString();
+                txtSegundoNombre.Text = drCliente["Segundo_NombreC"].ToString();
                 txtPrimerA.Text = drCliente["Primer_Apellido"].ToString();
                 txtSegundoA.Text = drCliente["Segundo_Apellido"].ToString();
                 txtEmail.Text = drCliente["Email"].ToString();
-                mskCelular.Text = drCliente["Telefono"].ToString();
-                mskTele.Text = drCliente["Celular"].ToString();
+                mskTele.Text = drCliente["Telefono"].ToString();
+                mskCelular.Text = drCliente["Celular"].ToString();
                 txtDireccion.Text = drCliente["Direccion"].ToString();
                 ObtenerCliente(drCliente["Id_Munic"].ToString()); 
             }
@@ -163,7 +193,7 @@ namespace Main.Vistas
                 comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 comboBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
-            else { }
+            
 
 
 
@@ -196,7 +226,7 @@ namespace Main.Vistas
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (email_bien_escrito(txtEmail.Text)) {
-                conex.editados(parametro(), "ActualizacionCliente");
+                conex.editados(parametro(), "ActualizacionCliente"); 
                 this.Hide();
             }
             else
@@ -211,7 +241,7 @@ namespace Main.Vistas
         {
             if (email_bien_escrito(txtEmail.Text))
             {
-                conex.Insertados(parametro(), "NuevoCliente");
+                conex.Insertados(parametroNuevo(), "NuevoCliente");
                 this.Hide();
             }
             else

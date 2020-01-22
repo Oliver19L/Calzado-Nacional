@@ -29,7 +29,7 @@ namespace Main.Vistas
         }
         public void listarDetalleProveedor()
         {
-            con.Listados(dgvdetalleProveedores, "ListaDetallePedidos");
+            con.Listados(dgvdetalleProveedores, "");
         }
         private void Gestion_Proveedores_Load(object sender, EventArgs e)
         {
