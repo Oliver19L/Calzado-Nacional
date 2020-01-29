@@ -104,6 +104,7 @@ namespace Main.Vistas
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            Validaciones();
             cone.Insertados(parametroInv(), "NuevoProducto");
             this.Dispose();
         }
@@ -134,5 +135,22 @@ namespace Main.Vistas
         {
             Dispose();
         }
+
+
+        public void Validaciones()
+        {
+            if (txtId.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtId, "Campo Vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+
+        }
+
+
     }
 }

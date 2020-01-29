@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarTrabajador));
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
@@ -57,8 +58,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnelim = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtId
@@ -105,7 +108,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(448, 228);
+            this.txtDireccion.Location = new System.Drawing.Point(488, 225);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(210, 78);
@@ -159,7 +162,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(387, 139);
+            this.label6.Location = new System.Drawing.Point(427, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 16;
@@ -168,7 +171,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(387, 183);
+            this.label7.Location = new System.Drawing.Point(427, 180);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 17;
@@ -177,7 +180,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(387, 231);
+            this.label8.Location = new System.Drawing.Point(427, 228);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 18;
@@ -186,7 +189,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(386, 91);
+            this.label9.Location = new System.Drawing.Point(426, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 13);
             this.label9.TabIndex = 19;
@@ -203,7 +206,7 @@
             // 
             // mskTele
             // 
-            this.mskTele.Location = new System.Drawing.Point(448, 139);
+            this.mskTele.Location = new System.Drawing.Point(488, 136);
             this.mskTele.Mask = "00000000";
             this.mskTele.Name = "mskTele";
             this.mskTele.Size = new System.Drawing.Size(65, 20);
@@ -211,7 +214,7 @@
             // 
             // mskCelular
             // 
-            this.mskCelular.Location = new System.Drawing.Point(448, 180);
+            this.mskCelular.Location = new System.Drawing.Point(488, 177);
             this.mskCelular.Mask = "00000000";
             this.mskCelular.Name = "mskCelular";
             this.mskCelular.Size = new System.Drawing.Size(65, 20);
@@ -327,17 +330,22 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(463, 91);
+            this.comboBox1.Location = new System.Drawing.Point(503, 88);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(127, 21);
             this.comboBox1.TabIndex = 30;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
             // 
             // EditarTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(695, 416);
+            this.ClientSize = new System.Drawing.Size(720, 412);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnelim);
             this.Controls.Add(this.panel1);
@@ -371,6 +379,7 @@
             this.Load += new System.EventHandler(this.EditarTrabajador_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,5 +415,6 @@
         private System.Windows.Forms.Button btnelim;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

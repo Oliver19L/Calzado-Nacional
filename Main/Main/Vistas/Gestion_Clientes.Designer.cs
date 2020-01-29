@@ -35,6 +35,7 @@
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnReporteAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,11 +125,27 @@
             this.textBox1.Size = new System.Drawing.Size(464, 20);
             this.textBox1.TabIndex = 33;
             // 
+            // btnReporteAll
+            // 
+            this.btnReporteAll.BackColor = System.Drawing.Color.White;
+            this.btnReporteAll.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnReporteAll.FlatAppearance.BorderSize = 2;
+            this.btnReporteAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnReporteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteAll.Location = new System.Drawing.Point(1210, 23);
+            this.btnReporteAll.Name = "btnReporteAll";
+            this.btnReporteAll.Size = new System.Drawing.Size(108, 28);
+            this.btnReporteAll.TabIndex = 35;
+            this.btnReporteAll.Text = "Generar Reporte";
+            this.btnReporteAll.UseVisualStyleBackColor = false;
+            this.btnReporteAll.Click += new System.EventHandler(this.btnReporteAll_Click);
+            // 
             // Gestion_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 530);
+            this.Controls.Add(this.btnReporteAll);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnCerrar);
@@ -154,5 +171,6 @@
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnReporteAll;
     }
 }

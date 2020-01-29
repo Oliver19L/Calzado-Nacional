@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Main.Reportes;
+using System.Data.SqlClient;
+
 
 namespace Main.Vistas
 {
@@ -40,7 +42,18 @@ namespace Main.Vistas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReporteDetallePedidos rdp = new ReporteDetallePedidos();
+            DataGridViewSelectedRowCollection rowCollection = dgvPedidos.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+            ReporteClienteDetallePedido rdp = new ReporteClienteDetallePedido();
+            rdp.Ide = Convert.ToInt32(drow["Id_Cliente"].ToString());
             rdp.ShowDialog();
         }
 

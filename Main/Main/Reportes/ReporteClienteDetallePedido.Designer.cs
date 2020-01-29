@@ -1,6 +1,6 @@
 ﻿namespace Main.Reportes
 {
-    partial class DetalleCompras
+    partial class ReporteClienteDetallePedido
     {
         /// <summary>
         /// Required designer variable.
@@ -31,52 +31,51 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSet = new Main.Reportes.DataSet();
-            this.ListarDvCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ListarDvCompraTableAdapter = new Main.Reportes.DataSetTableAdapters.ListarDvCompraTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListarDvCompraBindingSource)).BeginInit();
+            this.DataSetDetalleClientePedido = new Main.Reportes.DataSetDetalleClientePedido();
+            this.DetallePedidoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DetallePedidoClienteTableAdapter = new Main.Reportes.DataSetDetalleClientePedidoTableAdapters.DetallePedidoClienteTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetDetalleClientePedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetallePedidoClienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.ListarDvCompraBindingSource;
+            reportDataSource1.Name = "DataSet2";
+            reportDataSource1.Value = this.DetallePedidoClienteBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Main.Reportes.DetalleCompra.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Main.Reportes.ReporteClienteDetallePedido.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DataSet
+            // DataSetDetalleClientePedido
             // 
-            this.DataSet.DataSetName = "DataSet";
-            this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.DataSetDetalleClientePedido.DataSetName = "DataSetDetalleClientePedido";
+            this.DataSetDetalleClientePedido.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ListarDvCompraBindingSource
+            // DetallePedidoClienteBindingSource
             // 
-            this.ListarDvCompraBindingSource.DataMember = "ListarDvCompra";
-            this.ListarDvCompraBindingSource.DataSource = this.DataSet;
+            this.DetallePedidoClienteBindingSource.DataMember = "DetallePedidoCliente";
+            this.DetallePedidoClienteBindingSource.DataSource = this.DataSetDetalleClientePedido;
             // 
-            // ListarDvCompraTableAdapter
+            // DetallePedidoClienteTableAdapter
             // 
-            this.ListarDvCompraTableAdapter.ClearBeforeFill = true;
+            this.DetallePedidoClienteTableAdapter.ClearBeforeFill = true;
             // 
-            // DetalleCompras
+            // ReporteClienteDetallePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "DetalleCompras";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DetalleCompras";
-            this.Load += new System.EventHandler(this.DetalleCompras_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListarDvCompraBindingSource)).EndInit();
+            this.Name = "ReporteClienteDetallePedido";
+            this.Text = "ReporteClienteDetallePedido";
+            this.Load += new System.EventHandler(this.ReporteClienteDetallePedido_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetDetalleClientePedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetallePedidoClienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,8 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource ListarDvCompraBindingSource;
-        private DataSet DataSet;
-        private DataSetTableAdapters.ListarDvCompraTableAdapter ListarDvCompraTableAdapter;
+        private System.Windows.Forms.BindingSource DetallePedidoClienteBindingSource;
+        private DataSetDetalleClientePedido DataSetDetalleClientePedido;
+        private DataSetDetalleClientePedidoTableAdapters.DetallePedidoClienteTableAdapter DetallePedidoClienteTableAdapter;
     }
 }

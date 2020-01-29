@@ -48,11 +48,30 @@ namespace Main.Vistas
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            
             con.Insertados(Parametro(),"NuevoPedido");
             this.Hide();
         }
 
         public SqlParameter[] Parametro()
+        {
+
+            SqlParameter[] param = new SqlParameter[3];
+
+
+            param[0] = new SqlParameter("@Id_Pedid", SqlDbType.Char);
+            param[0].Value = mskId.Text;
+            param[1] = new SqlParameter("@Id_Clien", SqlDbType.Int);
+            param[1].Value = int .Parse(txtID_Cliente.Text);
+            param[2] = new SqlParameter("@Fecha_Finaliza", SqlDbType.Date);
+            param[2].Value = dtpFechaF.Text;
+
+            return param;
+
+        }
+
+        public SqlParameter[] ParametroAc()
         {
 
             SqlParameter[] param = new SqlParameter[4];
@@ -61,16 +80,16 @@ namespace Main.Vistas
             param[0] = new SqlParameter("@Id_Pedid", SqlDbType.Char);
             param[0].Value = mskId.Text;
             param[1] = new SqlParameter("@Id_Clien", SqlDbType.Int);
-            param[1].Value = int .Parse(txtID_Cliente.Text);
-            param[2] = new SqlParameter("@Fecha_Pedi", SqlDbType.DateTime);
-            param[2].Value = DateTime.Parse(mskFecha_Pedido.Text);
-            param[3] = new SqlParameter("@Fecha_Finaliza", SqlDbType.DateTime);
-            param[3].Value = dtpFechaF.Text;
+            param[1].Value = int.Parse(txtID_Cliente.Text);
+            param[2] = new SqlParameter("@Id_Clien", SqlDbType.Date);
+            param[2].Value = mskFecha_Pedido.Text;
+            param[3] = new SqlParameter("@Fecha_Finaliza", SqlDbType.Date);
+            param[3].Value = Convert.ToDateTime(dtpFechaF.Text);
 
             return param;
 
-        } 
-        
+        }
+
         public void btnNuevo()
         {
             btnEditar.Visible = false;
@@ -100,7 +119,7 @@ namespace Main.Vistas
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            con.editados(Parametro(),"ActualizarPedido");
+            con.editados(ParametroAc(),"ActualizarPedido");
             this.Hide();
         }
 

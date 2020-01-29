@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Main.Reportes
 {
-    public partial class DetalleCompras : Form
+    public partial class ReporteDetalleCompras : Form
     {
-        public DetalleCompras()
+        public ReporteDetalleCompras()
         {
             InitializeComponent();
         }

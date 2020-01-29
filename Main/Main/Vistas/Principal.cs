@@ -221,7 +221,16 @@ namespace Main
         {
             lbTiempo.Text = DateTime.Now.ToString();
         }
+
+
+
+
+
+
+
+
     }
+
 
    
     

@@ -76,12 +76,12 @@ namespace Main.DAO
 
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                
-
-                cmd.Connection = connect;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = proce;
+                SqlCommand cmd = new SqlCommand
+                {
+                    Connection = connect,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = proce
+                };
                 cmd.Parameters.AddRange(param);
                
 

@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.95533cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.95533cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.95533cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.95533cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.95533cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -362,7 +362,7 @@
         <Top>4.23016cm</Top>
         <Left>0.34078cm</Left>
         <Height>1.2cm</Height>
-        <Width>12.5cm</Width>
+        <Width>14.77667cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -404,9 +404,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
         <Top>0.28787cm</Top>
-        <Left>3.96495cm</Left>
+        <Left>3.29611cm</Left>
         <Height>0.94396cm</Height>
-        <Width>5.48979cm</Width>
+        <Width>6.15863cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -455,7 +455,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
         <Top>2.43141cm</Top>
-        <Left>4.57349cm</Left>
+        <Left>5.97578cm</Left>
         <Height>0.81167cm</Height>
         <Width>4.88125cm</Width>
         <ZIndex>3</ZIndex>
@@ -471,8 +471,38 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=globals!ExecutionTime</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>0.28787cm</Top>
+        <Left>10.34078cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.77667cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>5.99202in</Height>
+    <Height>2.27327in</Height>
     <Style>
       <Border>
         <Color>SkyBlue</Color>
@@ -481,8 +511,49 @@
       </Border>
     </Style>
   </Body>
-  <Width>5.125in</Width>
+  <Width>6.108in</Width>
   <Page>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Pagina   " &amp; globals!PageNumber &amp; "  de  " &amp; globals!TotalPages</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.705cm</Top>
+          <Left>5.68474cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.48979cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>

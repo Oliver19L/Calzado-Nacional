@@ -1,6 +1,6 @@
 ﻿namespace Main.Reportes
 {
-    partial class ReporteDetallePedidos
+    partial class ReporteClientesAll
     {
         /// <summary>
         /// Required designer variable.
@@ -32,19 +32,19 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataSet = new Main.Reportes.DataSet();
-            this.ListaDetallePedidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ListaDetallePedidosTableAdapter = new Main.Reportes.DataSetTableAdapters.ListaDetallePedidosTableAdapter();
+            this.ListarClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ListarClientesTableAdapter = new Main.Reportes.DataSetTableAdapters.ListarClientesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaDetallePedidosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListarClientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.ListaDetallePedidosBindingSource;
+            reportDataSource1.Value = this.ListarClientesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Main.Reportes.DetallePedidos.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Main.Reportes.ClienteAll.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -56,27 +56,26 @@
             this.DataSet.DataSetName = "DataSet";
             this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ListaDetallePedidosBindingSource
+            // ListarClientesBindingSource
             // 
-            this.ListaDetallePedidosBindingSource.DataMember = "ListaDetallePedidos";
-            this.ListaDetallePedidosBindingSource.DataSource = this.DataSet;
+            this.ListarClientesBindingSource.DataMember = "ListarClientes";
+            this.ListarClientesBindingSource.DataSource = this.DataSet;
             // 
-            // ListaDetallePedidosTableAdapter
+            // ListarClientesTableAdapter
             // 
-            this.ListaDetallePedidosTableAdapter.ClearBeforeFill = true;
+            this.ListarClientesTableAdapter.ClearBeforeFill = true;
             // 
-            // ReporteDetallePedidos
+            // ReporteClientesAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ReporteDetallePedidos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReporteDetallePedidos";
-            this.Load += new System.EventHandler(this.ReporteDetallePedidos_Load);
+            this.Name = "ReporteClientesAll";
+            this.Text = "ReporteClientesAll";
+            this.Load += new System.EventHandler(this.ReporteClientesAll_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaDetallePedidosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListarClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,8 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource ListaDetallePedidosBindingSource;
+        private System.Windows.Forms.BindingSource ListarClientesBindingSource;
         private DataSet DataSet;
-        private DataSetTableAdapters.ListaDetallePedidosTableAdapter ListaDetallePedidosTableAdapter;
+        private DataSetTableAdapters.ListarClientesTableAdapter ListarClientesTableAdapter;
     }
 }

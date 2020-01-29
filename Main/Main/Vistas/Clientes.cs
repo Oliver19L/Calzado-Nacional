@@ -58,27 +58,27 @@ namespace Main.Vistas
 
         public SqlParameter[] parametroNuevo()
         {
-            SqlParameter[] param = new SqlParameter[10];
+            SqlParameter[] param = new SqlParameter[9];
 
             
-            param[1] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
-            param[1].Value = txtPrimerNombre.Text;
-            param[2] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
-            param[2].Value = txtSegundoNombre.Text;
-            param[3] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
-            param[3].Value = txtPrimerA.Text;
-            param[4] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
-            param[4].Value = txtSegundoA.Text;
-            param[5] = new SqlParameter("@Email", SqlDbType.NVarChar);
-            param[5].Value = txtEmail.Text;
-            param[6] = new SqlParameter("@Telefono", SqlDbType.Char);
-            param[6].Value = mskTele.Text;
-            param[7] = new SqlParameter("@Celular", SqlDbType.Char);
-            param[7].Value = mskCelular.Text;
-            param[8] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
-            param[8].Value = txtDireccion.Text;
-            param[9] = new SqlParameter("@IdMunic", SqlDbType.Int);
-            param[9].Value = comboBox1.SelectedValue;
+            param[0] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
+            param[0].Value = txtPrimerNombre.Text;
+            param[1] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
+            param[1].Value = txtSegundoNombre.Text;
+            param[2] = new SqlParameter("@PrimApellid", SqlDbType.NVarChar);
+            param[2].Value = txtPrimerA.Text;
+            param[3] = new SqlParameter("@SegundApellid", SqlDbType.NVarChar);
+            param[3].Value = txtSegundoA.Text;
+            param[4] = new SqlParameter("@Email", SqlDbType.NVarChar);
+            param[4].Value = txtEmail.Text;
+            param[5] = new SqlParameter("@Telefono", SqlDbType.Char);
+            param[5].Value = mskTele.Text;
+            param[6] = new SqlParameter("@Celular", SqlDbType.Char);
+            param[6].Value = mskCelular.Text;
+            param[7] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
+            param[7].Value = txtDireccion.Text;
+            param[8] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[8].Value = comboBox1.SelectedValue;
 
             return param;
         }

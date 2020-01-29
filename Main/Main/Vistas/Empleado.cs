@@ -22,13 +22,13 @@ namespace Main.Vistas
 
         private DataRow drEmpleados;
 
-        public EditarTrabajador(Conexion cone,Boolean obt)
+        public EditarTrabajador(Conexion cone, Boolean obt)
         {
             this.conex = cone;
             InitializeComponent();
             Combo(obt);
-            
-            
+
+
 
 
         }
@@ -40,7 +40,7 @@ namespace Main.Vistas
         public SqlParameter[] parametro()
         {
 
-           
+
             SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
             param[0].Value = txtPrimerNombre.Text;
@@ -62,7 +62,7 @@ namespace Main.Vistas
             param[8].Value = comboBox1.SelectedValue;
 
             return param;
-           
+
         }
 
         public SqlParameter[] EditarEmpleadosParam()
@@ -72,7 +72,7 @@ namespace Main.Vistas
 
 
             param[0] = new SqlParameter("@Id", SqlDbType.Int);
-            param[0].Value =txtId.Text;
+            param[0].Value = txtId.Text;
             param[1] = new SqlParameter("@PrimNombre", SqlDbType.NVarChar);
             param[1].Value = txtPrimerNombre.Text;
             param[2] = new SqlParameter("@SegundNombre", SqlDbType.NVarChar);
@@ -94,29 +94,31 @@ namespace Main.Vistas
 
             return param;
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
+                CampoVacios();
+                ValidacionTodo();
 
-            if (email_bien_escrito(txtEmail.Text))
-            {
-                conex.Insertados(parametro(), "NuevoEmpleado");
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Email mal Escrito");
-                txtEmail.Text = String.Empty;
-            }
-            
-            
+               // if (email_bien_escrito(txtEmail.Text))
+               // {
+                    conex.Insertados(parametro(), "NuevoEmpleado");
+                    this.Hide();
+              //  }
+             //   else
+               // {
+               //     MessageBox.Show("Email mal Escrito");
+               //     txtEmail.Text = String.Empty;
+             //   }
+
+
         }
 
-       
 
 
 
-       
+
+
 
         public DataRow DrEmpleados
         {
@@ -129,7 +131,7 @@ namespace Main.Vistas
                 txtPrimerA.Text = drEmpleados["Primer_Apellido"].ToString();
                 txtSegundoA.Text = drEmpleados["Segundo_Apellido"].ToString();
                 txtEmail.Text = drEmpleados["Email"].ToString();
-                mskCelular.Text = drEmpleados["Celular"].ToString(); 
+                mskCelular.Text = drEmpleados["Celular"].ToString();
                 mskTele.Text = drEmpleados["Telefono"].ToString();
                 txtDireccion.Text = drEmpleados["Direccion"].ToString();
                 Obtener(drEmpleados["Id_Munic"].ToString());
@@ -139,13 +141,13 @@ namespace Main.Vistas
         public void DrEmpleadosMuni(string Muni)
         {
 
-               comboBox1.Text = Muni;
+            comboBox1.Text = Muni;
 
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
+            ValidacionTodo();
             if (email_bien_escrito(txtEmail.Text))
             {
                 conex.editados(EditarEmpleadosParam(), "ActualizacionEmpleado");
@@ -156,7 +158,7 @@ namespace Main.Vistas
                 MessageBox.Show("Email mal Escrito");
                 txtEmail.Text = string.Empty;
             }
-           
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -192,9 +194,9 @@ namespace Main.Vistas
             mskTele.Enabled = false;
             txtDireccion.Enabled = false;
             comboBox1.Enabled = false;
-          
+
         }
-            
+
         public void BtnInsertar()
         {
             txtId.Enabled = false;
@@ -215,7 +217,7 @@ namespace Main.Vistas
             mskCelular.Text = String.Empty;
             mskTele.Text = String.Empty;
             txtDireccion.Text = String.Empty;
-           
+
         }
 
         private void EditarTrabajador_Load(object sender, EventArgs e)
@@ -230,9 +232,9 @@ namespace Main.Vistas
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+
             Municipios muni = new Municipios(conex);
-            
+
             muni.ShowDialog();
         }
 
@@ -248,13 +250,13 @@ namespace Main.Vistas
                 MessageBox.Show("Email mal Escrito");
                 txtEmail.Text = string.Empty;
             }
-            
-            
+
+
         }
 
         public void Combo(Boolean bolo)
         {
-           
+
 
             if (bolo) {
 
@@ -265,35 +267,35 @@ namespace Main.Vistas
                     CommandText = "ListarMunicipios"
                 };
 
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            DataTable dataTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
 
-            sqlDataAdapter.Fill(dataTable);
-            comboBox1.DataSource = dataTable;
-            comboBox1.ValueMember = "Id_Munic";
-            comboBox1.DisplayMember = "NombreMun";
+                sqlDataAdapter.Fill(dataTable);
+                comboBox1.DataSource = dataTable;
+                comboBox1.ValueMember = "Id_Munic";
+                comboBox1.DisplayMember = "NombreMun";
 
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            foreach (DataRow dr in dataTable.Rows)
-            {
-                collection.Add(Convert.ToString(dr["NombreMun"]));
-            }
+                AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    collection.Add(Convert.ToString(dr["NombreMun"]));
+                }
 
-            comboBox1.AutoCompleteCustomSource = collection;
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                comboBox1.AutoCompleteCustomSource = collection;
+                comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                comboBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
             else { }
 
 
-           
-           
+
+
         }
 
-        public void Obtener (String id)
+        public void Obtener(String id)
         {
 
-         
+
 
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@Id", SqlDbType.Int);
@@ -308,7 +310,7 @@ namespace Main.Vistas
             DataTable dtable = new DataTable();
             dat.Fill(dtable);
             comboBox1.DataSource = dtable;
-            comboBox1.ValueMember ="Id_Munic";
+            comboBox1.ValueMember = "Id_Munic";
             comboBox1.DisplayMember = "NombreMun";
 
 
@@ -333,6 +335,137 @@ namespace Main.Vistas
             else
             {
                 return false;
+            }
+        }
+
+        public bool ValidarCamposvacios(string Cadena)
+        {
+            bool flag = false;
+
+            foreach (Char caracter in Cadena)
+            {
+                if (char.IsDigit(caracter))
+                {
+                    flag = true;
+                    break;
+                }
+
+            }
+            return flag;
+
+        }
+        public bool ValidarCadenaNumeros(String Cadena)
+        {
+            bool flag2 = false;
+
+            foreach (Char caracter in Cadena)
+            {
+                if (char.IsLetter(caracter))
+                {
+                    flag2 = true;
+                    break;
+                }
+
+            }
+            return flag2;
+        }
+
+        private void ValidacionTodo()
+        {
+            if (ValidarCamposvacios(txtPrimerNombre.Text))
+            {
+                errorProvider1.SetError(txtPrimerNombre," Ingreso Un Numero");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+            if (ValidarCamposvacios(txtSegundoNombre.Text) )
+            {
+                errorProvider1.SetError(txtSegundoNombre, "Ingreso un numero donde solo se permiten letras");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+            if (ValidarCamposvacios(txtPrimerA.Text) )
+            {
+                errorProvider1.SetError(txtPrimerA, "Ingreso Un Numero");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+            if (ValidarCamposvacios(txtSegundoA.Text))
+            {
+                errorProvider1.SetError(txtSegundoA, "Ingreso Un Numero donde solo se permiten Letras");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+            if (txtEmail.Equals(""))
+            {
+                errorProvider1.SetError(txtEmail, "El Campo esta vacio ");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+            if (txtDireccion.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtDireccion, "El Campo esta vacio Obligatorio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+
+            if (ValidarCadenaNumeros(mskCelular.Text) || mskCelular.Text.Equals(""))
+            {
+                errorProvider1.SetError(mskCelular, "Ingreso un Caracter donde solo se permiten Numeros");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+            if (ValidarCadenaNumeros(mskTele.Text))
+            {
+                errorProvider1.SetError(mskTele, "Ingreso un Caracter donde solo se permiten Numeros");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+        }
+
+        public void CampoVacios()
+        {
+            if (txtPrimerNombre.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtPrimerNombre, "El campo esta vacio");
+            }
+            else
+            {
+             //   errorProvider1.Clear();
+            }
+
+
+            if (txtPrimerA.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtPrimerA, "El campo esta vacio");
+            }
+            else
+            {
+               // errorProvider1.Clear();
             }
         }
 

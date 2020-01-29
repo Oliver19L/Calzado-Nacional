@@ -219,7 +219,7 @@
             this.btnActu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnActu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnActu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActu.Location = new System.Drawing.Point(273, 324);
+            this.btnActu.Location = new System.Drawing.Point(331, 293);
             this.btnActu.Name = "btnActu";
             this.btnActu.Size = new System.Drawing.Size(75, 27);
             this.btnActu.TabIndex = 62;
@@ -231,7 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 365);
+            this.ClientSize = new System.Drawing.Size(444, 365);
             this.Controls.Add(this.btnActu);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnelim);

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Main.Reportes;
 
 namespace Main.Vistas
 {
@@ -81,6 +82,12 @@ namespace Main.Vistas
             ET.BtnInsertar();
             ET.ShowDialog();
             ListaC();
+        }
+
+        private void btnReporteAll_Click(object sender, EventArgs e)
+        {
+            ReporteClientesAll rcl = new ReporteClientesAll();
+            rcl.ShowDialog();
         }
     }
 }

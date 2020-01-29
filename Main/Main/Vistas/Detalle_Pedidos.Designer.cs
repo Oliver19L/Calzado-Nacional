@@ -37,8 +37,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDetallePedido = new System.Windows.Forms.TextBox();
-            this.txtIdPedido = new System.Windows.Forms.TextBox();
-            this.txtCodigo_Producto = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtSub_Total = new System.Windows.Forms.TextBox();
@@ -49,6 +47,8 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -123,20 +123,6 @@
             this.txtDetallePedido.Size = new System.Drawing.Size(100, 20);
             this.txtDetallePedido.TabIndex = 7;
             // 
-            // txtIdPedido
-            // 
-            this.txtIdPedido.Location = new System.Drawing.Point(309, 45);
-            this.txtIdPedido.Name = "txtIdPedido";
-            this.txtIdPedido.Size = new System.Drawing.Size(100, 20);
-            this.txtIdPedido.TabIndex = 8;
-            // 
-            // txtCodigo_Producto
-            // 
-            this.txtCodigo_Producto.Location = new System.Drawing.Point(113, 96);
-            this.txtCodigo_Producto.Name = "txtCodigo_Producto";
-            this.txtCodigo_Producto.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo_Producto.TabIndex = 9;
-            // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(113, 143);
@@ -150,6 +136,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 11;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // txtSub_Total
             // 
@@ -249,12 +236,34 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(310, 45);
+            this.maskedTextBox1.Mask = "0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 19;
+            this.maskedTextBox1.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(113, 96);
+            this.maskedTextBox2.Mask = "0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox2.TabIndex = 20;
+            this.maskedTextBox2.MaskChanged += new System.EventHandler(this.maskedTextBox2_MaskChanged);
+            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            this.maskedTextBox2.TextChanged += new System.EventHandler(this.maskedTextBox2_TextChanged);
+            // 
             // Detalle_Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(460, 275);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
@@ -264,8 +273,6 @@
             this.Controls.Add(this.txtSub_Total);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtCodigo_Producto);
-            this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.txtDetallePedido);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -295,8 +302,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDetallePedido;
-        private System.Windows.Forms.TextBox txtIdPedido;
-        private System.Windows.Forms.TextBox txtCodigo_Producto;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtSub_Total;
@@ -307,5 +312,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
     }
 }
