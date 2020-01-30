@@ -48,7 +48,7 @@ namespace Main.Vistas
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+           
             
             con.Insertados(Parametro(),"NuevoPedido");
             this.Hide();
@@ -127,6 +127,44 @@ namespace Main.Vistas
         {
             con.eliminarChar(mskId.Text,"EliminarPedidos","@ID");
             
+        }
+
+        private void mskId_Validating(object sender, CancelEventArgs e)
+        {
+            if (mskId.Text.Equals(""))
+            {
+                errorProvider1.SetError(mskId,"El campo esta vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+        }
+
+        private void txtID_Cliente_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtID_Cliente.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtID_Cliente, "El campo esta vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void dtpFechaF_Validating(object sender, CancelEventArgs e)
+        {
+          if(dtpFechaF.Value <= DateTime.Now.Date)
+            {
+                errorProvider1.SetError(dtpFechaF,"El Valor de la fecha es incorrecto");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+          
         }
     }
 

@@ -22,6 +22,12 @@ namespace Main.Vistas
             this.cone = con;
             InitializeComponent();
         }
+
+        public Inventarios()
+        {
+            
+        }
+
         public DataRow DrInventario
         {
             set
@@ -139,6 +145,13 @@ namespace Main.Vistas
 
         public void Validaciones()
         {
+            
+
+
+        }
+
+        private void txtId_Validating(object sender, CancelEventArgs e)
+        {
             if (txtId.Text.Equals(""))
             {
                 errorProvider1.SetError(txtId, "Campo Vacio");
@@ -147,10 +160,69 @@ namespace Main.Vistas
             {
                 errorProvider1.Clear();
             }
-
-
         }
 
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombre.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtNombre, "Campo Vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
 
+        private void txtDescripcion_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtDescripcion.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtDescripcion, "Campo Vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        public bool ValidarLetra(String Texto)
+        {
+            bool flag = false;
+            foreach(char cadena in Texto)
+            {
+                if (char.IsLetter(cadena))
+                {
+                    flag = true;
+                    break;
+                }
+            }
+
+            return flag;
+        }
+
+        private void txtCantidad_Validating(object sender, CancelEventArgs e)
+        {
+            if(txtCantidad.Text.Equals("") || ValidarLetra(txtCantidad.Text))
+            {
+                errorProvider1.SetError(txtCantidad, "El campo vacio o Ingreso Una letra");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void txtPrecio_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtPrecio.Text.Equals("") || ValidarLetra(txtPrecio.Text))
+            {
+                errorProvider1.SetError(txtPrecio, "El campo vacio o Ingreso Una letra");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
     }
 }

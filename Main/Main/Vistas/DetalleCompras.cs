@@ -11,20 +11,25 @@ using System.Windows.Forms;
 
 namespace Main.Vistas
 {
-    public partial class Venta : Form
+    public partial class DetalleCompras : Form
     {
         private Conexion con;
-        public Venta(Conexion com)
+        public DetalleCompras(Conexion con)
         {
-            this.con = com;
+            this.con = con;
             InitializeComponent();
-            txtID_Venta.Enabled = false;
-            maskedTextBox2.Text = Convert.ToString(DateTime.Now.Date);
         }
 
-        private void Venta_Load(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+            txtID.Text = "";
+            txtNFactura.Text = "";
+            txtConcepto.Text = "";
+            txtPrecio.Text = "";
+            txtCantidad.Text = "";
+            txtDescuento.Text = "";
+            txtSub_Total.Text = "";
+            txtIva.Text = "";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -32,19 +37,7 @@ namespace Main.Vistas
             this.Hide();
         }
 
-        private void textBox1_Validating(object sender, CancelEventArgs e)
-        {
-            if (textBox1.Text.Equals(""))
-            {
-                errorProvider1.SetError(textBox1, "El campo esta vacio");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-        }
-
-        public void btnNuevaV()
+        public void btnNuevaDC()
         {
             btnActualizar.Enabled = false;
             btnActualizar.Visible = false;
@@ -52,7 +45,7 @@ namespace Main.Vistas
             btnelim.Visible = false;
         }
 
-        public void btnEliminarV()
+        public void btnEliminarDC()
         {
             btnActualizar.Enabled = false;
             btnActualizar.Visible = false;
@@ -60,7 +53,7 @@ namespace Main.Vistas
             btnInsertar.Visible = false;
         }
 
-        public void btnEditarV()
+        public void btnEditarDC()
         {
             btnInsertar.Enabled = false;
             btnInsertar.Visible = false;

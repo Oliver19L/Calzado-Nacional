@@ -13,29 +13,39 @@ namespace Main.Vistas
 {
     public partial class Compras : Form
     {
-
         private Conexion cone;
-        public Compras()
+        public Compras(Conexion cone)
         {
+            this.cone = cone;
             InitializeComponent();
         }
-        public Compras(Conexion con)
+
+
+        public void btnNuevaC()
         {
-            this.cone = con;
-            InitializeComponent();
-            ListarCompras(cone);
+            btnActualizar.Enabled = false;
+            btnActualizar.Visible = false;
+            btnelim.Enabled = false;
+            btnelim.Visible = false;
+        }
+
+        public void btnEliminarC()
+        {
+            btnActualizar.Enabled = false;
+            btnActualizar.Visible = false;
+            btnInsertar.Enabled = false;
+            btnInsertar.Visible = false;
+        }
+
+        public void btnEditarC()
+        {
+            btnInsertar.Enabled = false;
+            btnInsertar.Visible = false;
+            btnelim.Enabled = false;
+            btnelim.Visible = false;
         }
 
 
 
-        private void ListarCompras(Conexion cone)
-        {
-            cone.Listados(dgvCompras, "ListarCompra");
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

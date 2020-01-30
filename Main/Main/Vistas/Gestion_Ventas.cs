@@ -44,5 +44,25 @@ namespace Main.Vistas
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Venta venta = new Venta(cone);
+            venta.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Venta venta = new Venta(cone);
+            venta.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+
+            Venta venta = new Venta(cone);
+            venta.ShowDialog();
+        }
     }
 }

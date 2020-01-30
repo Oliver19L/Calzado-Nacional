@@ -19,7 +19,7 @@ namespace Main.Vistas
             this.con = con;
             InitializeComponent();
             ListarProveedor();
-            listarDetalleProveedor();
+          
         }
 
         public void ListarProveedor()
@@ -27,11 +27,13 @@ namespace Main.Vistas
             con.Listados(dgvProveedores, "ListaProveedor");
             
         }
-        public void listarDetalleProveedor()
-        {
-            con.Listados(dgvdetalleProveedores, "");
-        }
+       
         private void Gestion_Proveedores_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }

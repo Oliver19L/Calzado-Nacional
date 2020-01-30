@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,8 +45,10 @@
             this.dtpFechaF = new System.Windows.Forms.DateTimePicker();
             this.mskId = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,6 +77,7 @@
             this.txtID_Cliente.Name = "txtID_Cliente";
             this.txtID_Cliente.Size = new System.Drawing.Size(100, 20);
             this.txtID_Cliente.TabIndex = 3;
+            this.txtID_Cliente.Validating += new System.ComponentModel.CancelEventHandler(this.txtID_Cliente_Validating);
             // 
             // mskFecha_Pedido
             // 
@@ -114,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 198);
+            this.label4.Location = new System.Drawing.Point(6, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 9;
@@ -185,10 +189,11 @@
             // 
             // dtpFechaF
             // 
-            this.dtpFechaF.Location = new System.Drawing.Point(119, 191);
+            this.dtpFechaF.Location = new System.Drawing.Point(112, 176);
             this.dtpFechaF.Name = "dtpFechaF";
             this.dtpFechaF.Size = new System.Drawing.Size(93, 20);
             this.dtpFechaF.TabIndex = 14;
+            this.dtpFechaF.Validating += new System.ComponentModel.CancelEventHandler(this.dtpFechaF_Validating);
             // 
             // mskId
             // 
@@ -197,6 +202,7 @@
             this.mskId.Name = "mskId";
             this.mskId.Size = new System.Drawing.Size(40, 20);
             this.mskId.TabIndex = 15;
+            this.mskId.Validating += new System.ComponentModel.CancelEventHandler(this.mskId_Validating);
             // 
             // label5
             // 
@@ -207,6 +213,10 @@
             this.label5.Size = new System.Drawing.Size(61, 19);
             this.label5.TabIndex = 16;
             this.label5.Text = "Pedidos";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Pedidos
             // 
@@ -235,6 +245,7 @@
             this.Load += new System.EventHandler(this.Pedidos_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,5 +268,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaF;
         private System.Windows.Forms.MaskedTextBox mskId;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

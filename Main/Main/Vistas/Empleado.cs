@@ -96,22 +96,9 @@ namespace Main.Vistas
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-                CampoVacios();
-                ValidacionTodo();
-
-               // if (email_bien_escrito(txtEmail.Text))
-               // {
+        {    
                     conex.Insertados(parametro(), "NuevoEmpleado");
                     this.Hide();
-              //  }
-             //   else
-               // {
-               //     MessageBox.Show("Email mal Escrito");
-               //     txtEmail.Text = String.Empty;
-             //   }
-
-
         }
 
 
@@ -147,17 +134,10 @@ namespace Main.Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            ValidacionTodo();
-            if (email_bien_escrito(txtEmail.Text))
-            {
-                conex.editados(EditarEmpleadosParam(), "ActualizacionEmpleado");
+          
+             conex.editados(EditarEmpleadosParam(), "ActualizacionEmpleado");
                 this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Email mal Escrito");
-                txtEmail.Text = string.Empty;
-            }
+            
 
         }
 
@@ -325,16 +305,16 @@ namespace Main.Vistas
             {
                 if (Regex.Replace(email, expresion, String.Empty).Length == 0)
                 {
-                    return true;
+                    return false;
                 }
                 else
                 {
-                    return false;
+                    return true;
                 }
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
@@ -370,104 +350,110 @@ namespace Main.Vistas
             return flag2;
         }
 
-        private void ValidacionTodo()
+       
+        
+        
+
+        private void txtPrimerNombre_Validating(object sender, CancelEventArgs e)
         {
-            if (ValidarCamposvacios(txtPrimerNombre.Text))
+
+
+
+            if (txtPrimerNombre.Text.Equals("") || ValidarCamposvacios(txtPrimerNombre.Text))
             {
-                errorProvider1.SetError(txtPrimerNombre," Ingreso Un Numero");
+                errorProvider1.SetError(txtPrimerNombre, "El campo esta vacio o Ingreso un numero");
             }
             else
             {
                 errorProvider1.Clear();
             }
+        }
 
-            if (ValidarCamposvacios(txtSegundoNombre.Text) )
+        private void EditarTrabajador_Validating(object sender, CancelEventArgs e)
+        {
+            
+        }
+
+        private void txtSegundoNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (ValidarCamposvacios(txtSegundoNombre.Text))
             {
-                errorProvider1.SetError(txtSegundoNombre, "Ingreso un numero donde solo se permiten letras");
+                errorProvider1.SetError(txtSegundoNombre, "Ingreso un numero");
             }
             else
             {
                 errorProvider1.Clear();
             }
+        }
 
-            if (ValidarCamposvacios(txtPrimerA.Text) )
+        private void txtPrimerA_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtPrimerA.Text.Equals("") || ValidarCamposvacios(txtPrimerA.Text))
             {
-                errorProvider1.SetError(txtPrimerA, "Ingreso Un Numero");
+                errorProvider1.SetError(txtPrimerA, "El campo esta vacio o Ingreso un numero");
             }
             else
             {
                 errorProvider1.Clear();
             }
+        }
 
+        private void txtSegundoA_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (email_bien_escrito(txtEmail.Text))
+            {
+                errorProvider1.SetError(txtEmail, "El campo esta vacio o El Email no es correcto");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void mskCelular_Validating(object sender, CancelEventArgs e)
+        {
+            if (mskCelular.Text.Equals("") )
+            {
+                errorProvider1.SetError(mskCelular, "El campo esta vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtDireccion_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (txtDireccion.Text.Equals("")  )
+            {
+                errorProvider1.SetError(txtDireccion, "El campo esta vacio ");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void txtSegundoA_Validating(object sender, CancelEventArgs e)
+        {
             if (ValidarCamposvacios(txtSegundoA.Text))
             {
-                errorProvider1.SetError(txtSegundoA, "Ingreso Un Numero donde solo se permiten Letras");
+                errorProvider1.SetError(txtSegundoA, "Ingreso un numero");
             }
             else
             {
                 errorProvider1.Clear();
-            }
-
-            if (txtEmail.Equals(""))
-            {
-                errorProvider1.SetError(txtEmail, "El Campo esta vacio ");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-
-            if (txtDireccion.Text.Equals(""))
-            {
-                errorProvider1.SetError(txtDireccion, "El Campo esta vacio Obligatorio");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-
-
-            if (ValidarCadenaNumeros(mskCelular.Text) || mskCelular.Text.Equals(""))
-            {
-                errorProvider1.SetError(mskCelular, "Ingreso un Caracter donde solo se permiten Numeros");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-
-            if (ValidarCadenaNumeros(mskTele.Text))
-            {
-                errorProvider1.SetError(mskTele, "Ingreso un Caracter donde solo se permiten Numeros");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-
-        }
-
-        public void CampoVacios()
-        {
-            if (txtPrimerNombre.Text.Equals(""))
-            {
-                errorProvider1.SetError(txtPrimerNombre, "El campo esta vacio");
-            }
-            else
-            {
-             //   errorProvider1.Clear();
-            }
-
-
-            if (txtPrimerA.Text.Equals(""))
-            {
-                errorProvider1.SetError(txtPrimerA, "El campo esta vacio");
-            }
-            else
-            {
-               // errorProvider1.Clear();
             }
         }
-
     }
 }

@@ -43,7 +43,7 @@ namespace Main
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Compras(Con));
+            AbrirFormEnPanel(new Gestion_Compras(Con));
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

@@ -77,6 +77,7 @@
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(175, 20);
             this.txtPrimerNombre.TabIndex = 1;
+            this.txtPrimerNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrimerNombre_Validating);
             // 
             // txtSegundoNombre
             // 
@@ -84,6 +85,7 @@
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(175, 20);
             this.txtSegundoNombre.TabIndex = 2;
+            this.txtSegundoNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtSegundoNombre_Validating);
             // 
             // txtPrimerA
             // 
@@ -91,6 +93,7 @@
             this.txtPrimerA.Name = "txtPrimerA";
             this.txtPrimerA.Size = new System.Drawing.Size(175, 20);
             this.txtPrimerA.TabIndex = 3;
+            this.txtPrimerA.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrimerA_Validating);
             // 
             // txtSegundoA
             // 
@@ -98,6 +101,8 @@
             this.txtSegundoA.Name = "txtSegundoA";
             this.txtSegundoA.Size = new System.Drawing.Size(175, 20);
             this.txtSegundoA.TabIndex = 4;
+            this.txtSegundoA.TextChanged += new System.EventHandler(this.txtSegundoA_TextChanged);
+            this.txtSegundoA.Validating += new System.ComponentModel.CancelEventHandler(this.txtSegundoA_Validating);
             // 
             // txtEmail
             // 
@@ -105,14 +110,17 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(207, 20);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(488, 225);
+            this.txtDireccion.Location = new System.Drawing.Point(470, 224);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(210, 78);
             this.txtDireccion.TabIndex = 8;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
+            this.txtDireccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtDireccion_Validating);
             // 
             // label1
             // 
@@ -162,7 +170,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(427, 136);
+            this.label6.Location = new System.Drawing.Point(409, 135);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 16;
@@ -171,7 +179,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(427, 180);
+            this.label7.Location = new System.Drawing.Point(406, 183);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 17;
@@ -180,7 +188,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(427, 228);
+            this.label8.Location = new System.Drawing.Point(409, 227);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 18;
@@ -189,7 +197,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(426, 88);
+            this.label9.Location = new System.Drawing.Point(408, 87);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 13);
             this.label9.TabIndex = 19;
@@ -206,7 +214,7 @@
             // 
             // mskTele
             // 
-            this.mskTele.Location = new System.Drawing.Point(488, 136);
+            this.mskTele.Location = new System.Drawing.Point(470, 135);
             this.mskTele.Mask = "00000000";
             this.mskTele.Name = "mskTele";
             this.mskTele.Size = new System.Drawing.Size(65, 20);
@@ -214,11 +222,12 @@
             // 
             // mskCelular
             // 
-            this.mskCelular.Location = new System.Drawing.Point(488, 177);
+            this.mskCelular.Location = new System.Drawing.Point(470, 176);
             this.mskCelular.Mask = "00000000";
             this.mskCelular.Name = "mskCelular";
             this.mskCelular.Size = new System.Drawing.Size(65, 20);
             this.mskCelular.TabIndex = 22;
+            this.mskCelular.Validating += new System.ComponentModel.CancelEventHandler(this.mskCelular_Validating);
             // 
             // btnInsertar
             // 
@@ -330,7 +339,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(503, 88);
+            this.comboBox1.Location = new System.Drawing.Point(485, 87);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(127, 21);
             this.comboBox1.TabIndex = 30;
@@ -345,7 +354,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(720, 412);
+            this.ClientSize = new System.Drawing.Size(696, 412);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnelim);
             this.Controls.Add(this.panel1);
@@ -377,6 +386,7 @@
             this.Name = "EditarTrabajador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.EditarTrabajador_Load);
+            this.Validating += new System.ComponentModel.CancelEventHandler(this.EditarTrabajador_Validating);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

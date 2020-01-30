@@ -20,6 +20,7 @@ namespace Main.Vistas
         {
             this.con = con;
             InitializeComponent();
+            txtSub_Total.Enabled = false;
         }
 
         public DataRow DrDetallePedido
@@ -221,6 +222,68 @@ namespace Main.Vistas
 
                 }
                 lector.Close();
+            }
+        }
+
+        private void maskedTextBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (maskedTextBox2.Text.Equals(""))
+            {
+                errorProvider1.SetError(maskedTextBox2, "El campo esta Vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        Inventarios inv = new Inventarios();
+
+        private void txtPrecio_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtPrecio.Text.Equals("") || inv.ValidarLetra(txtPrecio.Text))
+            {
+                errorProvider1.SetError(txtPrecio, "El campo vacio o Ingreso Una letra");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void txtCantidad_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCantidad.Text.Equals("") || inv.ValidarLetra(txtCantidad.Text))
+            {
+                errorProvider1.SetError(txtCantidad, "El campo esta vacio o Ingreso Una letra");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void maskedTextBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (maskedTextBox1.Text.Equals(""))
+            {
+                errorProvider1.SetError(maskedTextBox1, "El campo esta vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void txtDescripcion_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtDescripcion.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtDescripcion, "El campo esta vacio");
+            }
+            else
+            {
+                errorProvider1.Clear();
             }
         }
     }
