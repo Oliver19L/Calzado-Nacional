@@ -40,6 +40,7 @@
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,12 +176,28 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnExportar
+            // 
+            this.btnExportar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnExportar.FlatAppearance.BorderSize = 2;
+            this.btnExportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnExportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Location = new System.Drawing.Point(15, 494);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(106, 25);
+            this.btnExportar.TabIndex = 29;
+            this.btnExportar.Text = "Exportar a Excel";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // Gestion_Trabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1331, 531);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label1);
@@ -210,5 +227,6 @@
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

@@ -37,5 +37,53 @@ namespace Main.Vistas
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rowCollection = dgvProveedores.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+            Proveedor pro = new Proveedor(con, false);
+            pro.DRPROVEEDOR = drow;
+            pro.Combo(false);
+            pro.btnEliminarP();
+            pro.ShowDialog();
+            ListarProveedor();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rowCollection = dgvProveedores.SelectedRows;
+
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show(this, "ERROR, debe seleccionar una fila de la tabla para poder editar", "Mensaje de ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DataGridViewRow gridRow = rowCollection[0];
+            DataRow drow = ((DataRowView)gridRow.DataBoundItem).Row;
+
+            Proveedor fp = new Proveedor(con, false);
+            fp.DRPROVEEDOR = drow;
+            fp.Combo(false);
+            fp.btnEditarP();
+            fp.ShowDialog();
+            ListarProveedor();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Proveedor prov = new Proveedor(con,true);
+            prov.btnNuevaP();
+            prov.ShowDialog();
+            ListarProveedor();
+        }
     }
 }

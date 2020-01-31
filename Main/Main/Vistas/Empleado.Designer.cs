@@ -294,10 +294,10 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label11.Location = new System.Drawing.Point(275, 30);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label11.Location = new System.Drawing.Point(322, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(154, 33);
+            this.label11.Size = new System.Drawing.Size(116, 25);
             this.label11.TabIndex = 27;
             this.label11.Text = "Empleado";
             // 
@@ -305,6 +305,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(696, 28);
@@ -358,7 +359,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnelim);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnActualizar);
@@ -388,6 +388,7 @@
             this.Load += new System.EventHandler(this.EditarTrabajador_Load);
             this.Validating += new System.ComponentModel.CancelEventHandler(this.EditarTrabajador_Validating);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
