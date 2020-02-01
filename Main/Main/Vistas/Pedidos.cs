@@ -48,10 +48,17 @@ namespace Main.Vistas
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            if (txtID_Cliente.Text.Equals("") || mskId.Text.Equals("") || dtpFechaF.Value <= DateTime.Now.Date)
+            {
+                con.Insertados(Parametro(), "NuevoPedido");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Error en los datos Ingresados");
+            }
            
-            
-            con.Insertados(Parametro(),"NuevoPedido");
-            this.Hide();
         }
 
         public SqlParameter[] Parametro()

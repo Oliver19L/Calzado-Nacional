@@ -63,6 +63,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.lbTiempo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -76,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -437,10 +439,11 @@
             // 
             this.lbTiempo.AutoSize = true;
             this.lbTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTiempo.Location = new System.Drawing.Point(631, 4);
+            this.lbTiempo.Location = new System.Drawing.Point(649, 17);
             this.lbTiempo.Name = "lbTiempo";
-            this.lbTiempo.Size = new System.Drawing.Size(0, 18);
+            this.lbTiempo.Size = new System.Drawing.Size(58, 18);
             this.lbTiempo.TabIndex = 7;
+            this.lbTiempo.Text = "Tiempo";
             // 
             // timer1
             // 
@@ -448,12 +451,23 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(610, 9);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(33, 26);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 8;
+            this.pictureBox13.TabStop = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1370, 486);
+            this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.lbTiempo);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -483,6 +497,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,6 +538,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lbTiempo;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox13;
     }
 }
 

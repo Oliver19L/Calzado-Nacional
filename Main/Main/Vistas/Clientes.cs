@@ -293,5 +293,15 @@ namespace Main.Vistas
                 return false;
             }
         }
+
+        private void Clientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

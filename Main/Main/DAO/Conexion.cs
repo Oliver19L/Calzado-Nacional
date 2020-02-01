@@ -102,19 +102,31 @@ namespace Main.DAO
         public void editados(SqlParameter[] param, String proce)
         {
 
-            SqlCommand cmd = new SqlCommand();
-         
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
 
 
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = proce;
-            cmd.Connection = connect;
-            cmd.Parameters.AddRange(param);
 
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = proce;
+                cmd.Connection = connect;
+                cmd.Parameters.AddRange(param);
 
-            da.Fill(ds);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(ds);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error en el Editado     " + ex.Message);
+                return;
+            }
+
+
 
 
         }

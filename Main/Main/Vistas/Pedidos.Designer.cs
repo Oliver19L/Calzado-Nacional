@@ -31,7 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.txtID_Cliente = new System.Windows.Forms.TextBox();
             this.mskFecha_Pedido = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,44 +48,57 @@
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 24);
+            this.panel1.Size = new System.Drawing.Size(350, 24);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // button2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(256, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(324, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(26, 24);
+            this.button2.TabIndex = 66;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(292, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(26, 24);
+            this.button4.TabIndex = 65;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // txtID_Cliente
             // 
-            this.txtID_Cliente.Location = new System.Drawing.Point(112, 92);
+            this.txtID_Cliente.Location = new System.Drawing.Point(227, 51);
             this.txtID_Cliente.Name = "txtID_Cliente";
-            this.txtID_Cliente.Size = new System.Drawing.Size(100, 20);
+            this.txtID_Cliente.Size = new System.Drawing.Size(72, 20);
             this.txtID_Cliente.TabIndex = 3;
             this.txtID_Cliente.Validating += new System.ComponentModel.CancelEventHandler(this.txtID_Cliente_Validating);
             // 
             // mskFecha_Pedido
             // 
-            this.mskFecha_Pedido.Location = new System.Drawing.Point(112, 132);
+            this.mskFecha_Pedido.Location = new System.Drawing.Point(112, 91);
             this.mskFecha_Pedido.Mask = "00/00/0000 00:00";
             this.mskFecha_Pedido.Name = "mskFecha_Pedido";
-            this.mskFecha_Pedido.Size = new System.Drawing.Size(100, 20);
+            this.mskFecha_Pedido.Size = new System.Drawing.Size(118, 20);
             this.mskFecha_Pedido.TabIndex = 4;
             this.mskFecha_Pedido.ValidatingType = typeof(System.DateTime);
             // 
@@ -100,7 +114,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 99);
+            this.label2.Location = new System.Drawing.Point(155, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 7;
@@ -109,7 +123,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 139);
+            this.label3.Location = new System.Drawing.Point(12, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 8;
@@ -118,7 +132,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 183);
+            this.label4.Location = new System.Drawing.Point(-2, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 9;
@@ -132,11 +146,14 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(112, 217);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(128, 169);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.Size = new System.Drawing.Size(110, 28);
             this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
+            this.button1.Text = "Limpiar Campos";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
@@ -147,11 +164,14 @@
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(227, 210);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(244, 169);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(64, 30);
+            this.btnEliminar.Size = new System.Drawing.Size(93, 28);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -163,11 +183,14 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(227, 132);
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(244, 169);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(64, 30);
+            this.button3.Size = new System.Drawing.Size(93, 28);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Ingresar";
+            this.button3.Text = "Guardar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -179,28 +202,31 @@
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(227, 176);
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(244, 169);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(64, 28);
+            this.btnEditar.Size = new System.Drawing.Size(93, 28);
             this.btnEditar.TabIndex = 13;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "Actualizar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // dtpFechaF
             // 
-            this.dtpFechaF.Location = new System.Drawing.Point(112, 176);
+            this.dtpFechaF.Location = new System.Drawing.Point(112, 126);
             this.dtpFechaF.Name = "dtpFechaF";
-            this.dtpFechaF.Size = new System.Drawing.Size(93, 20);
+            this.dtpFechaF.Size = new System.Drawing.Size(122, 20);
             this.dtpFechaF.TabIndex = 14;
             this.dtpFechaF.Validating += new System.ComponentModel.CancelEventHandler(this.dtpFechaF_Validating);
             // 
             // mskId
             // 
-            this.mskId.Location = new System.Drawing.Point(112, 55);
+            this.mskId.Location = new System.Drawing.Point(82, 55);
             this.mskId.Mask = "0000";
             this.mskId.Name = "mskId";
-            this.mskId.Size = new System.Drawing.Size(40, 20);
+            this.mskId.Size = new System.Drawing.Size(59, 20);
             this.mskId.TabIndex = 15;
             this.mskId.Validating += new System.ComponentModel.CancelEventHandler(this.mskId_Validating);
             // 
@@ -223,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(298, 251);
+            this.ClientSize = new System.Drawing.Size(350, 205);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.mskId);
             this.Controls.Add(this.dtpFechaF);
@@ -244,7 +270,6 @@
             this.Text = "Pedidos";
             this.Load += new System.EventHandler(this.Pedidos_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -260,7 +285,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button button3;
@@ -269,5 +293,7 @@
         private System.Windows.Forms.MaskedTextBox mskId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -22,6 +22,8 @@ namespace Main.Vistas
           
         }
 
+        
+
         public void ListarProveedor()
         {
             con.Listados(dgvProveedores, "ListaProveedor");
@@ -72,7 +74,7 @@ namespace Main.Vistas
 
             Proveedor fp = new Proveedor(con, false);
             fp.DRPROVEEDOR = drow;
-            fp.Combo(false);
+            fp.Combo(true);
             fp.btnEditarP();
             fp.ShowDialog();
             ListarProveedor();

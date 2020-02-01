@@ -44,7 +44,7 @@
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedores.Location = new System.Drawing.Point(12, 79);
             this.dgvProveedores.Name = "dgvProveedores";
-            this.dgvProveedores.Size = new System.Drawing.Size(549, 397);
+            this.dgvProveedores.Size = new System.Drawing.Size(800, 397);
             this.dgvProveedores.TabIndex = 0;
             // 
             // btnEditar

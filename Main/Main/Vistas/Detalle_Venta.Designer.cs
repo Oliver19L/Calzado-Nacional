@@ -44,18 +44,18 @@
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.txtSub_Total = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +142,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(359, 84);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(123, 42);
+            this.txtDescripcion.Size = new System.Drawing.Size(136, 42);
             this.txtDescripcion.TabIndex = 10;
             this.txtDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.txtDescripcion_Validating);
             // 
@@ -172,22 +172,23 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(526, 28);
             this.panel1.TabIndex = 14;
             // 
-            // pictureBox1
+            // label9
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(497, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(213, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(140, 24);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Detalle Venta:";
             // 
             // txtPrecio
             // 
@@ -212,11 +213,14 @@
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(376, 243);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(427, 246);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 27);
+            this.btnEliminar.Size = new System.Drawing.Size(87, 25);
             this.btnEliminar.TabIndex = 39;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar
@@ -227,27 +231,15 @@
             this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimpiar.Location = new System.Drawing.Point(194, 284);
+            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.Location = new System.Drawing.Point(313, 246);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(106, 26);
+            this.btnLimpiar.Size = new System.Drawing.Size(108, 25);
             this.btnLimpiar.TabIndex = 38;
             this.btnLimpiar.Text = "Limpiar Campos";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.White;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btnCancelar.FlatAppearance.BorderSize = 2;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(387, 283);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 27);
-            this.btnCancelar.TabIndex = 37;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // btnEditar
             // 
@@ -256,11 +248,14 @@
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(274, 243);
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(427, 246);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 27);
+            this.btnEditar.Size = new System.Drawing.Size(87, 25);
             this.btnEditar.TabIndex = 36;
             this.btnEditar.Text = "Actualizar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnNuevo
@@ -270,11 +265,14 @@
             this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Location = new System.Drawing.Point(306, 283);
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(427, 246);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 27);
+            this.btnNuevo.Size = new System.Drawing.Size(87, 25);
             this.btnNuevo.TabIndex = 35;
-            this.btnNuevo.Text = "Insertar";
+            this.btnNuevo.Text = "Guardar";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // maskedTextBox2
@@ -291,16 +289,42 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SkyBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(462, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 28);
+            this.button1.TabIndex = 67;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SkyBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(496, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 28);
+            this.button2.TabIndex = 68;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Detalle_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(526, 322);
+            this.ClientSize = new System.Drawing.Size(526, 286);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtPrecio);
@@ -324,7 +348,7 @@
             this.Text = "Detalle_Venta";
             this.Load += new System.EventHandler(this.Detalle_Venta_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -347,15 +371,16 @@
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.TextBox txtSub_Total;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

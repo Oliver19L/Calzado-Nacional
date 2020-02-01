@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,6 +36,8 @@ namespace Main.Vistas
                 txtNombre.Text = Drproveedor["Nombre_Proveedor"].ToString();
                 mskCelular.Text = Drproveedor["Celular"].ToString();
                 txtDireccion.Text = Drproveedor["Direccion"].ToString();
+                mskTelefono.Text = Drproveedor["Telefono"].ToString();
+                txtCorreo.Text = Drproveedor["Correo"].ToString();
                 Obtener(Drproveedor["Id_Munic"].ToString());
             }
         }
@@ -44,7 +47,7 @@ namespace Main.Vistas
 
         public SqlParameter[] parametroNuevo()
         {
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[7];
 
 
             param[0] = new SqlParameter("@Id", SqlDbType.Char);
@@ -55,8 +58,12 @@ namespace Main.Vistas
             param[2].Value = mskCelular.Text;
             param[3] = new SqlParameter("@Direccion", SqlDbType.NVarChar);
             param[3].Value = txtDireccion.Text;
-            param[4] = new SqlParameter("@Id_Munic", SqlDbType.Int);
-            param[4].Value = cmbMuni.SelectedValue;
+            param[4] = new SqlParameter("@Telefono", SqlDbType.Char);
+            param[4].Value = mskTelefono.Text;
+            param[5] = new SqlParameter("@Correo", SqlDbType.NVarChar);
+            param[5].Value = txtCorreo.Text;
+            param[6] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[6].Value = cmbMuni.SelectedValue;
             
 
             return param;
@@ -161,8 +168,13 @@ namespace Main.Vistas
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            cone.Insertados(parametroNuevo(), "NuevoProveedor");
-            this.Hide();
+            if (email_bien_escrito(txtCorreo.Text))
+            {
+                cone.Insertados(parametroNuevo(), "NuevoProveedor");
+                this.Hide();
+            }
+            else
+                MessageBox.Show("Correo Mal escrito");
         }
 
         private void btnelim_Click(object sender, EventArgs e)
@@ -173,13 +185,40 @@ namespace Main.Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            cone.editados(parametroNuevo(), "ActualizacionProveedor");
-            this.Hide();
+            if (email_bien_escrito(txtCorreo.Text))
+            {
+                cone.editados(parametroNuevo(), "ActualizacionProveedor");
+                this.Hide();
+            }
+            else
+                MessageBox.Show("Correo Mal escrito");
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private Boolean email_bien_escrito(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

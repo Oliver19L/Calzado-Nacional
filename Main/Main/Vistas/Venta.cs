@@ -67,5 +67,10 @@ namespace Main.Vistas
             btnelim.Enabled = false;
             btnelim.Visible = false;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

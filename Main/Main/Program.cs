@@ -20,7 +20,7 @@ namespace Main
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run( new IniSesion());
+            Application.Run(new IniSesion());
         }
     }
 }

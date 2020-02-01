@@ -112,14 +112,14 @@
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(13, 81);
             this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.Size = new System.Drawing.Size(345, 386);
+            this.dgvInventario.Size = new System.Drawing.Size(418, 386);
             this.dgvInventario.TabIndex = 28;
             // 
             // dgvDetalleVenta
             // 
             this.dgvDetalleVenta.AllowUserToAddRows = false;
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleVenta.Location = new System.Drawing.Point(445, 81);
+            this.dgvDetalleVenta.Location = new System.Drawing.Point(457, 81);
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
             this.dgvDetalleVenta.Size = new System.Drawing.Size(862, 377);
             this.dgvDetalleVenta.TabIndex = 35;
