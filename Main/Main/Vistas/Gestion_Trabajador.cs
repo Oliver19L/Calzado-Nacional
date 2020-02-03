@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataSet = System.Data.DataSet;
 
 namespace Main.Vistas
 {
@@ -171,31 +172,10 @@ namespace Main.Vistas
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //if (textBox1.Text!= "")
-            //{
-            //    foreach(DataGridViewRow ro in dgvEmpleados.Rows)
-            //    {
-            //        ro.Visible = false;
-            //    }
-
-            //    foreach (DataGridViewRow row in dgvEmpleados.Rows)
-            //    {
-
-            //        foreach (DataGridViewCell c in row.Cells)
-            //        {
-            //            if((c.Value.ToString().ToUpper()).IndexOf(textBox1.Text.ToUpper()) == 0){
-            //                row.Visible = true;
-            //                break;
-            //            }
-            //        }
-
-
-            //    }
-            //}
-            //else
-            //{
-            //    ListarUsuarios();
-            //}
+            if (txtBusquda.Text.Equals(""))
+            {
+                ListarUsuarios();
+            }
 
 
         }
@@ -234,5 +214,77 @@ namespace Main.Vistas
         {
             ExportarDatosExcel(dgvEmpleados);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txtBusquda.Text.Equals(""))
+            {
+                ListarUsuarios();
+            }
+            else
+            {
+                string result = comboBox1.SelectedItem.ToString();
+
+                switch (result)
+                {
+
+                    case "ID":
+                        BusquedaSQL("ID");
+
+                        break;
+                    case "Primer Nombre":
+                        BusquedaSQL("Primer Nombre");
+                        break;
+                    case "Segundo Nombre":
+                        BusquedaSQL("Segundo Nombre");
+                        break;
+                    case "Primer Apellido":
+                        BusquedaSQL("Primer Apellido");
+                        break;
+                    case "Segundo Apellido":
+                        BusquedaSQL("Segundo Apellido");
+                        break;
+                    case "Correo":
+                        BusquedaSQL("Correo");
+                        break;
+                    case "Telefono":
+                        BusquedaSQL("Telefono");
+                        break;
+                    case "Celular":
+                        BusquedaSQL("Celular");
+                        break;
+
+
+
+                }
+            }
+        }
+
+
+
+
+        public void BusquedaSQL(String Texto)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Codigo", SqlDbType.NVarChar);
+            param[0].Value = txtBusquda.Text;
+            param[1] = new SqlParameter("@Tipo", SqlDbType.VarChar);
+            param[1].Value = Texto;
+
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "BuscarEmpleado";
+            comando.Connection = conex.connect;
+            comando.Parameters.Add(param);
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+
+            da.Fill(dt);
+
+            dgvEmpleados.DataSource = dt;
+
+        }
+
     }
 }

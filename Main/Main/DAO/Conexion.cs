@@ -112,7 +112,7 @@ namespace Main.DAO
                 cmd.CommandText = proce;
                 cmd.Connection = connect;
                 cmd.Parameters.AddRange(param);
-
+                
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
