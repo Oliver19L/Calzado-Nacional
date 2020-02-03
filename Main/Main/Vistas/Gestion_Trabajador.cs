@@ -176,6 +176,46 @@ namespace Main.Vistas
             {
                 ListarUsuarios();
             }
+            else
+            {
+                int result = comboBox1.SelectedIndex;
+
+                switch (result)
+                {
+
+                    case 0:
+                        BusquedaSQL("ID");
+
+                        break;
+                    case 1:
+                        BusquedaSQL("Primer Nombre");
+                        break;
+                    case 2:
+                        BusquedaSQL("Segundo Nombre");
+                        break;
+                    case 3:
+                       
+                        BusquedaSQL("Primer Apellido");
+                        break;
+                    case 4:
+                        BusquedaSQL("Segundo Apellido");
+                        break;
+                    case 5:
+                        BusquedaSQL("Correo");
+                        break;
+                    case 6:
+                        BusquedaSQL("Telefono");
+                        break;
+                    case 7:
+                        
+                        BusquedaSQL("Celular");
+                        break;
+
+
+
+                }
+
+            }
 
 
         }
@@ -223,34 +263,37 @@ namespace Main.Vistas
             }
             else
             {
-                string result = comboBox1.SelectedItem.ToString();
+                //string result = comboBox1.SelectedItem.ToString();
+                int result  = comboBox1.SelectedIndex;
 
                 switch (result)
                 {
 
-                    case "ID":
+                    case 0:
                         BusquedaSQL("ID");
 
                         break;
-                    case "Primer Nombre":
+                    case 1:
                         BusquedaSQL("Primer Nombre");
                         break;
-                    case "Segundo Nombre":
+                    case 2:
                         BusquedaSQL("Segundo Nombre");
                         break;
-                    case "Primer Apellido":
+                    case  3:
+                        MessageBox.Show("hola");
                         BusquedaSQL("Primer Apellido");
                         break;
-                    case "Segundo Apellido":
+                    case 4:
                         BusquedaSQL("Segundo Apellido");
                         break;
-                    case "Correo":
+                    case 5:
                         BusquedaSQL("Correo");
                         break;
-                    case "Telefono":
+                    case 6:
                         BusquedaSQL("Telefono");
                         break;
-                    case "Celular":
+                    case 7:
+                        MessageBox.Show("hola");
                         BusquedaSQL("Celular");
                         break;
 
@@ -267,7 +310,7 @@ namespace Main.Vistas
         {
             SqlCommand comando = new SqlCommand();
             SqlParameter[] param = new SqlParameter[2];
-            param[0] = new SqlParameter("@Codigo", SqlDbType.NVarChar);
+            param[0] = new SqlParameter("@txtBuscar", SqlDbType.NVarChar);
             param[0].Value = txtBusquda.Text;
             param[1] = new SqlParameter("@Tipo", SqlDbType.VarChar);
             param[1].Value = Texto;
@@ -275,7 +318,7 @@ namespace Main.Vistas
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "BuscarEmpleado";
             comando.Connection = conex.connect;
-            comando.Parameters.Add(param);
+            comando.Parameters.AddRange(param);
 
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(comando);
