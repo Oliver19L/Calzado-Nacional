@@ -133,25 +133,32 @@ namespace Main.DAO
         public void eliminar(int id, String Procedimiento, String Campo)
         {
 
-            
-          
-            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
 
-           
+
                 SqlParameter[] param = new SqlParameter[1];
                 param[0] = new SqlParameter(Campo, SqlDbType.Int);
                 param[0].Value = id;
-  
 
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = Procedimiento;
-            cmd.Connection = connect;
-            cmd.Parameters.AddRange(param);
 
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = Procedimiento;
+                cmd.Connection = connect;
+                cmd.Parameters.AddRange(param);
 
-            da.Fill(ds);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error en el Insertado"+ e.Message);
+            }
+          
+            
         }
 
         public void eliminarChar(String id, String Procedimiento, String Campo)

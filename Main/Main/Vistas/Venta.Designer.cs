@@ -147,7 +147,7 @@
             this.btnelim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnelim.Image = ((System.Drawing.Image)(resources.GetObject("btnelim.Image")));
             this.btnelim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnelim.Location = new System.Drawing.Point(239, 111);
+            this.btnelim.Location = new System.Drawing.Point(239, 141);
             this.btnelim.Name = "btnelim";
             this.btnelim.Size = new System.Drawing.Size(86, 25);
             this.btnelim.TabIndex = 34;
@@ -183,7 +183,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(239, 80);
+            this.btnActualizar.Location = new System.Drawing.Point(239, 142);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(86, 25);
             this.btnActualizar.TabIndex = 31;

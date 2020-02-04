@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Main.Reportes;
 
 namespace Main.Vistas
 {
@@ -86,6 +87,47 @@ namespace Main.Vistas
             prov.btnNuevaP();
             prov.ShowDialog();
             ListarProveedor();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            ExportarDatosExcel(dgvProveedores);
+        }
+
+        public void ExportarDatosExcel(DataGridView dataGrid)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarE = new Microsoft.Office.Interop.Excel.Application();
+
+            exportarE.Application.Workbooks.Add(true);
+
+            int indicecolumna = 0;
+
+            foreach (DataGridViewColumn columna in dataGrid.Columns)
+            {
+                indicecolumna++;
+                exportarE.Cells[1, indicecolumna] = columna.Name;
+            }
+
+            int indiceFila = 0;
+
+            foreach (DataGridViewRow row in dataGrid.Rows)
+            {
+                indiceFila++;
+                indicecolumna = 0;
+                foreach (DataGridViewColumn column in dataGrid.Columns)
+                {
+                    indicecolumna++;
+                    exportarE.Cells[indiceFila + 1, indicecolumna] = row.Cells[column.Name].Value;
+                }
+            }
+
+            exportarE.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReporteListaProveedores reporteLista = new ReporteListaProveedores();
+            reporteLista.ShowDialog();
         }
     }
 }

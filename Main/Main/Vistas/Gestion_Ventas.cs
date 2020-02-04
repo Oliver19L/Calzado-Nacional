@@ -47,6 +47,12 @@ namespace Main.Vistas
         {
             string[] cmb = { "ID Detalle Venta", "ID Venta", "Codigo", "Producto", "Descripcion", "Cantidad", "PrecioSubtotal" };
             comboBox2.DataSource = cmb;
+
+            string[] cmb1 = { "Id_Venta", "Id_Cliente", "Fecha" };
+            comboBox1.DataSource = cmb1;
+            
+
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -93,6 +99,7 @@ namespace Main.Vistas
             venta.btnEliminarV();
             venta.ShowDialog();
             ListaVenta();
+            ListaDVenta();
 
         }
 
@@ -313,6 +320,7 @@ namespace Main.Vistas
             venta.btnNuevoD();
             venta.ShowDialog();
             ListaDVenta();
+            ListaVenta();
         }
 
         private void button9_Click(object sender, EventArgs e)

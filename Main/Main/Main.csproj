@@ -135,6 +135,12 @@
     <Compile Include="Reportes\ReporteListaProveedor.Designer.cs">
       <DependentUpon>ReporteListaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteListaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteListaProveedores.Designer.cs">
+      <DependentUpon>ReporteListaProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteListaVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,7 @@
     <EmbeddedResource Include="Reportes\DetalleVentaCliente.rdlc" />
     <EmbeddedResource Include="Reportes\ListaDetalleVenta.rdlc" />
     <EmbeddedResource Include="Reportes\ListaInvProveedor.rdlc" />
+    <EmbeddedResource Include="Reportes\ListaProveedores.rdlc" />
     <EmbeddedResource Include="Reportes\ListarVenta.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteClientesAll.resx">
       <DependentUpon>ReporteClientesAll.cs</DependentUpon>
@@ -346,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteListaProveedor.resx">
       <DependentUpon>ReporteListaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteListaProveedores.resx">
+      <DependentUpon>ReporteListaProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteListaVenta.resx">
       <DependentUpon>ReporteListaVenta.cs</DependentUpon>

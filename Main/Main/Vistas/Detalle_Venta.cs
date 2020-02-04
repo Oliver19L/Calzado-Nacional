@@ -36,8 +36,18 @@ namespace Main.Vistas
             param[3].Value = float.Parse(txtCantidad.Text);
             param[4] = new SqlParameter("@Precio", SqlDbType.Float);
             param[4].Value = float.Parse(txtPrecio.Text);
-            param[5] = new SqlParameter("@Descuento", SqlDbType.Float);
-            param[5].Value = float.Parse(txtDescuento.Text);
+            if (txtDescuento.Text.Equals(""))
+            {
+                param[5] = new SqlParameter("@Descuento", SqlDbType.Float);
+                param[5].Value = 0;
+            }
+            else
+            {
+                param[5] = new SqlParameter("@Descuento", SqlDbType.Float);
+                param[5].Value = float.Parse(txtDescuento.Text);
+            }
+                
+            
             param[6] = new SqlParameter("@SubTotal", SqlDbType.Float);
             param[6].Value = int.Parse(txtSub_Total.Text);
             return param;

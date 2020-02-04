@@ -26,16 +26,16 @@ namespace Main.Vistas
 
         public SqlParameter[] Parametro()
         {
-
-            SqlParameter[] param = new SqlParameter[1];
+            textBox2.Text = "0";
+            SqlParameter[] param = new SqlParameter[2];
 
 
             //param[0] = new SqlParameter("@Id_Venta", SqlDbType.Int);
             //param[0].Value = int.Parse( txtID_Venta.Text);
             param[0] = new SqlParameter("@Id_CC", SqlDbType.Int);
             param[0].Value = int.Parse(textBox1.Text);
-            //param[1] = new SqlParameter("@Fecha_v", SqlDbType.Date);
-            //param[1].Value = maskedTextBox2.Text;
+            param[1] = new SqlParameter("@Total", SqlDbType.Float);
+            param[1].Value = float.Parse(textBox2.Text);
 
             return param;
 
@@ -132,12 +132,14 @@ namespace Main.Vistas
 
         private void btnelim_Click(object sender, EventArgs e)
         {
-            con.eliminar(int.Parse(txtID_Venta.Text), "EliminarVenta", "@ID");
+            con.eliminar(int.Parse(txtID_Venta.Text),"EliminarVenta", "@ID");
+            this.Hide();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             con.editados(ParametroEdi(), "ActualizacionVenta");
+            this.Hide();
         }
     }
 }
