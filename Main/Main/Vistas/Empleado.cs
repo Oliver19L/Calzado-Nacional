@@ -143,7 +143,7 @@ namespace Main.Vistas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Hide();
         }
 
         public void BtnActualizar()

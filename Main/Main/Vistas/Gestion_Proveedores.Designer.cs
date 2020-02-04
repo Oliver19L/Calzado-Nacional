@@ -118,6 +118,7 @@
             this.button7.TabIndex = 55;
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // comboBox1
             // 
@@ -184,6 +185,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(379, 20);
             this.textBox1.TabIndex = 50;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Gestion_Proveedores
             // 

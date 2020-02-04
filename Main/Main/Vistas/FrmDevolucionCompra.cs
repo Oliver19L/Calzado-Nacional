@@ -19,5 +19,10 @@ namespace Main.Vistas
             this.con = con;
             InitializeComponent();
         }
+
+        private void FrmDevolucionCompra_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

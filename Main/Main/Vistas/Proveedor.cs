@@ -62,7 +62,7 @@ namespace Main.Vistas
             param[4].Value = mskTelefono.Text;
             param[5] = new SqlParameter("@Correo", SqlDbType.NVarChar);
             param[5].Value = txtCorreo.Text;
-            param[6] = new SqlParameter("@IdMunic", SqlDbType.Int);
+            param[6] = new SqlParameter("@Id_Munic", SqlDbType.Int);
             param[6].Value = cmbMuni.SelectedValue;
             
 
@@ -208,17 +208,27 @@ namespace Main.Vistas
             {
                 if (Regex.Replace(email, expresion, String.Empty).Length == 0)
                 {
-                    return false;
+                    return true;
                 }
                 else
                 {
-                    return true;
+                    return false;
                 }
             }
             else
             {
-                return true;
+                return false;
             }
+        }
+
+        private void cmbMuni_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

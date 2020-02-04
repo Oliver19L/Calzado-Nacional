@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Proveedor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnelim = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.mskCelular = new System.Windows.Forms.MaskedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -65,6 +65,18 @@
             this.panel1.Size = new System.Drawing.Size(431, 31);
             this.panel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SkyBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(366, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 31);
+            this.button1.TabIndex = 69;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -74,6 +86,21 @@
             this.label1.Size = new System.Drawing.Size(107, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Proveedor";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SkyBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(400, -1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 31);
+            this.button2.TabIndex = 70;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnelim
             // 
@@ -139,7 +166,7 @@
             this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsertar.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertar.Image")));
             this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertar.Location = new System.Drawing.Point(334, 246);
+            this.btnInsertar.Location = new System.Drawing.Point(334, 248);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(87, 25);
             this.btnInsertar.TabIndex = 30;
@@ -200,6 +227,7 @@
             this.cmbMuni.Name = "cmbMuni";
             this.cmbMuni.Size = new System.Drawing.Size(121, 21);
             this.cmbMuni.TabIndex = 40;
+            this.cmbMuni.SelectedIndexChanged += new System.EventHandler(this.cmbMuni_SelectedIndexChanged);
             // 
             // txtID
             // 
@@ -230,32 +258,6 @@
             this.mskCelular.Name = "mskCelular";
             this.mskCelular.Size = new System.Drawing.Size(100, 20);
             this.mskCelular.TabIndex = 45;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(366, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 31);
-            this.button1.TabIndex = 69;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.SkyBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(400, -1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 31);
-            this.button2.TabIndex = 70;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // mskTelefono
             // 

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Main.Reportes;
+using System.Data.SqlClient;
 
 namespace Main.Vistas
 {
@@ -20,20 +21,21 @@ namespace Main.Vistas
             this.con = con;
             InitializeComponent();
             ListarProveedor();
-          
+
         }
 
-        
+
 
         public void ListarProveedor()
         {
             con.Listados(dgvProveedores, "ListaProveedor");
-            
+
         }
-       
+
         private void Gestion_Proveedores_Load(object sender, EventArgs e)
         {
-
+            string[] comb = { "Id_Proveedor", "Nombre_Proveedor", "Celular", "Telefono", "Direccion", "Correo" };
+            comboBox1.DataSource = comb;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -83,7 +85,8 @@ namespace Main.Vistas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Proveedor prov = new Proveedor(con,true);
+            Proveedor prov = new Proveedor(con, true);
+            prov.Combo(true);
             prov.btnNuevaP();
             prov.ShowDialog();
             ListarProveedor();
@@ -128,6 +131,106 @@ namespace Main.Vistas
         {
             ReporteListaProveedores reporteLista = new ReporteListaProveedores();
             reporteLista.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Equals(""))
+            {
+                ListarProveedor();
+            }
+            else
+            {
+                int result = comboBox1.SelectedIndex;
+
+                switch (result)
+                {
+
+                    case 0:
+                        BusquedaSQL("Id_Proveedor", dgvProveedores);
+
+                        break;
+                    case 1:
+                        BusquedaSQL("Nombre_Proveedor", dgvProveedores);
+                        break;
+                    case 2:
+                        BusquedaSQL("Celular", dgvProveedores);
+                        break;
+                    case 3:
+
+                        BusquedaSQL("Telefono", dgvProveedores);
+                        break;
+                    case 4:
+                        BusquedaSQL("Direccion", dgvProveedores);
+                        break;
+                    case 5:
+                        BusquedaSQL("Correo", dgvProveedores);
+                        break;
+
+                }
+            }
+
+        }
+
+        public void BusquedaSQL(String Texto, DataGridView dataGrid)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@txtBuscar", SqlDbType.NVarChar);
+            param[0].Value = textBox1.Text;
+            param[1] = new SqlParameter("@Tipo", SqlDbType.VarChar);
+            param[1].Value = Texto;
+
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "BuscaProveedor";
+            comando.Connection = con.connect;
+            comando.Parameters.AddRange(param);
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+
+            da.Fill(dt);
+
+            dataGrid.DataSource = dt;
+        }
+
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Equals(""))
+            {
+                ListarProveedor();
+            }
+            else
+            {
+                int result = comboBox1.SelectedIndex;
+
+                switch (result)
+                {
+
+                    case 0:
+                        BusquedaSQL("Id_Proveedor", dgvProveedores);
+
+                        break;
+                    case 1:
+                        BusquedaSQL("Nombre_Proveedor", dgvProveedores);
+                        break;
+                    case 2:
+                        BusquedaSQL("Celular", dgvProveedores);
+                        break;
+                    case 3:
+
+                        BusquedaSQL("Telefono", dgvProveedores);
+                        break;
+                    case 4:
+                        BusquedaSQL("Direccion", dgvProveedores);
+                        break;
+                    case 5:
+                        BusquedaSQL("Correo", dgvProveedores);
+                        break;
+
+                }
+            }
         }
     }
 }
