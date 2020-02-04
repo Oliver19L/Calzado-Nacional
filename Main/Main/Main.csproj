@@ -105,6 +105,18 @@
     <Compile Include="Reportes\ReporteClienteDetallePedido.Designer.cs">
       <DependentUpon>ReporteClienteDetallePedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetalleVenta.Designer.cs">
+      <DependentUpon>ReporteDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetalleVentaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetalleVentaCliente.Designer.cs">
+      <DependentUpon>ReporteDetalleVentaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,18 @@
     </Compile>
     <Compile Include="Reportes\ReporteInventario.Designer.cs">
       <DependentUpon>ReporteInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteListaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteListaProveedor.Designer.cs">
+      <DependentUpon>ReporteListaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteListaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteListaVenta.Designer.cs">
+      <DependentUpon>ReporteListaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Vistas\Clientes.cs">
@@ -291,6 +315,10 @@
     </Compile>
     <EmbeddedResource Include="Reportes\ClienteAll.rdlc" />
     <EmbeddedResource Include="Reportes\DetalleCompra.rdlc" />
+    <EmbeddedResource Include="Reportes\DetalleVentaCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\ListaDetalleVenta.rdlc" />
+    <EmbeddedResource Include="Reportes\ListaInvProveedor.rdlc" />
+    <EmbeddedResource Include="Reportes\ListarVenta.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteClientesAll.resx">
       <DependentUpon>ReporteClientesAll.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,11 +332,23 @@
     <EmbeddedResource Include="Reportes\ReporteClienteDetallePedido.resx">
       <DependentUpon>ReporteClienteDetallePedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteDetalleVenta.resx">
+      <DependentUpon>ReporteDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteDetalleVentaCliente.resx">
+      <DependentUpon>ReporteDetalleVentaCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteEmpleados.resx">
       <DependentUpon>ReporteEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteInventario.resx">
       <DependentUpon>ReporteInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteListaProveedor.resx">
+      <DependentUpon>ReporteListaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteListaVenta.resx">
+      <DependentUpon>ReporteListaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>

@@ -311,5 +311,11 @@ namespace Main.Vistas
             }
             
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ReporteListaProveedor ri = new ReporteListaProveedor();
+            ri.ShowDialog();
+        }
     }
 }

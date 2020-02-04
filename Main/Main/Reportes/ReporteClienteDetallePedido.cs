@@ -23,6 +23,8 @@ namespace Main.Reportes
 
         private void ReporteClienteDetallePedido_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'DataSet.ListaDetallePedidos' Puede moverla o quitarla según sea necesario.
+          //  this.ListaDetallePedidosTableAdapter.Fill(this.DataSet2.ListaDetallePedidos);
             // TODO: esta línea de código carga datos en la tabla 'DataSetDetalleClientePedido.DetallePedidoCliente' Puede moverla o quitarla según sea necesario.
             this.DetallePedidoClienteTableAdapter.Fill(this.DataSetDetalleClientePedido.DetallePedidoCliente,ide);
 

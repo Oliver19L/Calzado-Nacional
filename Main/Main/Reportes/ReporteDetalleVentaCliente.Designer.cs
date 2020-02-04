@@ -1,6 +1,6 @@
 ﻿namespace Main.Reportes
 {
-    partial class ReporteClienteDetallePedido
+    partial class ReporteDetalleVentaCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -32,23 +32,23 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataSetDetalleClientePedido = new Main.Reportes.DataSetDetalleClientePedido();
-            this.DetallePedidoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DetallePedidoClienteTableAdapter = new Main.Reportes.DataSetDetalleClientePedidoTableAdapters.DetallePedidoClienteTableAdapter();
+            this.DetalleVentaClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DetalleVentaClienteTableAdapter = new Main.Reportes.DataSetDetalleClientePedidoTableAdapters.DetalleVentaClienteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetDetalleClientePedido)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetallePedidoClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleVentaClienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet2";
-            reportDataSource1.Value = this.DetallePedidoClienteBindingSource;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DetalleVentaClienteBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Main.Reportes.ClienteDetallePedido.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Main.Reportes.DetalleVentaCliente.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(781, 424);
             this.reportViewer1.TabIndex = 0;
             // 
             // DataSetDetalleClientePedido
@@ -56,26 +56,26 @@
             this.DataSetDetalleClientePedido.DataSetName = "DataSetDetalleClientePedido";
             this.DataSetDetalleClientePedido.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // DetallePedidoClienteBindingSource
+            // DetalleVentaClienteBindingSource
             // 
-            this.DetallePedidoClienteBindingSource.DataMember = "DetallePedidoCliente";
-            this.DetallePedidoClienteBindingSource.DataSource = this.DataSetDetalleClientePedido;
+            this.DetalleVentaClienteBindingSource.DataMember = "DetalleVentaCliente";
+            this.DetalleVentaClienteBindingSource.DataSource = this.DataSetDetalleClientePedido;
             // 
-            // DetallePedidoClienteTableAdapter
+            // DetalleVentaClienteTableAdapter
             // 
-            this.DetallePedidoClienteTableAdapter.ClearBeforeFill = true;
+            this.DetalleVentaClienteTableAdapter.ClearBeforeFill = true;
             // 
-            // ReporteClienteDetallePedido
+            // ReporteDetalleVentaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(781, 424);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ReporteClienteDetallePedido";
-            this.Text = "ReporteClienteDetallePedido";
-            this.Load += new System.EventHandler(this.ReporteClienteDetallePedido_Load);
+            this.Name = "ReporteDetalleVentaCliente";
+            this.Text = "ReporteDetalleVentaCliente";
+            this.Load += new System.EventHandler(this.ReporteDetalleVentaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataSetDetalleClientePedido)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetallePedidoClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleVentaClienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,8 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource DetallePedidoClienteBindingSource;
+        private System.Windows.Forms.BindingSource DetalleVentaClienteBindingSource;
         private DataSetDetalleClientePedido DataSetDetalleClientePedido;
-        private DataSetDetalleClientePedidoTableAdapters.DetallePedidoClienteTableAdapter DetallePedidoClienteTableAdapter;
+        private DataSetDetalleClientePedidoTableAdapters.DetalleVentaClienteTableAdapter DetalleVentaClienteTableAdapter;
     }
 }

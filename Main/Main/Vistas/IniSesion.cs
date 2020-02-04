@@ -108,7 +108,7 @@ namespace Main
             for (int i = 0; i <= 100; i++)
             {
                 progreso++;
-                Thread.Sleep(50);
+                Thread.Sleep(35);
                 bg.ReportProgress(i);
             }
         }
