@@ -51,6 +51,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -230,7 +231,7 @@
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportar.Location = new System.Drawing.Point(13, 86);
+            this.btnExportar.Location = new System.Drawing.Point(12, 67);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(127, 30);
             this.btnExportar.TabIndex = 42;
@@ -249,9 +250,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(155, 86);
+            this.button1.Location = new System.Drawing.Point(163, 67);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 30);
+            this.button1.Size = new System.Drawing.Size(142, 30);
             this.button1.TabIndex = 41;
             this.button1.Text = "Generar Reporte";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -363,9 +364,9 @@
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(298, 86);
+            this.button9.Location = new System.Drawing.Point(12, 105);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(122, 30);
+            this.button9.Size = new System.Drawing.Size(127, 30);
             this.button9.TabIndex = 49;
             this.button9.Text = " Reporte Venta";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -379,12 +380,32 @@
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 50;
             // 
+            // button10
+            // 
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.button10.FlatAppearance.BorderSize = 2;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(163, 105);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(157, 30);
+            this.button10.TabIndex = 51;
+            this.button10.Text = " Reporte Entre Fecha";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Gestion_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1331, 531);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -442,5 +463,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button10;
     }
 }

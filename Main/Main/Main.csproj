@@ -87,6 +87,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDetalleClientePedido.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Fechas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fechas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Fecha_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Fecha_Ventas.Designer.cs">
+      <DependentUpon>Fecha_Ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteClientesAll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +333,10 @@
     <EmbeddedResource Include="Reportes\ClienteAll.rdlc" />
     <EmbeddedResource Include="Reportes\DetalleCompra.rdlc" />
     <EmbeddedResource Include="Reportes\DetalleVentaCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\Fecha_Venta.rdlc" />
+    <EmbeddedResource Include="Reportes\Fecha_Ventas.resx">
+      <DependentUpon>Fecha_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ListaDetalleVenta.rdlc" />
     <EmbeddedResource Include="Reportes\ListaInvProveedor.rdlc" />
     <EmbeddedResource Include="Reportes\ListaProveedores.rdlc" />
@@ -484,6 +499,17 @@
     </None>
     <None Include="Reportes\DataSetDetalleClientePedido.xss">
       <DependentUpon>DataSetDetalleClientePedido.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Fechas.xsc">
+      <DependentUpon>Fechas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Fechas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Fechas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Fechas.xss">
+      <DependentUpon>Fechas.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
