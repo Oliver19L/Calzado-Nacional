@@ -36,17 +36,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtIDP = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtConcepto = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.txtMonto = new System.Windows.Forms.TextBox();
             this.btnelim = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mskFecha = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -116,48 +116,48 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Monto:";
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtID.Location = new System.Drawing.Point(87, 45);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 7;
             // 
-            // textBox2
+            // txtIDP
             // 
-            this.textBox2.Location = new System.Drawing.Point(279, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtIDP.Location = new System.Drawing.Point(279, 45);
+            this.txtIDP.Name = "txtIDP";
+            this.txtIDP.Size = new System.Drawing.Size(100, 20);
+            this.txtIDP.TabIndex = 8;
             // 
-            // textBox3
+            // txtCodigo
             // 
-            this.textBox3.Location = new System.Drawing.Point(514, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
+            this.txtCodigo.Location = new System.Drawing.Point(514, 45);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 9;
             // 
-            // textBox4
+            // txtConcepto
             // 
-            this.textBox4.Location = new System.Drawing.Point(279, 88);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(335, 99);
-            this.textBox4.TabIndex = 10;
+            this.txtConcepto.Location = new System.Drawing.Point(279, 88);
+            this.txtConcepto.Multiline = true;
+            this.txtConcepto.Name = "txtConcepto";
+            this.txtConcepto.Size = new System.Drawing.Size(335, 99);
+            this.txtConcepto.TabIndex = 10;
             // 
-            // textBox6
+            // txtCantidad
             // 
-            this.textBox6.Location = new System.Drawing.Point(87, 140);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 12;
+            this.txtCantidad.Location = new System.Drawing.Point(87, 140);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 12;
             // 
-            // textBox7
+            // txtMonto
             // 
-            this.textBox7.Location = new System.Drawing.Point(87, 201);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 13;
+            this.txtMonto.Location = new System.Drawing.Point(87, 201);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(100, 20);
+            this.txtMonto.TabIndex = 13;
             // 
             // btnelim
             // 
@@ -175,6 +175,7 @@
             this.btnelim.Text = "Eliminar";
             this.btnelim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnelim.UseVisualStyleBackColor = true;
+            this.btnelim.Click += new System.EventHandler(this.btnelim_Click);
             // 
             // btnLimpiar
             // 
@@ -210,6 +211,7 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnInsertar
             // 
@@ -227,15 +229,16 @@
             this.btnInsertar.Text = "Guardar";
             this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
-            // maskedTextBox1
+            // mskFecha
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(87, 88);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 35;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mskFecha.Location = new System.Drawing.Point(87, 88);
+            this.mskFecha.Mask = "00/00/0000";
+            this.mskFecha.Name = "mskFecha";
+            this.mskFecha.Size = new System.Drawing.Size(100, 20);
+            this.mskFecha.TabIndex = 35;
+            this.mskFecha.ValidatingType = typeof(System.DateTime);
             // 
             // panel1
             // 
@@ -280,17 +283,17 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(642, 251);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mskFecha);
             this.Controls.Add(this.btnelim);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnInsertar);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMonto);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtConcepto);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtIDP);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -317,17 +320,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtIDP;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtConcepto;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.Button btnelim;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnInsertar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mskFecha;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
